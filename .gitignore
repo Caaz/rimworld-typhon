@@ -1,0 +1,6 @@
+.vs
+bin
+MigrationBackup
+obj
+*.dll
+*.user
