@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <BodyPartDef>
+    <defName>TyphonThorax</defName>
+    <label>thorax</label>
+    <hitPoints>40</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <alive>false</alive>
+  </BodyPartDef>
+
+  <BodyPartDef>
+    <defName>TyphonMimicLeg</defName>
+    <label>leg</label>
+    <hitPoints>20</hitPoints>
+    <frostbiteVulnerability>0.01</frostbiteVulnerability>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+    <tags>
+      <li>MovingLimbCore</li>
+      <li>ManipulationLimbCore</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyDef>
+    <!-- Almost nothing is explained or revealed about their anatomy or biological makeup -->
+    <defName>Typhon_Mimic</defName>
+    <label>typhon mimmic</label>
+    <corePart>
+      <def>TyphonThorax</def>
+      <height>Middle</height>
+      <depth>Outside</depth>
+      <groups> <li>Torso</li> </groups>
+      <parts>
+        <!-- It bleeds, so it must have a heart -->
+        <li>
+          <def>Eye</def>
+          <customLabel>left eye</customLabel>
+          <coverage>0.12</coverage>
+        </li>
+        <li>
+          <def>Eye</def>
+          <customLabel>right eye</customLabel>
+          <coverage>0.12</coverage>
+        </li>
+        <li>
+          <def>Heart</def>
+          <coverage>0.03</coverage>
+          <depth>Inside</depth>
+        </li>
+        <li>
+          <def>TyphonMimicLeg</def>
+          <customLabel>front left leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <groups> <li>FrontLeftLeg</li> </groups>
+        </li>
+        <li>
+          <def>TyphonMimicLeg</def>
+          <customLabel>front right leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+          <groups> <li>FrontRightLeg</li> </groups>
+        </li>
+        <li>
+          <def>TyphonMimicLeg</def>
+          <customLabel>rear left leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+        </li>
+        <li>
+          <def>TyphonMimicLeg</def>
+          <customLabel>rear right leg</customLabel>
+          <coverage>0.07</coverage>
+          <height>Bottom</height>
+        </li>
+      </parts>
+    </corePart>
+  </BodyDef>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>Typhon_Mimic</defName>
+    <label>mimic</label>
+    <description>TODO</description>
+    <statBases>
+      <ToxicSensitivity>0</ToxicSensitivity>
+      <MoveSpeed>7.0</MoveSpeed>
+      <MarketValue>450</MarketValue>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <FilthRate>0</FilthRate>
+    </statBases>
+    <race>
+      <body>Typhon_Mimic</body>
+      <thinkTreeMain>TyphonMimic</thinkTreeMain>
+      <thinkTreeConstant>TyphonMimicConstant</thinkTreeConstant>
+      <fleshType>Typhon</fleshType>
+      <meatColor>(30,30,30)</meatColor>
+      <hasGenders>false</hasGenders>
+      <predator>true</predator>
+      <petness>0</petness>
+      <baseBodySize>1</baseBodySize>
+      <baseHungerRate>0.1</baseHungerRate>
+      <maxPreyBodySize>1.5</maxPreyBodySize>
+      <foodType>CarnivoreAnimalStrict</foodType>
+      <leatherDef>Leather_Light</leatherDef>
+      <gestationPeriodDays>999</gestationPeriodDays>
+      <trainability>None</trainability>
+      <wildness>1</wildness>
+      <manhunterOnTameFailChance>1</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <bloodDef>Filth_Typhon_Blood</bloodDef>
+      <litterSizeCurve>
+        <points>
+          <li>(0, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeExpectancy>999</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Warg_Wounded</soundWounded>
+          <soundDeath>Pawn_Warg_Death</soundDeath>
+          <soundCall>Pawn_Warg_Call</soundCall>
+          <soundAngry>Pawn_Warg_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+    </race>
+    <tools>
+      <li>
+        <label>Appendage</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontLeftLeg</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Appendage</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.5</cooldownTime>
+        <linkedBodyPartsGroup>FrontRightLeg</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>Body</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+        <chanceFactor>0.2</chanceFactor>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <PawnKindDef ParentName="AnimalKindBase" Name="TyphonKindMimicBase" Abstract ="True">
+    <defName>Typhon_Mimic</defName>
+    <label>Mimic</label>
+    <race>Typhon_Mimic</race>
+    <defaultFactionType>Typhon</defaultFactionType>
+    <combatPower>160</combatPower>
+    <ecoSystemWeight>0.5</ecoSystemWeight>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="TyphonKindMimicBase">
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawns/Typhon/Mimic/Mimic</texPath>
+          <drawSize>.7</drawSize>
+          <color>(255,255,255)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawns/Typhon/Mimic/Mimic</texPath>
+          <drawSize>.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="TyphonKindMimicBase">
+    <defName>Typhon_Mimic_Hidden</defName>
+    <defaultFactionType>Typhon_Hidden</defaultFactionType>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawns/Typhon/Mimic/Mimic</texPath>
+          <drawSize>.7</drawSize>
+          <color>(255,255,255,0)</color>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawns/Typhon/Mimic/Mimic</texPath>
+          <drawSize>.7</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>
