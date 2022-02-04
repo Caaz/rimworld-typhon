@@ -32,7 +32,7 @@ The following is the current planned phases and feature sets within them. This i
 - [ ] Add [Coral](https://prey.fandom.com/wiki/Coral)
     - [ ] Seems like this should inflict a fear response in anything that damages it.
     - [ ] Probably should go away with time.
-- [ ] Add [https://prey.fandom.com/wiki/Phantom]
+- [ ] Add [Phantoms](https://prey.fandom.com/wiki/Phantom)
 
 ## Credits
 
