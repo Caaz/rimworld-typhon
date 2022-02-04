@@ -1,6 +1,6 @@
 ﻿using RimWorld;
 
-namespace Typhons.TyphonDefOf
+namespace Typhon.TyphonDefOf
 {
     #pragma warning disable 0649
     [DefOf]

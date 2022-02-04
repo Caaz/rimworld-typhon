@@ -2,12 +2,12 @@
 <Defs>
   <JobDef>
     <defName>TyphonMimicMultiply</defName>
-    <driverClass>Typhons.JobDriver_MimicMultiply</driverClass>
+    <driverClass>Typhon.JobDriver_MimicMultiply</driverClass>
     <reportString>Multiplying</reportString>
   </JobDef>
   <JobDef>
     <defName>TyphonMimicBuilding</defName>
-    <driverClass>Typhons.JobDriver_MimicBuilding</driverClass>
+    <driverClass>Typhon.JobDriver_MimicBuilding</driverClass>
     <reportString>Hiding</reportString>
   </JobDef>
 </Defs>

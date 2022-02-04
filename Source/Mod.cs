@@ -1,9 +1,9 @@
 ﻿using HugsLib;
 
-namespace Typhons
+namespace Typhon
 {
     public class Mod : ModBase
     {
-        public override string ModIdentifier => "caaz.typhons";
+        public override string ModIdentifier => "caaz.typhon";
     }
 }

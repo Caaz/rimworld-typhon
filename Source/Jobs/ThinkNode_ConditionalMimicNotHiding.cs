@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace Typhons
+namespace Typhon
 {
     internal class ThinkNode_ConditionalMimicNotHiding : ThinkNode_Conditional
     {

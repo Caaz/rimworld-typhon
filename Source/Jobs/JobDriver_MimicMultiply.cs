@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace Typhons
+namespace Typhon
 {
     internal class JobDriver_MimicMultiply : JobDriver
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{D10FE8DC-AEEC-4E6B-8124-57FD5E495CC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Typhons</RootNamespace>
-    <AssemblyName>Typhons</AssemblyName>
+    <RootNamespace>Typhon</RootNamespace>
+    <AssemblyName>Typhon</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -68,6 +68,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About\About.xml" />
     <Content Include="Defs\JobDefs\Mimic.xml" />
     <Content Include="Defs\Misc\Filth.xml" />
     <Content Include="Defs\Misc\Misc.xml" />
