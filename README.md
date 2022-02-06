@@ -44,4 +44,4 @@ The following is the current planned phases and feature sets within them. This i
 ### Caaz
 - Coding, XML, etc.
 ### Magenta_Ivy
-- Art for Mimics.
+- Art for Mimics and Weavers.
