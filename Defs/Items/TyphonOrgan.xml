@@ -6,7 +6,8 @@
     <description>An organ harvested from a Typhon.</description>
     <smallVolume>true</smallVolume>
     <graphicData>
-      <texPath>Things/Item/Resource/Steel</texPath>
+      <texPath>Things/Item/Resource/MeatFoodRaw/Meat_Insect</texPath>
+      <color>(100,100,120,255)</color>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <stackLimit>75</stackLimit>
