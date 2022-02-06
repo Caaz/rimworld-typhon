@@ -20,7 +20,9 @@ The following is the current planned phases and feature sets within them. This i
 - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
 - [x] Add Typhon Organs
     - All Typhons will probably drop this, scaled to how big they are. Mimics should only drop a few
-- [ ] Add Recipe for Skilltrainers/Psytrainers
+- [x] Add Recipes for Skilltrainers
+    - Probably could use some balancing
+- [ ] Add Recipes for Psytrainers
 - [ ] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - Maybe with a downed pawn to go with it?
 - [ ] Add psychic abilities from Prey
