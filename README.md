@@ -2,7 +2,7 @@
 
 *A Rimworld Mod*
 <!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
-[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/aE6ABXNqPj)
+[![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 <!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
 
 ## Description
