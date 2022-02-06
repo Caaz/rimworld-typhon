@@ -16,24 +16,25 @@ The following is the current planned phases and feature sets within them. This i
 ### Phase 1 - Mimic
 
 - [x] Add the [Mimic Typhon](https://prey.fandom.com/wiki/Mimic).
-- [x] Mimics should feed on corpses, multiplying into more mimics!
-- [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
-    - [x] They copy features too!
-    - [ ] There should be a limit on the sie of what they copy. 
-    - [ ] We shouldn't copy connectable buildings, like fences.
+    - [ ] Mimics should have custom sounds!
+        - Going to require me to go record some samples to know what they even sound like.
+    - [x] Mimics should feed on corpses, multiplying into more mimics!
+    - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
+        - [x] They copy features too!
+        - [ ] There should be a limit on the sie of what they copy. 
+        - [ ] We shouldn't copy connectable buildings, like fences.
 - [x] Add Typhon Organs
     - All Typhons will probably drop this, scaled to how big they are. Mimics should only drop a few
 - [x] Add Recipes for Skilltrainers
     - Probably could use some balancing
 - [ ] Add Recipes for Psytrainers
     - Probably has to be done dynamically, to support modded abilities.
+    - [ ] Add psychic abilities from Prey
+        - Requires research. Time to actually play Prey myself.
+        - This may require this feature to be Royalty dependant! (At least, for psytrainers)
+        - Probably going to have to play more Prey to unlock the alien abilities. Should this be a post-release feature?
 - [ ] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - Maybe with a downed pawn to go with it?
-- [ ] Add psychic abilities from Prey
-    - Requires research. Time to actually play Prey myself.
-    - Looks like lore-wise they're identical to skilltrainers, where alien abilities are similar to psytrainers!
-    - This may require this feature to be Royalty dependant! (At least, for psytrainers)
-- [ ] Mimics should have custom sounds!
 
 ### Phase 2 - Weaver
 
