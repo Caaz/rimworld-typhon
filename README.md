@@ -18,11 +18,15 @@ The following is the current planned phases and feature sets within them. This i
 - [x] Add the [Mimic Typhon](https://prey.fandom.com/wiki/Mimic).
 - [x] Mimics should feed on corpses, multiplying into more mimics!
 - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
+    - [x] They copy features too!
+    - [ ] There should be a limit on the sie of what they copy. 
+    - [ ] We shouldn't copy connectable buildings, like fences.
 - [x] Add Typhon Organs
     - All Typhons will probably drop this, scaled to how big they are. Mimics should only drop a few
 - [x] Add Recipes for Skilltrainers
     - Probably could use some balancing
 - [ ] Add Recipes for Psytrainers
+    - Probably has to be done dynamically, to support modded abilities.
 - [ ] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - Maybe with a downed pawn to go with it?
 - [ ] Add psychic abilities from Prey
