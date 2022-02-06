@@ -26,13 +26,11 @@
         <!-- Do a queued job -->
         <li Class="ThinkNode_QueuedJob" />
 
-
         <li Class="Typhon.JobGiver_MimicMultiply" />
 
         <li Class="Typhon.JobGiver_AttackNearbyPawns" />
-        
-        <li Class="Typhon.JobGiver_MimicBuilding" />
 
+        <li Class="Typhon.JobGiver_MimicBuilding" />
         <!-- Mental state non critical -->
         <!--<li Class="ThinkNode_Subtree">
           <treeDef>MentalStateNonCritical</treeDef>

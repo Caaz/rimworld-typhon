@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
+    <Content Include="Defs\Items\TyphonOrgan.xml" />
     <Content Include="Defs\JobDefs\Mimic.xml" />
     <Content Include="Defs\Misc\Filth.xml" />
     <Content Include="Defs\Misc\Misc.xml" />

@@ -21,7 +21,7 @@ namespace Typhon
 				if (building == null) continue;
 				if (building.def.passability == Traversability.Impassable)
 					continue;
-				if (!ReservationUtility.CanReserveAndReach(pawn, building, PathEndMode.ClosestTouch, Danger.Deadly)) continue;
+				if (!pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)) continue;
 				return building;
 			}
 			return null;

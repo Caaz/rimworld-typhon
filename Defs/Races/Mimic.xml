@@ -94,15 +94,15 @@
       <thinkTreeMain>TyphonMimic</thinkTreeMain>
       <thinkTreeConstant>TyphonMimicConstant</thinkTreeConstant>
       <fleshType>Typhon</fleshType>
+      <specificMeatDef>TyphonOrgan</specificMeatDef>
       <meatColor>(30,30,30)</meatColor>
       <hasGenders>false</hasGenders>
       <predator>true</predator>
       <petness>0</petness>
-      <baseBodySize>1</baseBodySize>
+      <baseBodySize>.1</baseBodySize>
       <baseHungerRate>0.1</baseHungerRate>
       <maxPreyBodySize>1.5</maxPreyBodySize>
       <foodType>CarnivoreAnimalStrict</foodType>
-      <leatherDef>Leather_Light</leatherDef>
       <gestationPeriodDays>999</gestationPeriodDays>
       <trainability>None</trainability>
       <wildness>1</wildness>

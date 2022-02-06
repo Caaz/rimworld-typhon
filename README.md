@@ -1,6 +1,9 @@
 ﻿# Typhon
 
 *A Rimworld Mod*
+<!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
+[![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/aE6ABXNqPj)
+<!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
 
 ## Description
 
@@ -12,16 +15,18 @@ The following is the current planned phases and feature sets within them. This i
 
 ### Phase 1 - Mimic
 
-- [ ] Add the [Mimic Typhon](https://prey.fandom.com/wiki/Mimic).
+- [x] Add the [Mimic Typhon](https://prey.fandom.com/wiki/Mimic).
 - [x] Mimics should feed on corpses, multiplying into more mimics!
 - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
 - [ ] Mimic bodies should be processable somehow into psychic-related items
-    - [ ] Through the medicine bench? Or should it be through butchering?
+    - Butchering will drop Mimic Organs, which will be used in the crafting of Skilltrainers and psytrainers.
 - [ ] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - [ ] Maybe with a downed pawn to go with it?
 - [ ] Add psychic abilities from Prey
-    - [ ] Requires research. Time to actually play Prey myself.
+    - Requires research. Time to actually play Prey myself.
+    - Looks like lore-wise they're identical to skilltrainers, where alien abilities are similar to psytrainers!
     - This may require this mod to be Royalty dependant!
+- [ ] Add Mimic Organs
 - [ ] Mimics should have custom sounds!
 
 ### Phase 2 - Weaver
