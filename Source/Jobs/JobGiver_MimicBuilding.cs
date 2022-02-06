@@ -10,6 +10,7 @@ namespace Typhon
 		{
 			Building building = GetNearbyBuilding(pawn);
 			if (building == null) return null;
+			Log.Message("Giving Job, targetting " + building);
 			return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMimicBuilding, building);
 		}
 		private Building GetNearbyBuilding(Pawn pawn)

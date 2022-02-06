@@ -110,6 +110,7 @@
 
   <FactionDef ParentName="TyphonFaction">
     <defName>Typhon_Hidden</defName>
+    <fixedName>Typhon Hidden</fixedName>
     <permanentEnemyToEveryoneExcept>
       <li>Typhon</li>
       <li>PlayerColony</li>

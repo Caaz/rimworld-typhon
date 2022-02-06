@@ -20,7 +20,7 @@ namespace Typhon
         {
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch).FailOnDespawnedOrNull(TargetIndex.A);
             yield return Mimicry();
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.OnCell);
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.Touch);
             yield return Wait();
         }
         public override void ExposeData()
@@ -33,18 +33,30 @@ namespace Typhon
             Toil wait_toil = Toils_General.Wait(Int32.MaxValue);
             wait_toil.FailOn((Func<bool>)delegate
             {
-                Pawn target = (Pawn)AttackTargetFinder.BestAttackTarget(pawn, TargetScanFlags.None, null, 0, 3);
+                Pawn target = GetAttackableTarget();
                 bool failed = (target != null || Copy == null || Copy.DestroyedOrNull() || Copy.HitPoints != buildingHitPoints);
                 return failed;
             });
             wait_toil.AddFinishAction(delegate
             {
-                Log.Message("Finishing up.");
                 if (!Copy.DestroyedOrNull())
                     Copy.Destroy(DestroyMode.Vanish);
                 UpdateMimic(false);
             });
             return wait_toil;
+        }
+        private Pawn GetAttackableTarget()
+        {
+            foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, 2f, useCenter: true))
+            {
+                if (item.def.thingClass != typeof(Pawn)) continue;
+                Pawn target = (Pawn)item;
+                if (target.Dead) continue;
+                if (!(target.RaceProps.FleshType == FleshTypeDefOf.Normal)) continue;
+                if (!pawn.CanSee(target)) continue;
+                return target;
+            }
+            return null;
         }
         private Toil Mimicry()
         {
@@ -55,10 +67,12 @@ namespace Typhon
                 Building copy = (Building)ThingMaker.MakeThing(Copying.def, Copying.Stuff);
                 job.SetTarget(TargetIndex.B, copy);
                 bool placed = GenPlace.TryPlaceThing(Copy, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                Log.Message("Placed? " + placed);
+            };
+            mimic_toil.AddFinishAction(delegate
+            {
                 buildingHitPoints = Copy.HitPoints;
                 UpdateMimic(true);
-            };
+            });
             return mimic_toil;
         }
 
@@ -66,7 +80,7 @@ namespace Typhon
         {
             PawnKindDef pawnKind = (hidden) ? TyphonDefOf.PawnKind.Typhon_Mimic_Hidden : TyphonDefOf.PawnKind.Typhon_Mimic;
             pawn.ChangeKind(pawnKind);
-            pawn.SetFaction(FactionUtility.DefaultFactionFrom(pawnKind.defaultFactionType));
+            pawn.SetFactionDirect(FactionUtility.DefaultFactionFrom(pawnKind.defaultFactionType));
             pawn.Drawer.renderer.graphics.ResolveAllGraphics();
         }
     }
