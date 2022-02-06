@@ -12,6 +12,8 @@
     </graphicData>
     <stackLimit>75</stackLimit>
     <statBases>
+      <MaxHitPoints>20</MaxHitPoints>
+      <DeteriorationRate>6</DeteriorationRate>
       <MarketValue>40</MarketValue>
       <Mass>1</Mass>
       <Flammability>1</Flammability>

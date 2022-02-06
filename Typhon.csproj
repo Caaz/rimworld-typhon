@@ -75,6 +75,7 @@
     <Content Include="Defs\Misc\Misc.xml" />
     <Content Include="Defs\Misc\ThinkTrees.xml" />
     <Content Include="Defs\Races\Mimic.xml" />
+    <Content Include="Defs\Recipes\Skilltrainers.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LICENSE.md" />

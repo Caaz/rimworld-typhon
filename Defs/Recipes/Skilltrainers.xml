@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Abstract="True">
+    <defName>Typhon_Make_Skilltrainer</defName>
+    <label>make wort</label>
+    <description>Make skilltrainer from typhon organs and advanced components.</description>
+    <jobString>Making skilltrainer.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <workAmount>1000</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Typhon_Organ</li>
+            <li>ComponentSpacer</li>
+          </thingDefs>
+        </filter>
+        <count>40</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Typhon_Organ</li>
+        <li>ComponentIndustrial</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Neurotrainer_Shooting>5</Neurotrainer_Shooting>
+    </products>
+  </RecipeDef>
+</Defs>
