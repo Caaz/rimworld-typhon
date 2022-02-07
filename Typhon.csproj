@@ -50,7 +50,8 @@
     <Compile Include="Source\Jobs\JobGiver_MimicBuilding.cs" />
     <Compile Include="Source\Jobs\ThinkNode_ConditionalMimicNotHiding.cs" />
     <Compile Include="Source\Mod.cs" />
-    <Compile Include="Source\TyphonDefOf.cs" />
+    <Compile Include="Utilities\TyphonDefOf.cs" />
+    <Compile Include="Utilities\TyphonUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">

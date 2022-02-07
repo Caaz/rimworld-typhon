@@ -33,7 +33,7 @@ namespace Typhon
             Toil wait_toil = Toils_General.Wait(Int32.MaxValue);
             wait_toil.FailOn((Func<bool>)delegate
             {
-                Pawn target = GetAttackableTarget();
+                Pawn target = TyphonUtility.GetAttackableTarget(pawn);
                 bool failed = (target != null || Copy == null || Copy.DestroyedOrNull() || Copy.HitPoints != buildingHitPoints);
                 return failed;
             });
@@ -44,19 +44,6 @@ namespace Typhon
                 UpdateMimic(false);
             });
             return wait_toil;
-        }
-        private Pawn GetAttackableTarget()
-        {
-            foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, 2f, useCenter: true))
-            {
-                if (item.def.thingClass != typeof(Pawn)) continue;
-                Pawn target = (Pawn)item;
-                if (target.Dead) continue;
-                if (!(target.RaceProps.FleshType == FleshTypeDefOf.Normal)) continue;
-                if (!pawn.CanSee(target)) continue;
-                return target;
-            }
-            return null;
         }
         private Toil Mimicry()
         {
