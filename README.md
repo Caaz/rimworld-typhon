@@ -32,8 +32,9 @@ The following is the current planned phases and feature sets within them. This i
         - Requires research. Time to actually play Prey myself.
         - This may require this feature to be Royalty dependant! (At least, for psytrainers)
         - Probably going to have to play more Prey to unlock the alien abilities. Should this be a post-release feature?
-- [ ] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
+- [x] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - Maybe with a downed pawn to go with it?
+        - Turns out, not required to be interesting.
 
 ### Phase 2 - Weaver
 

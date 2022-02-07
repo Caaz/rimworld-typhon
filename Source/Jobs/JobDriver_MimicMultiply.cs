@@ -31,13 +31,8 @@ namespace Typhon
         {
             Corpse target = (Corpse)job.GetTarget(TargetIndex.A);
             for(int i = 0; i < 3; i ++)
-            {
-                PawnKindDef mimicKind = TyphonDefOf.PawnKind.Typhon_Mimic;
-                Pawn child = PawnGenerator.GeneratePawn(mimicKind, FactionUtility.DefaultFactionFrom(mimicKind.defaultFactionType));
-                child.ageTracker.AgeBiologicalTicks = 0;
-                child.ageTracker.AgeChronologicalTicks = 0;
-                GenSpawn.Spawn(child, pawn.Position, pawn.Map);
-            }
+                GenSpawn.Spawn(TyphonUtility.GenerateMimic(), pawn.Position, pawn.Map);
+
             CompRottable comp = target.GetComp<CompRottable>();
             if (comp != null)
                 comp.RotProgress = comp.PropsRot.TicksToDessicated;

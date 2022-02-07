@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Incidents\IncidentWorker_MimicCrash.cs" />
     <Compile Include="Source\Jobs\JobDriver_MimicBuilding.cs" />
     <Compile Include="Source\Jobs\JobDriver_MimicMultiply.cs" />
     <Compile Include="Source\Jobs\JobGiver_AttackNearbyPawns.cs" />
@@ -70,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
+    <Content Include="Defs\Incidents\Misc.xml" />
     <Content Include="Defs\Items\TyphonOrgan.xml" />
     <Content Include="Defs\JobDefs\Mimic.xml" />
     <Content Include="Defs\Misc\Filth.xml" />

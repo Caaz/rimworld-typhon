@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IncidentDef>
+    <defName>MimicCrash</defName>
+    <label>Mimic crash</label>
+    <category>ThreatBig</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <workerClass>Typhon.IncidentWorker_MimicCrash</workerClass>
+    <letterLabel>Crashing Transport Pod</letterLabel>
+    <letterText>A transport pod seems to be crashing nearby, with an anusual black creature, gripping it as it falls through the atmosphere.</letterText>
+    <letterDef>ThreatBig</letterDef>
+    <baseChance>.5</baseChance>
+    <minThreatPoints>100</minThreatPoints>
+    <pointsScaleable>true</pointsScaleable>
+  </IncidentDef>
+</Defs>

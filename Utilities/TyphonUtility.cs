@@ -7,6 +7,14 @@ namespace Typhon
 {
     internal class TyphonUtility
 	{
+		public static Pawn GenerateMimic()
+        {
+			PawnKindDef mimicKind = TyphonDefOf.PawnKind.Typhon_Mimic;
+			Pawn mimic = PawnGenerator.GeneratePawn(mimicKind, FactionUtility.DefaultFactionFrom(mimicKind.defaultFactionType));
+			mimic.ageTracker.AgeBiologicalTicks = 0;
+			mimic.ageTracker.AgeChronologicalTicks = 0;
+			return mimic;
+		}
 		public static Pawn GetAttackableTarget(Pawn pawn, float distance = 2f)
 		{
 			foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, distance, true))

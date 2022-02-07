@@ -8,7 +8,7 @@ namespace Typhon
 	{
 		protected override Job TryGiveJob(Pawn pawn)
 		{
-            Pawn target = TyphonUtility.GetAttackableTarget(pawn);
+            Pawn target = TyphonUtility.GetAttackableTarget(pawn, 5);
             if ((target == null) || !pawn.CanReserve(target, 4)) return null;
 			return new Job(JobDefOf.AttackMelee, target)
 			{
