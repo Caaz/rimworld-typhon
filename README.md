@@ -7,6 +7,9 @@
 
 This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld. 
 
+## Testing
+If you'd like to test this mod... A pre-release build is in the works!
+
 ## Planning
 
 The following is the current planned phases and feature sets within them. This isn't set in stone, but it should give a bit of direction, if you'd like to help contribute!
