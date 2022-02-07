@@ -21,6 +21,7 @@ The following is the current planned phases and feature sets within them. This i
         - [x] They copy features too!
         - [x] There should be a limit on the size of what they copy. 
         - [x] We shouldn't copy connectable buildings, like fences.
+        - [x] Shouldn't copy conduits either (fixed via only copying things at building altitude layer.)
 - [x] Add Typhon Organs
     - All Typhons will probably drop this, scaled to how big they are. Mimics should only drop a few
 - [x] Add Recipes for Skilltrainers

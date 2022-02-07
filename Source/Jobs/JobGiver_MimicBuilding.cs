@@ -22,6 +22,7 @@ namespace Typhon
 				if (building.def.passability == Traversability.Impassable) continue;
 				if (building.RotatedSize.Area != 1) continue;
 				if (building.def.building.isFence) continue;
+				if (building.def.altitudeLayer != AltitudeLayer.Building) continue;
 				if (!pawn.CanSee(building)) continue;
 				if (!pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)) continue;
 				return building;
