@@ -79,7 +79,7 @@
   <FactionDef Name="TyphonFaction" ParentName="FactionBase">
     <defName>Typhon</defName>
     <label>typhon</label>
-    <description></description>
+    <description>Typhon</description>
     <pawnSingular>typhon</pawnSingular>
     <pawnsPlural>typhon</pawnsPlural>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
