@@ -1,6 +1,4 @@
 ﻿# Typhon
-
-*A Rimworld Mod*
 <!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
 [![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 <!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
@@ -21,8 +19,8 @@ The following is the current planned phases and feature sets within them. This i
     - [x] Mimics should feed on corpses, multiplying into more mimics!
     - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
         - [x] They copy features too!
-        - [ ] There should be a limit on the sie of what they copy. 
-        - [ ] We shouldn't copy connectable buildings, like fences.
+        - [x] There should be a limit on the size of what they copy. 
+        - [x] We shouldn't copy connectable buildings, like fences.
 - [x] Add Typhon Organs
     - All Typhons will probably drop this, scaled to how big they are. Mimics should only drop a few
 - [x] Add Recipes for Skilltrainers
@@ -40,6 +38,8 @@ The following is the current planned phases and feature sets within them. This i
 
 
 - [ ] Add the [Weaver Typhon](https://prey.fandom.com/wiki/Weaver).
+    - [x] Assets
+    - [ ] Sounds
 - [ ] Add a new job to Mimics, to count nearby mimics, and if 6 or more exist, they should fight another mimic, and force it to turn into a Weaver!
 - [ ] Add [Coral](https://prey.fandom.com/wiki/Coral)
     - [ ] Seems like this should inflict a fear response in anything that damages it.
