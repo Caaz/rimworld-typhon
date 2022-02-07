@@ -51,8 +51,8 @@
     <Compile Include="Source\Jobs\JobGiver_MimicBuilding.cs" />
     <Compile Include="Source\Jobs\ThinkNode_ConditionalMimicNotHiding.cs" />
     <Compile Include="Source\Mod.cs" />
-    <Compile Include="Utilities\TyphonDefOf.cs" />
-    <Compile Include="Utilities\TyphonUtility.cs" />
+    <Compile Include="Source\Utilities\TyphonDefOf.cs" />
+    <Compile Include="Source\Utilities\TyphonUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
@@ -82,6 +82,7 @@
     <Content Include="Patches\Recipes.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\Workflows\buid.yml" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
   </ItemGroup>
