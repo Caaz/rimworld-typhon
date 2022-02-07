@@ -82,7 +82,7 @@
     <Content Include="Patches\Recipes.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".github\Workflows\buid.yml" />
+    <None Include=".github\workflows\Build.yml" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
   </ItemGroup>
