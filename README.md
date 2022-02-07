@@ -1,6 +1,6 @@
 ﻿# Typhon
 <!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
-![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge)![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge)
+[![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge)](#Typhon)[![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge)](https://github.com/Caaz/rimworld-typhon/releases)
 
 [![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 <!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
