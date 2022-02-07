@@ -1,5 +1,7 @@
 ﻿# Typhon
 <!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
+![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge)![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge)
+
 [![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 <!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
 
@@ -8,7 +10,7 @@
 This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld. 
 
 ## Testing
-If you'd like to test this mod... A pre-release build is in the works!
+If you'd like to test the latest cutting edge version of the mod, checkout the latest release! The *soon to come* steam page will have the latest stable release.
 
 ## Planning
 
