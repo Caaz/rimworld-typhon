@@ -11,7 +11,7 @@
     <letterLabel>Crashing Transport Pod</letterLabel>
     <letterText>A transport pod seems to be crashing nearby, with an anusual black creature, gripping it as it falls through the atmosphere.</letterText>
     <letterDef>ThreatBig</letterDef>
-    <baseChance>.5</baseChance>
+    <baseChance>4</baseChance>
     <minThreatPoints>100</minThreatPoints>
     <pointsScaleable>true</pointsScaleable>
   </IncidentDef>
