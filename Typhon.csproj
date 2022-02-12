@@ -82,13 +82,17 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>echo Renaming things
-cd ..
+    <PostBuildEvent>cd $(SolutionDir)
+echo Building Defs
+call pug -s --pretty --out Defs "Pug\Source\Defs"
+echo Building Patches
+call pug -s --pretty --out Patches "Pug\Source\Patches"
+echo Renaming html to xml
 forfiles /S /M *.html /C "cmd /c rename @file @fname.xml"
 </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>echo Building Definitions
-pug -s --pretty --out "$(SolutionDir)/Defs/" "$(SolutionDir)/Source/Defs"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
