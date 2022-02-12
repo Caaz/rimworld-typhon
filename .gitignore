@@ -4,3 +4,4 @@ MigrationBackup
 obj
 *.dll
 *.user
+Defs/*
