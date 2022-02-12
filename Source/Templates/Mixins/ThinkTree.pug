@@ -1,0 +1,30 @@
+mixin SimpleThinkNode(name)
+  li(Class=name)/
+
+mixin ThinkNode(name, extra)
+  unless block || extra
+    +SimpleThinkNode(name)
+  else
+    li(Class=name)
+      if extra
+        //- Until I can figure out a better way to do this, this'll work as a whitelist unfortunately.
+        if extra["tagToGive"]
+          tagToGive!= extra["tagToGive"]
+        if extra["ticksBetweenWandersRange"]
+          ticksBetweenWandersRange!= extra["ticksBetweenWandersRange"]
+        if extra["maxDanger"]
+          maxDanger!= extra["maxDanger"]
+      if block
+        subNodes
+          block
+
+mixin ThinkNodeSubtree(name)
+  li(Class="ThinkNode_Subtree")
+    treeDef!= name
+
+mixin ThinkTreeDef(defName, thinkRoot="ThinkNode_Priority")
+  ThinkTreeDef&attributes(attributes)
+    +BaseDef(defName)
+    thinkRoot(Class=thinkRoot)
+      subNodes
+        block

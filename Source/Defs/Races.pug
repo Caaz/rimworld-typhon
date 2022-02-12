@@ -1,0 +1,59 @@
+extends ../Templates/Defs.pug
+block defs
+  +ThingDef("Typhon_Mimic", "mimic")(ParentName="AnimalThingBase")
+    description Mimics are small Typhon which can camouflage themselves to look like inanimate objects in their environment, such as office chairs or garbage cans. Like all Typhon, they are composed of a shiny black semi-solid substance, which is shaped into central mass with four tentacle-like limbs.
+    statBases
+      ToxicSensitivity 0
+      MoveSpeed 7.0
+      MarketValue 450
+      ComfyTemperatureMin -40
+      FilthRate 0
+    race
+      body Typhon_Mimic
+      thinkTreeMain TyphonMimic
+      thinkTreeConstant TyphonMimicConstant
+      fleshType Typhon
+      specificMeatDef TyphonOrgan
+      hasGenders false
+      predator true
+      petness 0
+      baseBodySize .1
+      baseHungerRate 0
+      maxPreyBodySize 1.5
+      foodType CarnivoreAnimalStrict
+      gestationPeriodDays 1000
+      lifeExpectancy 1000
+      trainability None
+      wildness 1
+      manhunterOnDamageChance 1
+      manhunterOnTameFailChance 1
+      bloodDef Filth_Typhon_Blood
+      +LitterSizeCurve("(0, 0)")
+      lifeStageAges
+        +LifeStage("AnimalAdult", 0)
+          +LifeStageSounds("Pawn_Warg_Wounded", "Pawn_Warg_Death", "Pawn_Warg_Call", "Pawn_Warg_Angry")
+      soundMeleeHitPawn Pawn_Melee_SmallScratch_HitPawn
+      soundMeleeHitBuilding Pawn_Melee_SmallScratch_HitBuilding
+      soundMeleeMiss Pawn_Melee_SmallScratch_Miss
+    tools
+      +Tool("Appendage")
+        +Capacities("Blunt")
+        power 10
+        cooldownTime 1.5
+        linkedBodyPartsGroup FrontLeftLeg
+        surpriseAttack
+          +ExtraMeleeDamages([["Stun", 14]])
+      +Tool("Appendage")
+        +Capacities("Blunt")
+        power 10
+        cooldownTime 1.5
+        linkedBodyPartsGroup FrontRightLeg
+        surpriseAttack
+          +ExtraMeleeDamages([["Stun", 14]])
+      +Tool("Body")
+        +Capacities("Blunt")
+        power 5
+        cooldownTime 2
+        linkedBodyPartsGroup Torso
+        ensureLinkedBodyPartsGroupAlwaysUsable true
+        chanceFactor 0.2

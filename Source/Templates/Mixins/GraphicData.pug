@@ -1,0 +1,22 @@
+
+mixin BaseGraphicData(texPath, color, drawSize, graphicClass)
+  if texPath
+    texPath!= texPath
+  if color
+    color!= color
+  if drawSize
+    drawSize!= drawSize
+  if graphicClass
+    graphicClass!= graphicClass
+    
+mixin GraphicData(texPath, color, drawSize, graphicClass)
+  graphicData
+    +BaseGraphicData(texPath, color, drawSize, graphicClass)
+    
+mixin BodyGraphicData(texPath, color, drawSize, graphicClass)
+  bodyGraphicData
+    +BaseGraphicData(texPath, color, drawSize, graphicClass)
+
+mixin DessicatedBodyGraphicData(texPath, color, drawSize, graphicClass)
+  dessicatedBodyGraphicData
+    +BaseGraphicData(texPath, color, drawSize, graphicClass)

@@ -1,0 +1,59 @@
+mixin BaseList(items)
+  each item in items
+    li!= item
+    
+mixin ThingCategories(...items)
+  thingCategories
+    +BaseList(items)
+    
+mixin TradeTags(...items)
+  tradeTags
+    +BaseList(items)
+    
+mixin ColorSpectrum(...items)
+  colorSpectrum
+    +BaseList(items)
+    
+mixin RaidCommonalityFromPointsCurve(...items)
+  raidCommonalityFromPointsCurve
+    points
+      +BaseList(items)
+      
+mixin PermanentEnemyToEveryoneExcept(...items)
+  permanentEnemyToEveryoneExcept
+    +BaseList(items)
+    
+mixin Tags(...items)
+  tags
+    +BaseList(items)
+    
+mixin Groups(...items)
+  groups
+    +BaseList(items)
+    
+mixin LitterSizeCurve(...items)
+  litterSizeCurve
+    points
+      +BaseList(items)
+    
+mixin Capacities(...items)
+  capacities
+    +BaseList(items)
+
+mixin ThingDefs(...items)
+  thingDefs
+    +BaseList(items)
+
+mixin GenericWounds(wounds)
+  genericWounds
+    each wound in wounds
+      li 
+        texture!= wound[0]
+        color!= wound[1]
+        
+mixin ExtraMeleeDamages(damages)
+  extraMeleeDamages
+    each damage in damages
+      li 
+        def!= damage[0]
+        amount!= damage[1]

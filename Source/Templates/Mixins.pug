@@ -1,0 +1,69 @@
+include Mixins/Defs.pug
+include Mixins/ThinkTree.pug
+include Mixins/Lists.pug
+include Mixins/GraphicData.pug
+
+mixin EffecterDef(defName,kwargs)
+  EffecterDef&attributes(attributes)
+    +BaseDef(defName, label)
+    if kwargs
+      if kwargs["offsetTowardsTarget"]
+        offsetTowardsTarget!= kwargs["offsetTowardsTarget"]
+      if kwargs["positionRadius"]
+        positionRadius!= kwargs["positionRadius"]
+    children
+      block
+    
+mixin SubEffecter(subEffecterClass, kwargs)
+  li
+    subEffecterClass!= subEffecterClass
+    if kwargs
+      if kwargs["positionRadius"]
+        positionRadius!= kwargs["positionRadius"]
+      if kwargs["burstCount"]
+        burstCount!= kwargs["burstCount"]
+      if kwargs["fleckDef"]
+        fleckDef!= kwargs["fleckDef"]
+      if kwargs["speed"]
+        speed!= kwargs["speed"]
+      if kwargs["scale"]
+        scale!= kwargs["scale"]
+      if kwargs["spawnLocType"]
+        spawnLocType!= kwargs["spawnLocType"]
+
+mixin BodyPartBase(def)
+  def!= def
+  block
+  
+mixin BodyPart(def, core)
+  if core
+    corePart
+      +BodyPartBase(def, kwargs)
+        block
+  else
+    li
+      +BodyPartBase(def, kwargs)
+        block
+  
+mixin LifeStage(def, minAge)
+  li
+    def!= def
+    minAge!= minAge
+    block
+
+mixin LifeStageSounds(wounded, death, call, angry)
+  soundWounded!= wounded
+  soundDeath!= death
+  soundCall!= call
+  soundAngry!= angry
+
+mixin Tool(label)
+  li
+    label!= label
+    block
+
+mixin Ingredient(things, count)
+  li
+    filter
+      +ThingDefs(things)
+    count!= count

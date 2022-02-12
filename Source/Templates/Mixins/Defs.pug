@@ -1,0 +1,63 @@
+mixin BaseDef(defName, label)
+  if defName
+    defName!= defName
+  if label
+    label!= label
+  if block
+    block
+    
+mixin IncidentDef(defName, label)
+  IncidentDef&attributes(attributes)
+    +BaseDef(defName, label)
+    block
+    
+mixin JobDef(defName, driverClass, reportString)
+  JobDef&attributes(attributes)
+    +BaseDef(defName)
+    driverClass!= driverClass
+    reportString!= reportString
+    block
+
+mixin ThingDef(defName, label)
+  ThingDef&attributes(attributes)
+    +BaseDef(defName, label)
+    block
+    
+mixin FleshTypeDef(defName)
+  FleshTypeDef&attributes(attributes)
+    +BaseDef(defName)
+    block
+    
+mixin ThingCategoryDef(defName, label, parent)
+  ThingCategoryDef&attributes(attributes)
+    +BaseDef(defName, label)
+    parent!= parent
+
+mixin FactionDef(defName, label)
+  FactionDef&attributes(attributes)
+    +BaseDef(defName, label)
+    block
+    
+mixin BodyDef(defName, label)
+  BodyDef&attributes(attributes)
+    +BaseDef(defName, label)
+    block
+    
+mixin BodyPartDef(defName, label)
+  BodyPartDef&attributes(attributes)
+    +BaseDef(defName, label)
+    block
+
+mixin PawnKindDef(defName, label, race)
+  PawnKindDef&attributes(attributes)
+    +BaseDef(defName, label)
+    if race
+      race!= race
+    block
+    
+mixin RecipeDef(defName, label, jobString)
+  RecipeDef&attributes(attributes)
+    +BaseDef(defName, label)
+    if jobString
+      jobString!= jobString
+    block

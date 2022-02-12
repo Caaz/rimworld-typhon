@@ -71,20 +71,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About\About.xml" />
-    <Content Include="Defs\Incidents\Misc.xml" />
-    <Content Include="Defs\Items\TyphonOrgan.xml" />
-    <Content Include="Defs\JobDefs\Mimic.xml" />
-    <Content Include="Defs\Misc\Filth.xml" />
-    <Content Include="Defs\Misc\Misc.xml" />
-    <Content Include="Defs\Misc\ThinkTrees.xml" />
-    <Content Include="Defs\Races\Mimic.xml" />
-    <Content Include="Defs\Recipes\Skilltrainers.xml" />
     <Content Include="Patches\Recipes.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".github\workflows\Build.yml" />
     <None Include="LICENSE.md" />
     <None Include="README.md" />
+    <None Include="Source\Defs\Test.pug" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo Renaming things
+cd ..
+forfiles /S /M *.html /C "cmd /c rename @file @fname.xml"
+</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>echo Building Definitions
+pug -s --pretty --out "$(SolutionDir)/Defs/" "$(SolutionDir)/Source/Defs"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
