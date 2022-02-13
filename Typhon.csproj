@@ -83,6 +83,10 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(SolutionDir)
+echo Removing previously built XML files
+del /q Defs\*
+del /q Patches\*
+del /q About\*
 echo Building Defs
 call pug -s --pretty --out Defs "Pug\Source\Defs"
 echo Building Patches
