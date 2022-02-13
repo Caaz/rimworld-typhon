@@ -43,6 +43,14 @@ mixin Capacities(...items)
 mixin ThingDefs(...items)
   thingDefs
     +BaseList(items)
+    
+mixin SupportedVersions(...items)
+  supportedVersions
+    +BaseList(items)
+    
+mixin LoadAfter(...items)
+  loadAfter
+    +BaseList(items)
 
 mixin GenericWounds(wounds)
   genericWounds
