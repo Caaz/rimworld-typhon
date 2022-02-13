@@ -42,4 +42,5 @@ jobs:
           Defs
           Patches
           Textures
+          Sounds
           *.md
