@@ -9,7 +9,17 @@
 
 This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld. 
 
+## Development
+### Dependencies
+
+#### C#
+Nuget handles all of the current C# dependencies. Visual Studio seems to handle that fine.
+
+#### XML
+XML building is part of the build post script, in order to compile pugjs you'll need [pug-cli](https://github.com/pugjs/pug-cli) installed.
+
 ## Testing
+
 If you'd like to test the latest cutting edge version of the mod, checkout the latest release! The *soon to come* steam page will have the latest stable release.
 
 ## Planning
@@ -19,8 +29,7 @@ The following is the current planned phases and feature sets within them. This i
 ### Phase 1 - Mimic
 
 - [x] Add the [Mimic Typhon](https://prey.fandom.com/wiki/Mimic).
-    - [ ] Mimics should have custom sounds!
-        - Going to require me to go record some samples to know what they even sound like.
+    - [x] Mimics should have custom sounds!
     - [x] Mimics should feed on corpses, multiplying into more mimics!
     - [x] Mimics should copy the visual look of objects, when not in combat. They wait there til they can ambush!
         - [x] They copy features too!
@@ -43,7 +52,6 @@ The following is the current planned phases and feature sets within them. This i
 
 ### Phase 2 - Weaver
 
-
 - [ ] Add the [Weaver Typhon](https://prey.fandom.com/wiki/Weaver).
     - [x] Assets
     - [ ] Sounds
@@ -59,3 +67,8 @@ The following is the current planned phases and feature sets within them. This i
 - Coding, XML, etc.
 ### Magenta_Ivy
 - Art for Mimics and Weavers.
+### Justin Marshall Elias
+![JME](Assets/JME_Final.png)
+- Original Sound Design
+    - Discord **dendroid101#1813**
+    - [Instagram @justinmarshallelias](https://www.instagram.com/justinmarshallelias/)

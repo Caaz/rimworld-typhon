@@ -61,3 +61,18 @@ mixin RecipeDef(defName, label, jobString)
     if jobString
       jobString!= jobString
     block
+    
+mixin SoundDef(defName, context)
+  SoundDef&attributes(attributes)
+    +BaseDef(defName)
+    context!= context
+    subSounds
+      block
+    
+mixin SubSound(...grains)
+  li
+    block
+    grains
+      each grain in grains
+        li(Class="AudioGrain_Folder")
+          clipFolderPath!= grain
