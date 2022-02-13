@@ -92,7 +92,6 @@
     <None Include="Pug\Source\Patches\Recipes.pug" />
     <None Include="Pug\Templates\Defs.pug" />
     <None Include="README.md" />
-    <None Include="Source\Defs\Test.pug" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
