@@ -15,7 +15,7 @@ namespace Typhon
 			mimic.ageTracker.AgeChronologicalTicks = 0;
 			return mimic;
 		}
-		public static Pawn GetAttackableTarget(Pawn pawn, float distance = 2f)
+		public static Pawn GetAttackableTarget(Pawn pawn, float distance = 4f)
 		{
 			foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, distance, true))
 				if (TyphonUtility.AcceptablePrey(pawn, item))

@@ -20,7 +20,8 @@ block defs
       baseBodySize .1
       baseHungerRate 0
       maxPreyBodySize 1.5
-      foodType CarnivoreAnimalStrict
+      needsRest false
+      foodType None
       gestationPeriodDays 1000
       lifeExpectancy 1000
       trainability None
@@ -39,14 +40,14 @@ block defs
       +Tool("Appendage")
         +Capacities("Blunt")
         power 10
-        cooldownTime 1.5
+        cooldownTime .7
         linkedBodyPartsGroup FrontLeftLeg
         surpriseAttack
           +ExtraMeleeDamages([["Stun", 14]])
       +Tool("Appendage")
         +Capacities("Blunt")
         power 10
-        cooldownTime 1.5
+        cooldownTime .7
         linkedBodyPartsGroup FrontRightLeg
         surpriseAttack
           +ExtraMeleeDamages([["Stun", 14]])
