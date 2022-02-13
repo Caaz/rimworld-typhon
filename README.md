@@ -49,6 +49,9 @@ The following is the current planned phases and feature sets within them. This i
 - [x] Add an event, introducing mimics to an area, using something like a crashed drop pod, that could introduce a single mimic.
     - Maybe with a downed pawn to go with it?
         - Turns out, not required to be interesting.
+- [ ] Polishing
+    - [ ] Add Descriptions for all the things! I don't want to have people reference the workshop page to know what to do!
+    - [ ] Screenshots on the workshop page? Images at the very least.
 
 ### Phase 2 - Weaver
 
