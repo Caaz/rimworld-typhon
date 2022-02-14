@@ -1,6 +1,12 @@
 ﻿# Typhon
 <!-- Add badges from here since it's easy https://github.com/Ileriayo/markdown-badges -->
-[![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge)](#Typhon)[![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge)](https://github.com/Caaz/rimworld-typhon/releases)
+[![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge&logo=github)](#Typhon)
+[![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge&logo=github)](https://github.com/Caaz/rimworld-typhon/releases)
+
+[![Subscriptions](https://img.shields.io/steam/subscriptions/2752054193?logo=steam&style=for-the-badge)](https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193)
+[![Favorites](https://img.shields.io/steam/favorites/2752054193?logo=steam&style=for-the-badge)](https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193)
+[![Updated Date](https://img.shields.io/steam/update-date/2752054193?logo=steam&style=for-the-badge)](https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193)
+[![Updated Date](https://img.shields.io/steam/views/2752054193?logo=steam&style=for-the-badge)](https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193)
 
 [![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 <!-- ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=for-the-badge&logo=steam&logoColor=white) -->
