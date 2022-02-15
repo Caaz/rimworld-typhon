@@ -25,18 +25,19 @@ namespace Typhon
 		private static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
 			if (
-				prey == null || 
-				hunter == null || 
-				prey.def.thingClass != typeof(Pawn)
+				prey == null
+				|| hunter == null
+				|| prey.def.thingClass != typeof(Pawn)
 			)
 				return false;
 
             Pawn target = (Pawn)prey;
 
 			return !(
-				target.Dead ||
-				!(target.RaceProps.FleshType == FleshTypeDefOf.Normal) ||
-				!hunter.CanSee(target)
+				target.Dead
+				|| !(target.RaceProps.FleshType == FleshTypeDefOf.Normal)
+				|| target.BodySize > 2
+				|| !hunter.CanSee(target)
 			);
         }
 	}
