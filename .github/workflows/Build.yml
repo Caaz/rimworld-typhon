@@ -18,7 +18,6 @@ jobs:
       with:
         node-version: '14'
 
-    - run: npm cache clean --force
     - name: Install pug-cli for building XMLs
       run: npm install pug-cli -g
 

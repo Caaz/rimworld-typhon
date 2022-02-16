@@ -6,7 +6,7 @@ mixin UpdateNews(version)
     modNameReadable Typhon
     modIdentifier= identifier
     linkUrl https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193
-    defName!= identifier.replaceAll(".","_")+"_"+version.replaceAll(".","_")
+    defName!= identifier.replace(/\./g,"_")+"_"+version.replace(/\./g,"_")
     assemblyVersion= version
     content
       block
