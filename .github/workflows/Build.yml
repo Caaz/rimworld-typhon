@@ -31,6 +31,20 @@ jobs:
 
     - name: Build
       run: msbuild Typhon.sln /p:Configuration=Release
+      
+    - name: Set release packageId
+      uses: rvolo/xml-replace-action@v0.2
+      with:
+        filepath: "About/About.xml"
+        xpath: "//ModMetaData/packageId/text()"
+        replace: "caaz.typhon"
+
+    - name: Set release name
+      uses: rvolo/xml-replace-action@v0.2
+      with:
+        filepath: "About/About.xml"
+        xpath: "//ModMetaData/name/text()"
+        replace: "Typhon"
 
     - name: Upload Preview Mod
       uses: actions/upload-artifact@v2
