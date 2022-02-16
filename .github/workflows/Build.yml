@@ -33,14 +33,14 @@ jobs:
       run: msbuild Typhon.sln /p:Configuration=Release
 
     - name: Set release packageId
-      uses: rvolo/xml-replace-action@v0.2
+      uses: rvolo/xml-replace-action@v0.3
       with:
         filepath: "About/About.xml"
         xpath: "/ModMetaData/packageId/text()"
         replace: "caaz.typhon"
 
     - name: Set release name
-      uses: rvolo/xml-replace-action@v0.2
+      uses: rvolo/xml-replace-action@v0.3
       with:
         filepath: "About/About.xml"
         xpath: "/ModMetaData/name/text()"
