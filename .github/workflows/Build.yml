@@ -17,6 +17,7 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
+
     - name: Install pug-cli for building XMLs
       run: npm install pug-cli -g
 
@@ -32,6 +33,20 @@ jobs:
     - name: Build
       run: msbuild Typhon.sln /p:Configuration=Release
 
+    - name: Set release packageId
+      uses: rvolo/xml-replace-action@v0.3
+      with:
+        filepath: "About/About.xml"
+        xpath: "/ModMetaData/packageId/text()"
+        replace: "caaz.typhon"
+
+    - name: Set release name
+      uses: rvolo/xml-replace-action@v0.3
+      with:
+        filepath: "About/About.xml"
+        xpath: "/ModMetaData/name/text()"
+        replace: "Typhon"
+
     - name: Upload Preview Mod
       uses: actions/upload-artifact@v2
       with:
@@ -43,4 +58,5 @@ jobs:
           Patches
           Textures
           Sounds
+          News
           *.md

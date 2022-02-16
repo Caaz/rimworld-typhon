@@ -6,12 +6,20 @@ mixin UpdateNews(version)
     modNameReadable Typhon
     modIdentifier= identifier
     linkUrl https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193
-    defName!= identifier.replaceAll(".","_")+"_"+version.replaceAll(".","_")
+    defName!= identifier.replace(/\./g,"_")+"_"+version.replace(/\./g,"_")
     assemblyVersion= version
     content
       block
 
 block defs
+  +UpdateNews("1.0.0.2")
+    | Enhanced Mimic mimicing (If updated mid-game these changes will take effect next time they hide)
+    | - Hidden mimics are no longer clickable
+    | - Hidden Mimics no longer show tooltip on hover
+    | Better build process
+    | - Cleaned up steam uploads a ton, now without source code! If you want that, go to github!
+    | Thanks for all the suggestions and support!
+
   +UpdateNews("1.0.0.1")
     | Rebalanced Mimics
     | - Reduced mimic damage, increased cooldown on attacks
