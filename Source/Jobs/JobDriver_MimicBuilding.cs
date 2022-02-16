@@ -66,6 +66,8 @@ namespace Typhon
         private void UpdateMimic(bool hidden)
         {
             PawnKindDef pawnKind = (hidden) ? TyphonDefOf.PawnKind.Typhon_Mimic_Hidden : TyphonDefOf.PawnKind.Typhon_Mimic;
+            ThingDef thing = (hidden) ? TyphonDefOf.Thing.Typhon_Mimic_Hidden : TyphonDefOf.Thing.Typhon_Mimic;
+            pawn.def = thing;
             pawn.ChangeKind(pawnKind);
             pawn.SetFactionDirect(FactionUtility.DefaultFactionFrom(pawnKind.defaultFactionType));
             pawn.Drawer.renderer.graphics.ResolveAllGraphics();

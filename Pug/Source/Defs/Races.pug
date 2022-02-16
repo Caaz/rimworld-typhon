@@ -1,6 +1,6 @@
 extends ../../Templates/Defs.pug
 block defs
-  +ThingDef("Typhon_Mimic", "mimic")(ParentName="AnimalThingBase")
+  +ThingDef("Typhon_Mimic", "mimic")(ParentName="AnimalThingBase" Name="TyphonMimicRace")
     description.
       Mimics are small Typhon which can camouflage themselves to look like inanimate objects in their environment, such as office chairs or garbage cans. Like all Typhon, they are composed of a shiny black semi-solid substance.
       On the rim, they're known for destroying entire ecosystems. It's best to quickly eliminate any mimics when you see them. Though, it's known that some have tried to contain mimics, and use them to produce Skilltrainers.
@@ -60,3 +60,6 @@ block defs
         linkedBodyPartsGroup Torso
         ensureLinkedBodyPartsGroupAlwaysUsable true
         chanceFactor 0.2
+        
+  +ThingDef("Typhon_Mimic_Hidden")(ParentName="TyphonMimicRace")
+    selectable false

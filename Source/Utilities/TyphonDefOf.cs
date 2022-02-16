@@ -7,6 +7,7 @@ namespace Typhon.TyphonDefOf
     internal static class Thing
     {
         public static Verse.ThingDef Typhon_Mimic;
+        public static Verse.ThingDef Typhon_Mimic_Hidden;
         static Thing()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
