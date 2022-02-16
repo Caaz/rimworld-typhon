@@ -88,6 +88,7 @@
     <None Include="Pug\Source\Defs\Races.pug" />
     <None Include="Pug\Source\Defs\Recipes.pug" />
     <None Include="Pug\Source\Defs\ThinkTrees.pug" />
+    <None Include="Pug\Source\News\UpdateFeatures.pug" />
     <None Include="Pug\Source\Patches\Recipes.pug" />
     <None Include="Pug\Templates\Defs.pug" />
     <None Include="README.md" />
