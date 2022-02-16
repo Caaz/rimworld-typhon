@@ -16,15 +16,17 @@ namespace Typhon
         {
 			foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, 20f, true))
 			{
-				if (item.def.thingClass != typeof(Building)) continue;
 				Building building = item as Building;
-				if (building == null) continue;
-				if (building.def.passability == Traversability.Impassable) continue;
-				if (building.RotatedSize.Area != 1) continue;
-				if (building.def.building.isFence) continue;
-				if (building.def.altitudeLayer != AltitudeLayer.Building) continue;
-				if (!pawn.CanSee(building)) continue;
-				if (!pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)) continue;
+				if (
+					item.def.thingClass != typeof(Building)
+					|| building == null
+					|| building.def.passability == Traversability.Impassable
+					|| building.RotatedSize.Area != 1
+					|| building.def.building.isFence
+					|| building.def.altitudeLayer != AltitudeLayer.Building
+					|| !pawn.CanSee(building)
+					|| !pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)
+				) continue;
 				return building;
 			}
 			return null;
