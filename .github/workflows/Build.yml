@@ -43,4 +43,5 @@ jobs:
           Patches
           Textures
           Sounds
+          News
           *.md
