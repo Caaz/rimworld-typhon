@@ -36,7 +36,7 @@ namespace Typhon
 			return !(
 				target.Dead
 				|| !(target.RaceProps.FleshType == FleshTypeDefOf.Normal)
-				|| target.BodySize > 2
+				|| target.BodySize > 1.2
 				|| !hunter.CanSee(target)
 			);
         }

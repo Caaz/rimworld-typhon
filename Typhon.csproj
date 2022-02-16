@@ -48,7 +48,6 @@
     <Compile Include="Source\Jobs\JobGiver_AttackNearbyPawns.cs" />
     <Compile Include="Source\Jobs\JobGiver_MimicMultiply.cs" />
     <Compile Include="Source\Jobs\JobGiver_MimicBuilding.cs" />
-    <Compile Include="Source\Jobs\ThinkNode_ConditionalMimicNotHiding.cs" />
     <Compile Include="Source\Mod.cs" />
     <Compile Include="Source\Utilities\TyphonDefOf.cs" />
     <Compile Include="Source\Utilities\TyphonUtility.cs" />
