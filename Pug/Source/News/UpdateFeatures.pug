@@ -1,0 +1,25 @@
+extends ../../Templates/Defs.pug
+
+mixin UpdateNews(version)
+  - var identifier = "caaz.typhon"
+  #{"HugsLib.UpdateFeatureDef"}
+    modNameReadable Typhon
+    modIdentifier= identifier
+    linkUrl https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193
+    defName!= identifier.replaceAll(".","_")+"_"+version.replaceAll(".","_")
+    assemblyVersion= version
+    content
+      block
+
+block defs
+  +UpdateNews("1.0.0.1")
+    | Rebalanced Mimics
+    | - Reduced mimic damage, increased cooldown on attacks
+    | - Reduced surprise attack damage
+    | 
+    | Added target size restrition to Mimics
+    | - Ensures they only attack things of size &lt; 1.5
+    | 
+    | Introduced UpdateFeatureDef
+    | - So I can show these notes!
+    | - pugjs fought me. I learned a new dynamic thing and will probably wind up re-writing a ton of defs

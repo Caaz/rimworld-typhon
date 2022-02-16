@@ -96,16 +96,24 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(SolutionDir)
+echo Making dirs
+mkdir Defs
+mkdir Patches
+mkdir About
+mkdir News
 echo Removing previously built XML files
 del /q Defs\*.xml
 del /q Patches\*.xml
 del /q About\*.xml
+del /q News\*.xml
 echo Building Defs
 call pug -s --out Defs "Pug\Source\Defs"
 echo Building Patches
 call pug -s --out Patches "Pug\Source\Patches"
 echo Building About
 call pug -s --out About "Pug\Source\About"
+echo Building News
+call pug -s --out News "Pug\Source\News"
 echo Renaming html to xml
 forfiles /S /M *.html /C "cmd /c rename @file @fname.xml"
 </PostBuildEvent>
