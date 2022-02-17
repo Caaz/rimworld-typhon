@@ -17,11 +17,27 @@ namespace Typhon
 		}
 		public static Pawn GetAttackableTarget(Pawn pawn, float distance = 4f)
 		{
-			foreach (Thing item in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, distance, true))
-				if (TyphonUtility.AcceptablePrey(pawn, item))
-					return (Pawn)item;
+			foreach (Thing thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, distance * 2, true))
+            {
+				if (pawn.Position.DistanceTo(thing.Position) < distance)
+					if (TyphonUtility.AcceptablePrey(pawn, thing))
+						return (Pawn)thing;
+
+				if (TyphonUtility.IsTyphon(thing))
+				{
+					Pawn typhon = thing as Pawn;
+					Pawn target = typhon.LastAttackedTarget.Pawn;
+					if (target == null || target.Dead) continue;
+					return target;
+				}
+			}
+
 			return null;
 		}
+		private static bool IsTyphon(Thing thing)
+        {
+			return (thing.def == TyphonDefOf.Thing.Typhon_Mimic);
+        }
 		private static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
 			if (
