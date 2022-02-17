@@ -1,9 +1,0 @@
-extends ../../Templates/Defs.pug
-block defs
-  +BodyPartDef()(Name="TyphonPart" Abstract="true")
-    permanentInjuryChanceFactor 0
-    skinCovered false
-  +BodyPartDef("TyphonThorax", "thorax", 40)(ParentName="TyphonPart")
-  +BodyPartDef("TyphonMimicLeg", "leg", 30)(ParentName="TyphonPart")
-    frostbiteVulnerability 0.01
-    +Tags("MovingLimbCore", "ManipulationLimbCore")

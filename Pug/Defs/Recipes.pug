@@ -1,0 +1,23 @@
+mixin SkilltrainerRecipe(skill)
+  +RecipeDef("Typhon_Make_Skilltrainer_" + skill, "make skilltrainer (" + skill + ")", "Making skilltrainer (" + skill + ")")(ParentName="TyphonSkilltrainerRecipeBase")
+    skillRequirements!= "<" + skill + ">10</" + skill + ">"
+    products!= "<Neurotrainer_" + skill + ">1</Neurotrainer_" + skill + ">"
+    
++RecipeDef()(Name="TyphonSkilltrainerRecipeBase" Abstract="True")
+  description Make skilltrainer from typhon organs and advanced components.
+  workSpeedStat GeneralLaborSpeed
+  effectWorking Cook
+  soundWorking Recipe_Machining
+  allowMixingIngredients true
+  workAmount 1000
+  unfinishedThingDef UnfinishedComponent
+  ingredients
+    +Ingredient(["TyphonOrgan"], 10)
+    +Ingredient(["ComponentSpacer"], 20)
+    +Ingredient(["Gold"], 5)
+  fixedIngredientFilter
+    +ThingDefs("TyphonOrgan", "ComponentSpacer", "Gold")
+    
+//- Wish granted, me.
+each skill in ["Shooting", "Melee", "Construction", "Mining", "Cooking", "Plants", "Animals", "Crafting", "Artistic", "Medicine", "Social", "Intellectual"]
+  +SkilltrainerRecipe(skill)
