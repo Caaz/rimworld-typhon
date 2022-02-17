@@ -1,0 +1,22 @@
++FactionDef("Typhon", "typhon")(Name="TyphonFaction" ParentName="FactionBase")
+  description The Typhon creatures are strange psychic beings from another world. Not much is known about them, as not many live to tell the tale.
+  pawnSingular typhon
+  pawnsPlural typhon
+  fixedName Typhon
+  techLevel Animal
+  humanlikeFaction false
+  hidden true
+  autoFlee false
+  canUseAvoidGrid false
+  requiredCountAtGameStart 1
+  maxConfigurableAtWorldCreation 1
+  configurationListOrderPriority 90
+  allowedArrivalTemperatureRange -45~45
+  factionIconPath World/WorldObjects/Expanding/Insects
+  settlementTexturePath World/WorldObjects/DefaultSettlement
+  +ColorSpectrum("(0.2,0.2,0.2)", "(0.5,0.5,0.5)")
+  +RaidCommonalityFromPointsCurve("(0, 0)")
+  +PermanentEnemyToEveryoneExcept("Typhon_Hidden")
+  
++FactionDef("Typhon_Hidden", "typhon")(ParentName="TyphonFaction")
+  +PermanentEnemyToEveryoneExcept("Typhon", "PlayerColony", "PlayerTribe")
