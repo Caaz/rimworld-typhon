@@ -101,7 +101,7 @@ set list=About Defs Patches News
 (for %25%25a in (%25list%25) do ( 
   mkdir %25%25a
   del /q %25%25a\*.xml
-  call pug -s --extension xml --out %25%25a Pug\%25%25a.pug
+  call pug -s --pretty --extension xml --out %25%25a Pug\%25%25a.pug
 ))</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
