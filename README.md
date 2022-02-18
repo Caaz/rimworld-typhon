@@ -11,7 +11,7 @@
 
 ## Description
 
-This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld. 
+This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld.
 
 ## Development
 ### Dependencies
@@ -32,6 +32,8 @@ The [latest build action on the main branch](https://github.com/Caaz/rimworld-ty
 - Coding, XML, etc.
 ### Magenta_Ivy
 - Art for Mimics and Weavers.
+### Amstaiert
+- Art for Neuromods (Skilltrainers/Psytrainers)
 ### Justin Marshall Elias
 ![JME](Assets/JME_Final.png)
 - Original Sound Design
