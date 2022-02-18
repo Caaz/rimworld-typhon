@@ -10,3 +10,17 @@
     canFilthAttach true
     cleaningSound Interact_CleanFilth_Fluid
   +GraphicData("Things/Filth/Spatter", "(25,25,25)")
+  
++ThingDef("Filth_Typhon_Coral","coral")(ParentName="BaseFilth")
+  +GraphicData("Typhon/Coral", "(250,180,0)", "(3,3)", "Graphic_Random")
+    shaderType TransparentPostLight
+  statBases
+    Beauty -50
+    Cleanliness -20
+  filth
+    ignoreFilthMultiplierStat true
+    disappearsInDays .1~.3
+    rainWashes false
+    canFilthAttach false
+    cleaningWorkToReduceThickness 70
+    cleaningSound Interact_CleanFilth_Fluid
