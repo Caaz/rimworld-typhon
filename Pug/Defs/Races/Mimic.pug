@@ -1,0 +1,34 @@
+include Mixins.pug
++ThingDef("Typhon_Mimic", "mimic")(ParentName="TyphonRaceBase" Name="TyphonMimicRace")
+  description Mimics are small Typhon which can camouflage themselves to look like inanimate objects in their environment, such as office chairs or garbage cans. Like all Typhon, they are composed of a shiny black semi-solid substance.\n\nOn the rim, they're known for destroying entire ecosystems. It's best to quickly eliminate any mimics when you see them. Though, it's known that some have tried to contain mimics, and use them to produce Skilltrainers.
+  +TyphonRace("Typhon_Mimic", "Typhon_Thinktree_Mimic")
+    baseBodySize .1
+    lifeStageAges
+      +LifeStage("AnimalAdult", 0)
+        +LifeStageSounds("Typhon_Mimic_Wounded", "Typhon_Mimic_Death", "Typhon_Mimic_Call", "Typhon_Mimic_Angry")
+  tools
+    +Tool("Appendage")
+      +Capacities("Blunt")
+      power 9
+      cooldownTime .9
+      linkedBodyPartsGroup FrontLeftLeg
+      surpriseAttack
+        +ExtraMeleeDamages([["Stun", 9]])
+    +Tool("Appendage")
+      +Capacities("Blunt")
+      power 9
+      cooldownTime .9
+      linkedBodyPartsGroup FrontRightLeg
+      surpriseAttack
+        +ExtraMeleeDamages([["Stun", 9]])
+    +Tool("Body")
+      +Capacities("Blunt")
+      power 5
+      cooldownTime 2
+      linkedBodyPartsGroup Torso
+      ensureLinkedBodyPartsGroupAlwaysUsable true
+      chanceFactor 0.2
+      
++ThingDef("Typhon_Mimic_Hidden")(ParentName="TyphonMimicRace")
+  selectable false
+  hasTooltip false

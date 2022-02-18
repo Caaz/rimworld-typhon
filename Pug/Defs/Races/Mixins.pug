@@ -1,0 +1,26 @@
+mixin TyphonRace(bodyDef, thinkTreeMain)
+  race
+    body= bodyDef
+    thinkTreeMain= thinkTreeMain
+    thinkTreeConstant Typhon_Thinktree_Constant
+    fleshType Typhon
+    specificMeatDef TyphonOrgan
+    hasGenders false
+    predator false
+    petness 0
+    baseHungerRate 0
+    maxPreyBodySize 1.5
+    needsRest false
+    foodType None
+    gestationPeriodDays 1000
+    lifeExpectancy 1000
+    trainability None
+    wildness 1
+    manhunterOnDamageChance 1
+    manhunterOnTameFailChance 1
+    bloodDef Filth_Typhon_Blood
+    +LitterSizeCurve("(0, 0)")
+    soundMeleeHitPawn Pawn_Melee_SmallScratch_HitPawn
+    soundMeleeHitBuilding Pawn_Melee_SmallScratch_HitBuilding
+    soundMeleeMiss Pawn_Melee_SmallScratch_Miss
+    block
