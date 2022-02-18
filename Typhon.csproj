@@ -83,6 +83,7 @@
     <None Include="Pug\Defs\Misc.pug" />
     <None Include="Pug\Defs\PawnKinds.pug" />
     <None Include="Pug\Defs\Races.pug" />
+    <None Include="Pug\Defs\Races\Mimic.pug" />
     <None Include="Pug\Defs\Recipes.pug" />
     <None Include="Pug\Defs\Sounds.pug" />
     <None Include="Pug\Defs\ThinkTrees.pug" />
