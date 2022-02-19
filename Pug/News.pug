@@ -17,6 +17,26 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.0.0.4",
+    ["Mimic Multiplying Improvement", [
+      "Mimics when feeding on bodies, will now split into a number of mimics based on how big the body was",
+      "They still won't attack larger enemies, but should they find one to eat... Things could get ugly."
+    ]],
+    ["Added Psytrainer Recipes", [
+      "Dynamically fetches existing Psytrainers, and builds a recipe for each, should work with modded psytrainers!",
+      "If anything's going to break, it's this. Let me know if something weird happens, or if a rebalance is required."
+    ]],
+    ["Added Mod Settings", [
+      "Nothing too big, but there's something in mod settings now",
+      "If there's anything that should be configurable, let me know!"
+    ]],
+    ["Added Psytrainer Retexture", [
+      "If you're really wanting to feel the prey vibe, amstaiert made some great neuromod textures to replace the skill/psytrainers",
+      "By default, this feature is disabled, but you can enable it via mod settings!",
+      "Big thanks to amstaiert on this one!"
+    ]]
+  )
+  
   +UpdateNews("1.0.0.3",
     ["Typhon Hiemind", [
       "Mimics will notice when nearby mimics are attacking something, and join in. Now they're proper ambush predators!",
