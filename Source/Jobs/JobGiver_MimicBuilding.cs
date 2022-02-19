@@ -24,6 +24,7 @@ namespace Typhon
                     || building.RotatedSize.Area != 1
                     || building.def.building.isFence
                     || building.def.altitudeLayer != AltitudeLayer.Building
+                    || ThingCompUtility.TryGetComp<CompCanBeDormant>(building) != null
                     || !pawn.CanSee(building)
                     || !pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)
                 ) continue;
