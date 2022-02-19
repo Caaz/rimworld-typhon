@@ -49,6 +49,7 @@
     <Compile Include="Source\Jobs\JobGiver_MimicMultiply.cs" />
     <Compile Include="Source\Jobs\JobGiver_MimicBuilding.cs" />
     <Compile Include="Source\Mod.cs" />
+    <Compile Include="Source\Utilities\Neuromods.cs" />
     <Compile Include="Source\Utilities\TyphonDefOf.cs" />
     <Compile Include="Source\Utilities\TyphonUtility.cs" />
   </ItemGroup>
