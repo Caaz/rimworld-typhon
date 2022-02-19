@@ -30,8 +30,10 @@ namespace Typhon
         private void Multiply()
         {
             Corpse target = (Corpse)job.GetTarget(TargetIndex.A);
-            for(int i = 0; i < 3; i ++)
-                GenSpawn.Spawn(TyphonUtility.GenerateMimic(), pawn.Position, pawn.Map);
+            int mimicAmount = (int)(target.InnerPawn.BodySize * 4);
+            if (mimicAmount > 1)
+                for (int i = 0; i < mimicAmount - 1; i++)
+                    GenSpawn.Spawn(TyphonUtility.GenerateMimic(), pawn.Position, pawn.Map);
 
             CompRottable comp = target.GetComp<CompRottable>();
             if (comp != null)

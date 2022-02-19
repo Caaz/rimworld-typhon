@@ -2,7 +2,7 @@
 
 namespace Typhon.TyphonDefOf
 {
-    #pragma warning disable 0649
+#pragma warning disable 0649
     [DefOf]
     internal static class Thing
     {
