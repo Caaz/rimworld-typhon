@@ -17,6 +17,11 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.0.0.5",
+    ["Mimic Building Comp filter", [
+      "Mimics can no longer mmimic buildings with the comp \"CompCanBeDormant\", this solves them mimicing a dormant thing without a timer, making them immediately active, and causing strange situations."
+    ]]
+  )
   +UpdateNews("1.0.0.4",
     ["Mimic Multiplying Improvement", [
       "Mimics when feeding on bodies, will now split into a number of mimics based on how big the body was",
