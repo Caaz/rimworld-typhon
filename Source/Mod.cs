@@ -47,8 +47,8 @@ namespace Typhon
 			skillRequirement.skill = DefDatabase<SkillDef>.GetNamed("Intellectual");
 			skillRequirement.minLevel = 15;
             List<SkillRequirement> skills = new List<SkillRequirement>();
+			skills.Add(skillRequirement);
 			ThingDef fabricationBench = ThingDef.Named("FabricationBench");
-			// There's absolutely a better way to loop through what I want, proof of concept, proof of conept...
 			foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)
 			{
 				try
@@ -60,7 +60,6 @@ namespace Typhon
 						RecipeDef recipeDef = new RecipeDef();
 						recipeDef.defName = "Typhon_Make_Psytrainer_" + compDef.ability.defName;
 						recipeDef.label = "make psytrainer (" + compDef.ability.label + ")";
-						recipeDef.ingredients.Clear();
 						recipeDef.ingredients.Add(gold);
 						recipeDef.ingredients.Add(componentSpacer);
 						recipeDef.ingredients.Add(typhonOrgan);
@@ -76,6 +75,7 @@ namespace Typhon
 						product.count = 1;
 						product.thingDef = thingDef;
 						recipeDef.products.Add(product);
+						recipeDef.ResolveReferences();
                         InjectedDefHasher.GiveShortHashToDef(recipeDef, typeof(RecipeDef));
 						DefDatabase<RecipeDef>.Add(recipeDef);
 						fabricationBench.recipes.Add(recipeDef);
