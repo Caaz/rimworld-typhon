@@ -43,5 +43,14 @@ namespace Typhon.TyphonDefOf
             DefOfHelper.EnsureInitializedInCtor(typeof(FactionDefOf));
         }
     }
+    [DefOf]
+    internal static class FleshType
+    {
+        public static FleshTypeDef Typhon;
+        static FleshType()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(FleshTypeDefOf));
+        }
+    }
 #pragma warning restore 0649
 }
