@@ -1,4 +1,5 @@
-﻿using HugsLib;
+﻿using HarmonyLib;
+using HugsLib;
 using HugsLib.Settings;
 using HugsLib.Utils;
 using RimWorld;
@@ -10,7 +11,6 @@ namespace Typhon
 {
     public class Mod : ModBase
     {
-        public override string ModIdentifier => "caaz.typhon";
         internal static SettingHandle<bool> neuromodRetexture;
         public override void DefsLoaded()
         {
