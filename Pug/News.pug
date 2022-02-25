@@ -17,6 +17,13 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.0.0.7",
+    ["Better Hivemind", [
+      "Mimic hivemind now operate via signals!",
+      "This means it'll generally be more responsive, and gives me more options for what kind of commands I can have the hivemind respond to!",
+      "(Also, it's the first step to creating a weaver)"
+    ]]
+  )
   +UpdateNews("1.0.0.6",
     ["Space-Ready Typhon!", [
       "Minor patch to RaceProperties.IsFlesh which now causes Typhon to not be flesh! This will allow them to survive in the void of space!",
