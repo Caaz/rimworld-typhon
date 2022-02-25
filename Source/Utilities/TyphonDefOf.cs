@@ -18,6 +18,7 @@ namespace Typhon.TyphonDefOf
     {
         public static Verse.JobDef TyphonMimicMultiply;
         public static Verse.JobDef TyphonMimicBuilding;
+        public static Verse.JobDef TyphonAttackPawn;
         static Job()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(JobDefOf));
