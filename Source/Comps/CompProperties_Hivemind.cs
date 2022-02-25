@@ -14,7 +14,7 @@ namespace Typhon
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
         {
             if (!parentDef.receivesSignals)
-                yield return "ThingDefs with Typhon.CompProperties_Hivemind component must have receivesSignals set to true, otherwise wakeup won't work properly!";
+                yield return "ThingDefs with Typhon.CompProperties_Hivemind component must have receivesSignals set to true!";
         }
     }
 }

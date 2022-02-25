@@ -22,11 +22,9 @@ namespace Typhon
 		}
 		private void RecievedAttackSignal(Signal signal, Pawn typhon)
 		{
-			Log.Message(typhon + " recieved attack signal for " + signal);
 			if (typhon.CurJobDef == TyphonDefOf.Job.TyphonAttackPawn) return;
 			Pawn target = signal.args.GetArg<Pawn>("TARGET");
 			if (target == null) return;
-			Log.Message(typhon + " attacking "+ target);
 			Job attackJob = TyphonUtility.AttackJob(typhon, target);
 			if (attackJob == null) return;
 			typhon.jobs.StopAll();
@@ -34,7 +32,6 @@ namespace Typhon
         }
 		public void SendAttackSignal(Pawn source, Pawn target)
         {
-			Log.Message("Sending attack signal for " + target);
 			Signal attackSignal = new Signal(Props.hivemindSignalTag + ".Attack", new NamedArgument(source, "SOURCE"), new NamedArgument(target, "TARGET"));
             Find.SignalManager.SendSignal(attackSignal);
         }
