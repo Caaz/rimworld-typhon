@@ -1,0 +1,17 @@
++PawnKindDef("Typhon_Mimic", "Mimic", "Typhon_Mimic")(ParentName="AnimalKindBase" Name="TyphonKindMimicBase" Abstract="True")
+  defaultFactionType Typhon
+  combatPower 160
+  ecoSystemWeight 0.5
+
++PawnKindDef()(ParentName="TyphonKindMimicBase")
+  lifeStages
+    li
+      +BodyGraphicData("Typhon/Mimic/Mimic", "(255,255,255)", "0.7")
+      +DessicatedBodyGraphicData("Typhon/Mimic/Mimic", "(200,200,255)", "0.7")
+    
++PawnKindDef("Typhon_Mimic_Hidden", "Mimic", "Typhon_Mimic_Hidden")(ParentName="TyphonKindMimicBase")
+  defaultFactionType Typhon_Hidden
+  lifeStages
+    li
+      +BodyGraphicData("Typhon/Mimic/Mimic", "(255,255,255, 0)", "0.7")
+      +DessicatedBodyGraphicData("Typhon/Mimic/Mimic", "(200,200,255)", "0.7")

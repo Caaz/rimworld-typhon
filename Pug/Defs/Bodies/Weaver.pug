@@ -1,0 +1,28 @@
++BodyDef("Typhon_Weaver_Body", "typhon mimic")
+  +BodyPart("TyphonThorax", true)
+    height Middle
+    depth Outside
+    +Groups("Torso")
+    parts
+      +BodyPart("Eye")
+        customLabel left eye
+        coverage 0.12
+      +BodyPart("Eye")
+        customLabel right eye
+        coverage 0.12
+      +BodyPart("Heart")
+        coverage 0.03
+        depth Inside
+      +BodyPart("TyphonTendril")
+        customLabel left tendril
+        coverage 0.30
+        height Top
+        +Groups("Arms")
+      +BodyPart("TyphonTendril")
+        customLabel right tendril
+        coverage 0.30
+        height Top
+        +Groups("Arms")
+      +BodyPart("TyphonTendril")
+        coverage 0.1
+        height Bottom
