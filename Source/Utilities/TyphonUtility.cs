@@ -26,6 +26,7 @@ namespace Typhon
                 if (TyphonUtility.IsTyphon(thing))
                 {
                     Pawn typhon = thing as Pawn;
+                    if (pawn == typhon) continue;
                     Pawn target = typhon.LastAttackedTarget.Pawn;
                     if (target == null || target.Dead) continue;
                     return target;
@@ -54,6 +55,7 @@ namespace Typhon
                 || !(target.RaceProps.FleshType == FleshTypeDefOf.Normal)
                 || target.BodySize > 1.2
                 || !hunter.CanSee(target)
+                || !hunter.CanReach(target, PathEndMode.OnCell, Danger.Deadly)
             );
         }
     }

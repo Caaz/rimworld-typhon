@@ -43,9 +43,10 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_MimicCrash.cs" />
+    <Compile Include="Source\Jobs\JobDriver_AttackPawn.cs" />
     <Compile Include="Source\Jobs\JobDriver_MimicBuilding.cs" />
     <Compile Include="Source\Jobs\JobDriver_MimicMultiply.cs" />
-    <Compile Include="Source\Jobs\JobGiver_AttackNearbyPawns.cs" />
+    <Compile Include="Source\Jobs\JobGiver_AttackPawn.cs" />
     <Compile Include="Source\Jobs\JobGiver_MimicMultiply.cs" />
     <Compile Include="Source\Jobs\JobGiver_MimicBuilding.cs" />
     <Compile Include="Source\Mod.cs" />
