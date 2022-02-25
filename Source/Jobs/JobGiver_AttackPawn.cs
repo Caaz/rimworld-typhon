@@ -8,12 +8,12 @@ namespace Typhon
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Pawn target = TyphonUtility.GetAttackableTarget(pawn, 5);
-            if ((target == null) || !pawn.CanReserve(target, 4)) return null;
-            Job job = JobMaker.MakeJob(TyphonDefOf.Job.TyphonAttackPawn, target);
-            job.killIncappedTarget = true;
-            job.expiryInterval = Rand.Range(420, 900);
-            return job;
+            Job attackJob = TyphonUtility.AttackJob(pawn, null);
+            if (attackJob == null) return null;
+            CompHivemind comp = pawn.GetComp<CompHivemind>();
+            if(comp == null) return null;
+            comp.SendAttackSignal(pawn, attackJob.targetA.Pawn);
+            return attackJob;
         }
     }
 }
