@@ -62,3 +62,9 @@ mixin Ingredient(things, count)
     filter
       +ThingDefs(things)
     count!= count
+
+mixin Comps(...simpleComps)
+  comps
+    each comp in simpleComps
+      li(Class=comp)/
+    block

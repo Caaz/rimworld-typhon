@@ -22,18 +22,20 @@ namespace Typhon
                 if (pawn.Position.DistanceTo(thing.Position) < distance)
                     if (TyphonUtility.AcceptablePrey(pawn, thing))
                         return (Pawn)thing;
-
-                if (TyphonUtility.IsTyphon(thing))
-                {
-                    Pawn typhon = thing as Pawn;
-                    if (pawn == typhon) continue;
-                    Pawn target = typhon.LastAttackedTarget.Pawn;
-                    if (target == null || target.Dead) continue;
-                    return target;
-                }
             }
 
             return null;
+        }
+        public static Job AttackJob(Pawn typhon, Pawn target)
+        {
+            if (target == null)
+                target = TyphonUtility.GetAttackableTarget(typhon, 5);
+            else if (!AcceptablePrey(typhon, target)) return null;
+            if ((target == null) || !typhon.CanReserve(target, 4)) return null;
+            Job job = JobMaker.MakeJob(TyphonDefOf.Job.TyphonAttackPawn, target);
+            job.killIncappedTarget = true;
+            job.expiryInterval = Rand.Range(420, 900);
+            return job;
         }
         private static bool IsTyphon(Thing thing)
         {
