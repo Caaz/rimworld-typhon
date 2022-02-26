@@ -17,11 +17,18 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
-  +UpdateNews("1.0.0.7",
+  +UpdateNews("1.0.1.0",
     ["Better Hivemind", [
       "Mimic hivemind now operate via signals!",
       "This means it'll generally be more responsive, and gives me more options for what kind of commands I can have the hivemind respond to!",
       "(Also, it's the first step to creating a weaver)"
+    ]],
+    ["Alternative Mimic Hiding", [
+      "Use an empty texture, scaled to 0 for hidden mimics. Hopefully this will help those with the visible-hidden-mimic issue. Could use modslists on this issue, I suspect a graphics cache thing."
+    ]],
+    ["Bugfix - Mimic job", [
+      "Fixes an infinite loop on the odd chance a mimic can't path to the copied building they create.",
+      "This was a funky one to figure out, a re-do of this job might be required later."
     ]]
   )
   +UpdateNews("1.0.0.6",
