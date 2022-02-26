@@ -2,9 +2,9 @@
 using Verse;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.JobGiver
 {
-    internal class JobGiver_MimicMultiply : ThinkNode_JobGiver
+    internal class MimicMultiply : ThinkNode_JobGiver
     {
         protected override Job TryGiveJob(Pawn pawn)
         {

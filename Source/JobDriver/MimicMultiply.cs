@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.JobDriver
 {
-    internal class JobDriver_MimicMultiply : JobDriver
+    internal class MimicMultiply : Verse.AI.JobDriver
     {
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
