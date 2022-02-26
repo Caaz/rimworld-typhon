@@ -2,9 +2,9 @@
 using Verse;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.JobGiver
 {
-    internal class JobGiver_MimicBuilding : ThinkNode_JobGiver
+    internal class MimicBuilding : ThinkNode_JobGiver
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
@@ -26,7 +26,7 @@ namespace Typhon
                     || building.def.altitudeLayer != AltitudeLayer.Building
                     || ThingCompUtility.TryGetComp<CompCanBeDormant>(building) != null
                     || !pawn.CanSee(building)
-                    || !pawn.CanReserveAndReach(building, PathEndMode.ClosestTouch, Danger.Deadly)
+                    || !pawn.CanReserveAndReach(building, PathEndMode.Touch, Danger.Deadly)
                 ) continue;
                 return building;
             }

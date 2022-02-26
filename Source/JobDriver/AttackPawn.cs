@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.JobDriver
 {
-    internal class JobDriver_AttackPawn : JobDriver_AttackMelee
+    internal class AttackPawn : Verse.AI.JobDriver_AttackMelee
     {
         public override void Notify_PatherFailed()
         {

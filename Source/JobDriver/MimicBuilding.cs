@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.JobDriver
 {
-    internal class JobDriver_MimicBuilding : JobDriver
+    internal class MimicBuilding : Verse.AI.JobDriver
     {
         private Building Copying => (Building)job.GetTarget(TargetIndex.A).Thing;
         private Building Copy => (Building)job.GetTarget(TargetIndex.B).Thing;
@@ -18,9 +18,10 @@ namespace Typhon
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch).FailOnDespawnedOrNull(TargetIndex.A);
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch).FailOnDespawnedOrNull(TargetIndex.A);
             yield return Mimicry();
-            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.Touch);
+            if (pawn.CanReach(TargetB, PathEndMode.OnCell, Danger.Deadly))
+                yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.Touch).FailOnDespawnedOrNull(TargetIndex.B);
             yield return Wait();
         }
         public override void ExposeData()
@@ -54,6 +55,9 @@ namespace Typhon
                 Building copy = (Building)ThingMaker.MakeThing(Copying.def, Copying.Stuff);
                 job.SetTarget(TargetIndex.B, copy);
                 bool placed = GenPlace.TryPlaceThing(Copy, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                Log.Message("Placed? " + placed);
+                if(!placed)
+                    EndJobWith(JobCondition.Errored);
             };
             mimic_toil.AddFinishAction(delegate
             {
