@@ -7,13 +7,9 @@ mixin ThinkNode(name, extra)
   else
     li(Class=name)
       if extra
-        //- Until I can figure out a better way to do this, this'll work as a whitelist unfortunately.
-        if extra["tagToGive"]
-          tagToGive!= extra["tagToGive"]
-        if extra["ticksBetweenWandersRange"]
-          ticksBetweenWandersRange!= extra["ticksBetweenWandersRange"]
-        if extra["maxDanger"]
-          maxDanger!= extra["maxDanger"]
+        each data, key in extra
+          #{key}!= data
+          
       if block
         subNodes
           block

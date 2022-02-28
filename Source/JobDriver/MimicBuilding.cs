@@ -55,7 +55,6 @@ namespace Typhon.JobDriver
                 Building copy = (Building)ThingMaker.MakeThing(Copying.def, Copying.Stuff);
                 job.SetTarget(TargetIndex.B, copy);
                 bool placed = GenPlace.TryPlaceThing(Copy, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                Log.Message("Placed? " + placed);
                 if(!placed)
                     EndJobWith(JobCondition.Errored);
             };
