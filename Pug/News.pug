@@ -17,6 +17,12 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.0.2.0"
+    ["Removal of Typhon_Hidden Faction", [
+      "When generating a new world, you'll no longer see two typhon factions on the list of factions generated!",
+      "This may cause an error to raise when loading a world for the first time. It's generally a non-issue. Don't worry about it."
+    ]]
+  )
   +UpdateNews("1.0.1.0",
     ["Better Hivemind", [
       "Mimic hivemind now operate via signals!",

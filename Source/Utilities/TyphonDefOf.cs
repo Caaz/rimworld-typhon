@@ -42,7 +42,7 @@ namespace Typhon.TyphonDefOf
     internal static class Faction
     {
         public static FactionDef Typhon;
-        public static FactionDef Typhon_Hidden;
+        //public static FactionDef Typhon_Hidden;
         static Faction()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(FactionDefOf));
