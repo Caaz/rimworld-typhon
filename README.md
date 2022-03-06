@@ -30,8 +30,8 @@ The [latest build action on the main branch](https://github.com/Caaz/rimworld-ty
 
 ### Caaz
 - Coding, XML, etc.
-### Magenta_Ivy
-- Art for Mimics and Weavers.
+### Vali Dragunova
+- Art for Mimics, Weavers, and Phantoms
 ### Amstaiert
 - Art for Neuromods (Skilltrainers/Psytrainers)
 ### Justin Marshall Elias
