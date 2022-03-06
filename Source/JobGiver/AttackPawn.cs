@@ -11,8 +11,8 @@ namespace Typhon.JobGiver
             Job attackJob = TyphonUtility.AttackJob(pawn, null);
             if (attackJob == null) return null;
             CompHivemind comp = pawn.GetComp<CompHivemind>();
-            if(comp == null) return null;
-            comp.SendAttackSignal(pawn, attackJob.targetA.Pawn);
+            if(comp != null)
+                comp.SendAttackSignal(pawn, attackJob.targetA.Pawn);
             return attackJob;
         }
     }
