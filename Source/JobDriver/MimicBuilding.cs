@@ -51,7 +51,6 @@ namespace Typhon.JobDriver
             Toil mimic_toil = new Toil();
             mimic_toil.initAction = delegate
             {
-                mimic_toil.actor.pather.StopDead();
                 Building copy = (Building)ThingMaker.MakeThing(Copying.def, Copying.Stuff);
                 job.SetTarget(TargetIndex.B, copy);
                 bool placed = GenPlace.TryPlaceThing(Copy, pawn.Position, pawn.Map, ThingPlaceMode.Near);
@@ -70,9 +69,11 @@ namespace Typhon.JobDriver
         {
             PawnKindDef pawnKind = (hidden) ? TyphonDefOf.PawnKind.Typhon_Mimic_Hidden : TyphonDefOf.PawnKind.Typhon_Mimic;
             ThingDef thing = (hidden) ? TyphonDefOf.Thing.Typhon_Mimic_Hidden : TyphonDefOf.Thing.Typhon_Mimic;
+            RegionListersUpdater.DeregisterInRegions(pawn, pawn.Map);
             pawn.def = thing;
             pawn.ChangeKind(pawnKind);
             pawn.Drawer.renderer.graphics.ResolveAllGraphics();
+            RegionListersUpdater.RegisterInRegions(pawn, pawn.Map);
         }
     }
 }
