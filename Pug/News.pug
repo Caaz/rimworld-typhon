@@ -21,6 +21,11 @@ block defs
     ["Removal of Typhon_Hidden Faction", [
       "When generating a new world, you'll no longer see two typhon factions on the list of factions generated!",
       "This may cause an error to raise when loading a world for the first time. It's generally a non-issue. Don't worry about it."
+    ]],
+    ["Bugfix - Pather", [
+      "A bug from 1.0.1.0 occurred, the alternate mimic hiding caused a bug in the pather because of changing defs",
+      "This resolves the bug from happening again, but saves with a bugged mimic will still be bugged.",
+      "The hivemind can get a mimic out of the bug state, if you need to. Spawn a nearby mimic and like, a turkey or something for it to attack. It will force nearby mimics to re-do the attack job, getting out of the bug state."
     ]]
   )
   +UpdateNews("1.0.1.0",
