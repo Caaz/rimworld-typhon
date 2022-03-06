@@ -17,6 +17,11 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.0.2.1", 
+    ["New Art!", [
+      "Vali Dragunova has redone some existing assets for mimics, weavers, and phantoms!"
+    ]]
+  )
   +UpdateNews("1.0.2.0",
     ["Removal of Typhon_Hidden Faction", [
       "When generating a new world, you'll no longer see two typhon factions on the list of factions generated!",
