@@ -12,6 +12,7 @@ namespace Typhon
             Pawn typhon = PawnGenerator.GeneratePawn(kind, FactionUtility.DefaultFactionFrom(kind.defaultFactionType));
             typhon.ageTracker.AgeBiologicalTicks = 0;
             typhon.ageTracker.AgeChronologicalTicks = 0;
+            typhon.health.RemoveAllHediffs();
             return typhon;
         }
         public static Pawn GenerateMimic() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Mimic);
