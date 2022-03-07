@@ -1,0 +1,71 @@
+include Mixins.pug
++ThingDef("Typhon_Phantom_Race", "phantom")(ParentName="TyphonRaceBase")
+  description TODO
+  +TyphonRace("Human", "Humanlike")
+    baseBodySize 1
+    lifeStageAges
+      +LifeStage("AnimalAdult", 0)
+        +LifeStageSounds("Typhon_Mimic_Wounded", "Typhon_Mimic_Death", "Typhon_Mimic_Call", "Typhon_Mimic_Angry")
+  tools
+    +Tool("Right Claw")
+      +Capacities("Blunt")
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup RightHand
+      surpriseAttack
+        extraMeleeDamages
+          li
+            def Stun
+            amount 14
+    +Tool("Left Claw")
+      +Capacities("Blunt")
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup LeftHand
+      surpriseAttack
+        extraMeleeDamages
+          li
+            def Stun
+            amount 14
+    +Tool("Teeth")
+      +Capacities("Bite")
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup Teeth
+      chanceFactor 0.1
+      soundMeleeHit Pawn_Melee_HumanBite_Hit
+      soundMeleeMiss Pawn_Melee_HumanBite_Miss
+    +Tool("Body")
+      +Capacities("Blunt")
+      power 5
+      cooldownTime 2
+      linkedBodyPartsGroup Torso
+      ensureLinkedBodyPartsGroupAlwaysUsable true
+      chanceFactor 0.2
+
+
+//- 
+      
+        <li>
+          <label>teeth</label>
+          <capacities>
+            <li>Bite</li>
+          </capacities>
+          <power>8.2</power>
+          <cooldownTime>2</cooldownTime>
+          <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+          <chanceFactor>0.07</chanceFactor>
+          <soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+          <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+        </li>
+        <li>
+          <label>head</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>5</power>
+          <cooldownTime>2</cooldownTime>
+          <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+          <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+          <chanceFactor>0.2</chanceFactor>
+        </li>
