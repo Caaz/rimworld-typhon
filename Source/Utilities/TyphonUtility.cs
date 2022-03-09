@@ -17,6 +17,12 @@ namespace Typhon
         }
         public static Pawn GenerateMimic() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Mimic);
         public static Pawn GenerateWeaver() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Weaver);
+        public static Pawn GeneratePhantom(Pawn from)
+        {
+            Pawn phantom = GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Phantom);
+            phantom.Name = from.Name;
+            return phantom;
+        }
         public static Pawn GetAttackableTarget(Pawn pawn, float distance = 4f)
         {
             foreach (Thing thing in GenRadial.RadialDistinctThingsAround(pawn.Position, pawn.Map, distance * 2, true))
