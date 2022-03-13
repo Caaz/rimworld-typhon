@@ -41,8 +41,7 @@ namespace Typhon.JobDriver
             wait_toil.FailOn((Func<bool>)delegate
             {
                 Pawn target = TyphonUtility.GetAttackableTarget(pawn);
-                bool failed = (target != null || Copy == null || Copy.DestroyedOrNull() || Copy.HitPoints != buildingHitPoints);
-                return failed;
+                return (target != null || Copy == null || Copy.DestroyedOrNull() || Copy.HitPoints != buildingHitPoints);
             });
             return wait_toil;
         }

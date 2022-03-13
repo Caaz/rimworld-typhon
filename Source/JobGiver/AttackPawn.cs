@@ -8,7 +8,7 @@ namespace Typhon.JobGiver
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
-            Job attackJob = TyphonUtility.AttackJob(pawn, null);
+            Job attackJob = TyphonUtility.AttackJob(pawn);
             if (attackJob == null) return null;
             CompHivemind comp = pawn.GetComp<CompHivemind>();
             if(comp != null)
