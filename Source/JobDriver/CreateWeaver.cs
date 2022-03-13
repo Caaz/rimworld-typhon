@@ -27,7 +27,7 @@ namespace Typhon.JobDriver
                 CompHivemind comp = pawn.GetComp<CompHivemind>();
                 if (comp == null) EndJobWith(JobCondition.Errored);
                 pawn.health.AddHediff(TyphonDefOf.Hediff.TyphonCreatesWeaver);
-                comp.SendAttackSignal(pawn, pawn);
+                comp.SendSignal_Attack(pawn, pawn);
             });
             return wait;
         }

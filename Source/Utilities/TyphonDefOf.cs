@@ -21,7 +21,6 @@ namespace Typhon.TyphonDefOf
     {
         public static Verse.JobDef TyphonMimicMultiply;
         public static Verse.JobDef TyphonMimicBuilding;
-        public static Verse.JobDef TyphonAttackPawn;
         public static Verse.JobDef TyphonCreateWeaver;
         public static Verse.JobDef TyphonCreatePhantom;
         static Job()

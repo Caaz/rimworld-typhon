@@ -9,7 +9,7 @@ namespace Typhon.JobGiver
         protected override Job TryGiveJob(Pawn pawn)
         {
             List<Pawn> mimics = GetMimics(pawn.Position, pawn.Map, 7f);
-            return (mimics.Count > 5) ? JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateWeaver) : null;
+            return (mimics.Count > 7) ? JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateWeaver) : null;
         }
         private List<Pawn> GetMimics(IntVec3 position, Map map, float radius)
         {
