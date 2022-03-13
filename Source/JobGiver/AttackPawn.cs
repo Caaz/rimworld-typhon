@@ -12,7 +12,7 @@ namespace Typhon.JobGiver
             if (attackJob == null) return null;
             CompHivemind comp = pawn.GetComp<CompHivemind>();
             if(comp != null)
-                comp.SendAttackSignal(pawn, attackJob.targetA.Pawn);
+                comp.SendSignal_Attack(pawn, attackJob.targetA.Pawn);
             return attackJob;
         }
     }

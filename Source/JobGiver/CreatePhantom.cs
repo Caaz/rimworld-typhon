@@ -13,6 +13,7 @@ namespace Typhon.JobGiver
                 target.GetRotStage() != RotStage.Dessicated
                 || !pawn.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly)
                 || !(target.InnerPawn.RaceProps.FleshType == FleshTypeDefOf.Normal)
+                || !target.InnerPawn.RaceProps.Humanlike
             ) return null;
             return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreatePhantom, target);
         }

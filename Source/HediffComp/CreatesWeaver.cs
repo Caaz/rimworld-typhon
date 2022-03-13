@@ -7,8 +7,12 @@ namespace Typhon.HediffComp
 		public override void Notify_PawnDied()
 		{
 			base.Notify_PawnDied();
-			GenSpawn.Spawn(TyphonUtility.GenerateWeaver(), base.Pawn.Corpse.Position, base.Pawn.Corpse.Map);
+			Pawn weaver = TyphonUtility.GenerateWeaver();
+			GenSpawn.Spawn(weaver, base.Pawn.Corpse.Position, base.Pawn.Corpse.Map);
 			base.Pawn.Corpse.Destroy();
+			CompHivemind comp = weaver.GetComp<CompHivemind>();
+			if (comp != null)
+				comp.SendSignal_CreatedWeaver(weaver);
 		}
     }
 }
