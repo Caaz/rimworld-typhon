@@ -34,7 +34,8 @@ namespace Typhon
 			Pawn target = signal.args.GetArg<Pawn>("TARGET");
 			if (target == null) return;
 			bool skipValidation = (target.CurJob != null && target.CurJob.def == TyphonDefOf.Job.TyphonCreateWeaver);
-			Job attackJob = TyphonUtility.AttackJob(typhon, target, skipValidation);
+			if (!skipValidation && !TyphonUtility.AcceptablePrey(typhon, target)) return;
+			Job attackJob = TyphonUtility.AttackJob(typhon, target);
 			if (attackJob == null) return;
 			typhon.jobs.StopAll();
             typhon.jobs.StartJob(attackJob);
