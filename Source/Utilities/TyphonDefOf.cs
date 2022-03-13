@@ -10,6 +10,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.ThingDef Typhon_Mimic;
         public static Verse.ThingDef Typhon_Mimic_Hidden;
         public static Verse.ThingDef Typhon_Weaver_Race;
+        public static Verse.ThingDef Typhon_Phantom_Race;
         static Thing()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));

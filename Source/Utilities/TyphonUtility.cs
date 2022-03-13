@@ -83,13 +83,13 @@ namespace Typhon
         private static float PreySize(Pawn typhon)
         {
             if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 1.2f;
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 2f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 2f;
             return 1f;
         }
         private static float AttackRange(Pawn typhon)
         {
             if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 5f;
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 20f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 20f;
             return 5f;
         }
     }

@@ -13,6 +13,8 @@ namespace Typhon
 			if (!AcceptingSignals(typhon)) return;
 
 			string prefix = Props.hivemindSignalTag+".";
+			if (!signal.tag.StartsWith(prefix)) return;
+
 			Pawn sender = signal.args.GetArg<Pawn>("SOURCE");
 			if (
 				(sender == null)
