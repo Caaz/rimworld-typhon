@@ -33,7 +33,7 @@ namespace Typhon
         public static Job AttackJob(Pawn typhon, Pawn target = null)
         {
             Job job;
-            if (target == null) target = TyphonUtility.GetAttackableTarget(typhon);
+            if (target == null) target = TyphonUtility.GetAttackableTarget(typhon, AttackRange(typhon));
             if (target == null) return null;
             // Try ranged attack job
             Verb verb = typhon.TryGetAttackVerb(target, !typhon.IsColonist);
@@ -75,10 +75,22 @@ namespace Typhon
             return !(
                 target.Dead
                 || !target.RaceProps.IsFlesh
-                || target.BodySize > 1.2
+                || target.BodySize > PreySize(hunter)
                 || !hunter.CanSee(target)
                 || !hunter.CanReach(target, PathEndMode.OnCell, Danger.Deadly)
             );
+        }
+        private static float PreySize(Pawn typhon)
+        {
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 1.2f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 2f;
+            return 1f;
+        }
+        private static float AttackRange(Pawn typhon)
+        {
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 5f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 20f;
+            return 5f;
         }
     }
 }
