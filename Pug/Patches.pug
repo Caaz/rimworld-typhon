@@ -1,36 +1,9 @@
 doctype xml
 Patch
+  include Patches/VanillaExpandedFramework.pug
   Operation(Class="PatchOperationAdd")
     xpath /Defs/ThingDef[defName="FabricationBench"]/recipes
     value
       each skill in ["Shooting", "Melee", "Construction", "Mining", "Cooking", "Plants", "Animals", "Crafting", "Artistic", "Medicine", "Social", "Intellectual"]
         li!= "Typhon_Make_Skilltrainer_" + skill
         
-  Operation(Class="PatchOperationFindMod")
-    mods
-      li Vanilla Expanded Framework
-    match(Class="PatchOperationSequence")
-      operations
-        li(Class="PatchOperationAdd")
-          xpath /Defs
-          value
-            #{"MVCF.ModDef"}
-              defName Caaz_Typhon
-              label Typhon
-              description Add animal ranged attacks for Typhon.
-              Features
-                RangedAnimals true
-        li(Class="PatchOperationAdd")
-          xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]
-          value
-            verbs
-              li
-                verbClass Verb_Shoot
-                hasStandardCommand true
-                defaultProjectile Typhon_Projectile_KineticOrb
-                warmupTime 1
-                range 10
-                ticksBetweenBurstShots 5
-                soundCast Shot_ChargeBlaster
-                soundCastTail GunTail_Heavy
-                muzzleFlashScale 0
