@@ -89,7 +89,7 @@ namespace Typhon
         private static float AttackRange(Pawn typhon)
         {
             if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 5f;
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 20f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 10f;
             return 5f;
         }
     }
