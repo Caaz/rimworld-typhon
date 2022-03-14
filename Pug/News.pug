@@ -17,13 +17,42 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
-  +UpdateNews("1.0.2.1", 
-    ["New Art!", [
+  +UpdateNews("1.1.0.0",
+    ["New Artist, New Art!", [
       "Vali Dragunova has redone some existing assets for mimics, weavers, and phantoms!"
+    ]],
+    ["Milestone 1 Release!", [
+      "Weavers and Phantoms are here!",
+      "Mimics were the MVP to test the waters, prove I can mod, and gauge interest.",
+      "It's clear to me that you all are very excited for this mod, and I don't want to let anyone down.",
+      "The discord channel has been especially great to talk over upcoming features and just in general nerd out about prey. If you're not already a part of it, I'd recomend checking ito out, links on the workshop page and github.",
+    ]],
+    ["Weavers", [
+      "Mimics will occasionally decide to attack each other, when this happens, it causes the loser to mutate into a weaver!",
+      "Weavers float around and leave coral in their area. The coral is harmless, for now. In future updates, coral may be modified for additional features.",
+      "When a weaver finds a dessicated humanoid corpse left behind from mimic attacks, they can create a phantom."
+    ]],
+    ["Phantoms", [
+      "Phantoms are reanimated corpses created by weavers. They're mostly mindless, patrolling their area, and attacking anything nearby.",
+      "If you listen closely, you'll find they have voice lines thanks to dendroid!",
+      "Without VEF, they'll stick to melee attacks."
+    ]], 
+    ["Vanilla Expanded Framework usage", [
+      "While this mod doesn't explicitly require Vanilla Expanded Framework, there are some additional features enabled when it's there",
+      "Notably, the ability for phantoms to blink is a VEF feature, while I'd like to rework it a bit for combat, it's good enough for now.",
+      "Phantoms also have a kinetic blast attack, which only works if VEF is enabled."
     ]],
     ["Diseases Overhaul Compatibility", [
       "Did a one-line-change to ensure Typhon spawned with this mod are created without hediffs.",
       "A better solution would probably ensure typhon can't ever get diseases, but this should probably work for now."
+    ]],
+    ["Funding", [
+      "I (Caaz) pay for mod assets and I'd like to continue paying for those assets. I've been lucky enough to stumble into some great people to work with, and they deserve funding for their skills",
+      "The link to pitch in for funding can be found on the workshop and on the github. I've decided to use OpenCollective, as it keeps the budget visible to all, and shows that the money is going to the right place.",
+      "My goal here is to ensure I can afford quality assets, as the plans for this grow larger and larger, I'm learning there's a lot of things we're going to need!"
+    ]],
+    ["Bugfix - Hivemind", [
+      "Hivemind no longer freaks out when non-hivemind signals are received."
     ]]
   )
   // last release
