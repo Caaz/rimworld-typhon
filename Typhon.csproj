@@ -103,10 +103,14 @@
     <None Include="Pug\Mixins\ThinkTree.pug" />
     <None Include="Pug\News.pug" />
     <None Include="Pug\Patches.pug" />
+    <None Include="Pug\Patches\VanillaExpandedFramework.pug" />
     <None Include="Pug\Templates\Defs.pug" />
+    <None Include="Pug\Wiki.pug" />
     <None Include="README.md" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Pug\Wiki\reset.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>cd $(ProjectDir)
@@ -115,7 +119,8 @@ set list=About Defs Patches News
   mkdir %25%25a
   del /q %25%25a\*.xml
   call pug -s --pretty --extension xml --out %25%25a Pug\%25%25a.pug
-))</PostBuildEvent>
+))
+call pug -s --pretty --out bin\ Pug\Wiki.pug</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent />
