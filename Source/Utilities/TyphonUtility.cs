@@ -35,7 +35,6 @@ namespace Typhon
             Job job;
             if (target == null) target = TyphonUtility.GetAttackableTarget(typhon, AttackRange(typhon));
             if (target == null) return null;
-            // Try ranged attack job
             Verb verb = typhon.TryGetAttackVerb(target, !typhon.IsColonist);
             if (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch))
             {
@@ -53,11 +52,9 @@ namespace Typhon
         }
         private static bool IsTyphon(Thing thing)
         {
-            return (
-                thing.def == TyphonDefOf.Thing.Typhon_Mimic
-                || thing.def == TyphonDefOf.Thing.Typhon_Mimic_Hidden
-                || thing.def == TyphonDefOf.Thing.Typhon_Weaver_Race
-            );
+            Pawn pawn = thing as Pawn;
+            if(pawn == null) return false;
+            return (pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon);
         }
         public static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
