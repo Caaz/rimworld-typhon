@@ -50,12 +50,6 @@ namespace Typhon
             job.endIfCantShootTargetFromCurPos = true;
             return job;
         }
-        private static bool IsTyphon(Thing thing)
-        {
-            Pawn pawn = thing as Pawn;
-            if(pawn == null) return false;
-            return (pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon);
-        }
         public static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
             if (
