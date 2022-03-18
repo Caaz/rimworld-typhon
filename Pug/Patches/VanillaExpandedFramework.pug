@@ -12,6 +12,7 @@ Operation(Class="PatchOperationFindMod")
             description Add animal ranged attacks for Typhon.
             Features
               RangedAnimals true
+              ExtraEquipmentVerbs true
       li(Class="PatchOperationAdd")
         xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]
         value
@@ -34,3 +35,17 @@ Operation(Class="PatchOperationFindMod")
               blinkInterval 1000
               distance 2~10
               blinkWhenManhunter true
+      li(Class="PatchOperationAdd")
+        xpath /Defs/ThingDef[defName="Typhon_Gloo_Cannon"]/verbs
+        value
+          li
+            verbClass Verb_Shoot
+            hasStandardCommand true
+            defaultProjectile Typhon_Projectile_KineticOrb
+            warmupTime 2
+            range 25
+            ticksBetweenBurstShots 10
+            burstShotCount 1
+            soundCast Shot_ChargeRifle
+            soundCastTail GunTail_Medium
+            muzzleFlashScale 0

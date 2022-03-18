@@ -1,0 +1,52 @@
++ThingDef("Typhon_Gloo_Cannon", "GLOO Cannon")(ParentName="BaseHumanMakeableGun")
+  description TODO
+  techLevel Spacer
+  graphicData
+    texPath Typhon/GlooCannon/GlooCannon
+    graphicClass Graphic_Single
+  soundInteract Interact_ChargeRifle
+  statBases
+    WorkToMake 45000
+    Mass 5
+    AccuracyTouch 0.5
+    AccuracyShort 0.4
+    AccuracyMedium 0.3
+    AccuracyLong 0.2
+    RangedWeapon_Cooldown .1
+  recipeMaker
+    researchPrerequisite ChargedShot
+    skillRequirements
+      Crafting 8
+    recipeUsers(Inherit=False)
+      li FabricationBench
+  costList
+    Plasteel 40
+    ComponentSpacer 3
+  thingSetMakerTags
+    li RewardStandardLowFreq
+    li RewardStandardQualitySuper
+  weaponTags
+    li SpacerGun
+  weaponClasses
+    li RangedLight
+  verbs
+    li
+      verbClass Verb_Shoot
+      hasStandardCommand true
+      defaultProjectile Typhon_Projectile_Gloo
+      warmupTime .5
+      range 25
+      ticksBetweenBurstShots 10
+      burstShotCount 3
+      soundCast Shot_ChargeRifle
+      soundCastTail GunTail_Medium
+      muzzleFlashScale 0
+  tools
+    +Tool("stock")
+      +Capacities("Blunt")
+      power 10
+      cooldownTime 2.5
+    +Tool("barrel")
+      +Capacities("Blunt", "Poke")
+      power 6
+      cooldownTime 2
