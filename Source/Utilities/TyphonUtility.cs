@@ -9,7 +9,9 @@ namespace Typhon
     {
         public static Pawn GenerateTyphon(PawnKindDef kind)
         {
-            Pawn typhon = PawnGenerator.GeneratePawn(kind, FactionUtility.DefaultFactionFrom(kind.defaultFactionType));
+            Faction typhonFaction = FactionUtility.DefaultFactionFrom(kind.defaultFactionType);
+            if (typhonFaction == null) typhonFaction = Faction.OfMechanoids;
+            Pawn typhon = PawnGenerator.GeneratePawn(kind, typhonFaction);
             typhon.ageTracker.AgeBiologicalTicks = 0;
             typhon.ageTracker.AgeChronologicalTicks = 0;
             typhon.health.RemoveAllHediffs();
