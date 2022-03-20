@@ -35,13 +35,13 @@ Operation(Class="PatchOperationFindMod")
               blinkInterval 1000
               distance 2~10
               blinkWhenManhunter true
-      li(Class="PatchOperationAdd")
+      //- li(Class="PatchOperationAdd")
         xpath /Defs/ThingDef[defName="Typhon_Gloo_Cannon"]/verbs
         value
           li
-            verbClass Verb_Shoot
+            verbClass Verb_LaunchProjectile
             hasStandardCommand true
-            defaultProjectile Typhon_Projectile_KineticOrb
+            defaultProjectile Typhon_Projectile_Gloo_Large
             warmupTime 2
             range 25
             ticksBetweenBurstShots 10
@@ -49,3 +49,4 @@ Operation(Class="PatchOperationFindMod")
             soundCast Shot_ChargeRifle
             soundCastTail GunTail_Medium
             muzzleFlashScale 0
+            forcedMissRadius 2
