@@ -3,11 +3,19 @@
   skinCovered false
   bleedRate 0
 
-+BodyPartDef("TyphonThorax", "thorax", 40)(ParentName="TyphonPart")
-+BodyPartDef("TyphonMimicLeg", "leg", 30)(ParentName="TyphonPart")
++BodyPartDef("TyphonThorax", "thorax")(ParentName="TyphonPart")
++BodyPartDef("TyphonMimicLeg", "leg")(ParentName="TyphonPart")
   frostbiteVulnerability 0.01
   +Tags("MovingLimbCore", "ManipulationLimbCore")
   
-+BodyPartDef("TyphonTendril", "leg", 30)(ParentName="TyphonPart")
++BodyPartDef("TyphonTendril", "leg")(ParentName="TyphonPart")
   frostbiteVulnerability 0.01
   +Tags("MovingLimbCore", "ManipulationLimbCore")
+  
++BodyPartDef("TyphonOperatorLevitator", "reyes field manipulator")
+  permanentInjuryChanceFactor 0
+  skinCovered false
+  bleedRate 0
+  solid true
+  alive false
+  +Tags("MovingLimbCore", "MovingLimbSegment")

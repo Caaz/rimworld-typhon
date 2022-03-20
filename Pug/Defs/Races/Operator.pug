@@ -1,0 +1,61 @@
+include Mixins.pug
+
++ThingDef("Typhon_Operator_Race", "operator")(ParentName="BasePawn")
+  description TODO
+  soundImpactDefault BulletImpact_Metal
+  statBases
+    PsychicSensitivity 0.5
+    ToxicSensitivity 0
+    Flammability 0
+    ComfyTemperatureMin -100
+    ComfyTemperatureMax 250
+    MeatAmount 0
+    ArmorRating_Heat 2
+  butcherProducts
+    Steel 30
+    Plasteel 20
+  race
+    fleshType Mechanoid
+    needsRest false
+    hasGenders false
+    foodType None
+    lifeExpectancy 2500
+    bloodDef Filth_MachineBits
+    body Typhon_Operator_Body
+    thinkTreeMain Typhon_Thinktree_Operator
+    thinkTreeConstant Typhon_Thinktree_Constant
+    soundMeleeHitPawn Pawn_Melee_MechanoidBash_HitPawn
+    soundMeleeHitBuilding Pawn_Melee_MechanoidBash_HitBuilding
+    soundMeleeMiss Pawn_Melee_MechanoidBash_Miss
+    baseBodySize 1
+    lifeStageAges
+      +LifeStage("MechanoidFullyFormed", 0)
+        +LifeStageSounds("Pawn_Mech_Centipede_Wounded", "Pawn_Mech_Centipede_Death", "Pawn_Mech_Centipede_Call")
+  tools
+    +Tool("Left Manipulator")
+      +Capacities("Scratch", "Cut", "Stab")
+      power 3
+      cooldownTime 2
+      linkedBodyPartsGroup LeftHand
+      surpriseAttack
+        extraMeleeDamages
+          li
+            def Stun
+            amount 2
+    +Tool("Left Manipulator")
+      +Capacities("Scratch", "Cut", "Stab")
+      power 3
+      cooldownTime 2
+      linkedBodyPartsGroup RightHand
+      surpriseAttack
+        extraMeleeDamages
+          li
+            def Stun
+            amount 2
+    +Tool("Body")
+      +Capacities("Blunt")
+      power 5
+      cooldownTime 2
+      linkedBodyPartsGroup Torso
+      ensureLinkedBodyPartsGroupAlwaysUsable true
+      chanceFactor 0.2

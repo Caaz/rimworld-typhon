@@ -50,7 +50,8 @@ mixin LifeStageSounds(wounded, death, call, angry)
   soundWounded!= wounded
   soundDeath!= death
   soundCall!= call
-  soundAngry!= angry
+  if angry
+    soundAngry!= angry
 
 mixin Tool(label)
   li
