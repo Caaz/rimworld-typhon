@@ -37,19 +37,13 @@ namespace Typhon
             if (target == null) target = TyphonUtility.GetAttackableTarget(typhon, AttackRange(typhon));
             if (target == null) return null;
             Verb verb = typhon.TryGetAttackVerb(target, !typhon.IsColonist);
-            if (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch))
-            {
-                Job meleeJob = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
-                meleeJob.killIncappedTarget = true;
-                meleeJob.expiryInterval = Rand.Range(420, 900);
-                return meleeJob;
-            }
-            Job rangedJob = JobMaker.MakeJob(JobDefOf.AttackStatic, target);
-            rangedJob.maxNumStaticAttacks = 2;
-            rangedJob.killIncappedTarget = true;
-            rangedJob.expiryInterval = Rand.Range(420, 900);
-            rangedJob.endIfCantShootTargetFromCurPos = true;
-            return rangedJob;
+            bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
+            Job attackJob = JobMaker.MakeJob((isMelee)? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
+            attackJob.maxNumStaticAttacks = 2;
+            attackJob.killIncappedTarget = true;
+            attackJob.expiryInterval = Rand.Range(420, 900);
+            attackJob.endIfCantShootTargetFromCurPos = true;
+            return attackJob;
         }
         public static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
