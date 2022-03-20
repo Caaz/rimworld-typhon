@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
@@ -9,7 +8,9 @@ namespace Typhon
     {
         public static Pawn GenerateTyphon(PawnKindDef kind)
         {
-            Pawn typhon = PawnGenerator.GeneratePawn(kind, FactionUtility.DefaultFactionFrom(kind.defaultFactionType));
+            Faction typhonFaction = FactionUtility.DefaultFactionFrom(kind.defaultFactionType);
+            if (typhonFaction == null) typhonFaction = Faction.OfMechanoids;
+            Pawn typhon = PawnGenerator.GeneratePawn(kind, typhonFaction);
             typhon.ageTracker.AgeBiologicalTicks = 0;
             typhon.ageTracker.AgeChronologicalTicks = 0;
             typhon.health.RemoveAllHediffs();
@@ -32,23 +33,16 @@ namespace Typhon
         }
         public static Job AttackJob(Pawn typhon, Pawn target = null)
         {
-            Job job;
             if (target == null) target = TyphonUtility.GetAttackableTarget(typhon, AttackRange(typhon));
             if (target == null) return null;
             Verb verb = typhon.TryGetAttackVerb(target, !typhon.IsColonist);
-            if (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch))
-            {
-                job = JobMaker.MakeJob(JobDefOf.AttackMelee, target);
-                job.killIncappedTarget = true;
-                job.expiryInterval = Rand.Range(420, 900);
-                return job;
-            }
-            job = JobMaker.MakeJob(JobDefOf.AttackStatic, target);
-            job.maxNumStaticAttacks = 2;
-            job.killIncappedTarget = true;
-            job.expiryInterval = Rand.Range(420, 900);
-            job.endIfCantShootTargetFromCurPos = true;
-            return job;
+            bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
+            Job attackJob = JobMaker.MakeJob((isMelee)? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
+            attackJob.maxNumStaticAttacks = 2;
+            attackJob.killIncappedTarget = true;
+            attackJob.expiryInterval = Rand.Range(420, 900);
+            attackJob.endIfCantShootTargetFromCurPos = true;
+            return attackJob;
         }
         public static bool AcceptablePrey(Pawn hunter, Thing prey)
         {
