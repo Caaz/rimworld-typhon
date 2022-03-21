@@ -58,6 +58,7 @@
     <Compile Include="Source\JobGiver\MimicMultiply.cs" />
     <Compile Include="Source\Mod.cs" />
     <Compile Include="Source\Patches.cs" />
+    <Compile Include="Source\Projectile_Gloo.cs" />
     <Compile Include="Source\Utilities\TyphonDefOf.cs" />
     <Compile Include="Source\Utilities\TyphonUtility.cs" />
   </ItemGroup>
