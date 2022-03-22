@@ -23,6 +23,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.JobDef TyphonMimicBuilding;
         public static Verse.JobDef TyphonCreateWeaver;
         public static Verse.JobDef TyphonCreatePhantom;
+        public static Verse.JobDef TyphonOperatorMedical;
         static Job()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(JobDefOf));

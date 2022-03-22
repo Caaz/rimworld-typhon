@@ -48,9 +48,11 @@
     <Compile Include="Source\HediffComp\CreatesWeaver.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_MimicCrash.cs" />
     <Compile Include="Source\JobDriver\CreateWeaver.cs" />
+    <Compile Include="Source\JobDriver\Operator\Medical.cs" />
     <Compile Include="Source\JobDriver\MimicBuilding.cs" />
     <Compile Include="Source\JobDriver\CreatePhantom.cs" />
     <Compile Include="Source\JobDriver\MimicMultiply.cs" />
+    <Compile Include="Source\JobGiver\Operator.cs" />
     <Compile Include="Source\JobGiver\CreatePhantom.cs" />
     <Compile Include="Source\JobGiver\AttackPawn.cs" />
     <Compile Include="Source\JobGiver\CreateWeaver.cs" />
