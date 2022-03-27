@@ -1,0 +1,18 @@
+include Mixins.pug
++ThingDef("Typhon_Cystoid_Race", "cystoid")(ParentName="TyphonRaceBase")
+  description Cystoids are small typhon that act as mobile mines, seeking out nearby movement and detonating violently.
+  +TyphonRace("Typhon_Cystoid_Body", "Typhon_Thinktree_Cystoid")
+    deathActionWorkerClass DeathActionWorker_SmallExplosion
+    baseHealthScale .1
+    baseBodySize .1
+    lifeStageAges
+      +LifeStage("AnimalAdult", 0)
+        +LifeStageSounds("Typhon_Mimic_Wounded", "Typhon_Mimic_Death", "Typhon_Mimic_Call", "Typhon_Mimic_Angry")
+  tools
+    +Tool("Body")
+      +Capacities("Blunt")
+      power 5
+      cooldownTime 2
+      linkedBodyPartsGroup Torso
+      ensureLinkedBodyPartsGroupAlwaysUsable true
+      chanceFactor 0.2
