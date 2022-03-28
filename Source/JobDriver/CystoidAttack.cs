@@ -12,6 +12,10 @@ namespace Typhon.JobDriver
         }
         protected override IEnumerable<Toil> MakeNewToils()
         {
+            AddFailCondition((Func<bool>)delegate
+            {
+                return (TargetA.Thing == null || TargetA.ThingDestroyed);
+            });
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.OnCell).FailOnDespawnedOrNull(TargetIndex.A);
             yield return Toils_General.Do(Explode);
         }
