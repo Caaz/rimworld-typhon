@@ -17,6 +17,21 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.1.1.0", 
+    ["Cystoids!", [
+      "Cystoids are small spikey creatures that act as mobile mines! When they near a target, they explode!",
+      "They have very little health, and will explode when killed.",
+      "Weavers will spawn cystoids as a defense mechanism! This changes their attack behavior."
+    ]],
+    ["Cystoid Nests!", [
+      "Weavers will now peroidically create cystoid nests, which hold cystoids in them.",
+      "These nests will become quite a problem if you enjoy flammable objects."
+    ]],
+    ["Tweak to Typhon attack targets", [
+      "Typhon no longer check Fleshtype for targets. They'll attack anything within size limits now",
+      "This ensures androids are not safe, and solves some logic issues for future features."
+    ]]
+  )
   +UpdateNews("1.1.0.0",
     ["New Artist, New Art!", [
       "Vali Dragunova has redone some existing assets for mimics, weavers, and phantoms!"
@@ -55,7 +70,6 @@ block defs
       "Hivemind no longer freaks out when non-hivemind signals are received."
     ]]
   )
-  // last release
   +UpdateNews("1.0.2.0",
     ["Removal of Typhon_Hidden Faction", [
       "When generating a new world, you'll no longer see two typhon factions on the list of factions generated!",

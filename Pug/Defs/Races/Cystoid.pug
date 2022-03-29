@@ -3,6 +3,7 @@ include Mixins.pug
   description Cystoids are small typhon that act as mobile mines, seeking out nearby movement and detonating violently.
   statBases
       MaxHitPoints 1
+      MoveSpeed 2
   +TyphonRace("Typhon_Cystoid_Body", "Typhon_Thinktree_Cystoid")
     deathActionWorkerClass DeathActionWorker_SmallExplosion
     baseHealthScale .1
