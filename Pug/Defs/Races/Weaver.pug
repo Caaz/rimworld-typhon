@@ -11,6 +11,11 @@ include Mixins.pug
     li(Class="CompProperties_SpawnerFilth")
       filthDef Filth_Typhon_Coral
       spawnMtbHours .1
+    li(Class="CompProperties_Spawner")
+      thingToSpawn Typhon_Cystoid_Nest
+      spawnMaxAdjacent 1
+      inheritFaction true
+      spawnIntervalRange 30000~200000
   tools
     +Tool("Tendril")
       +Capacities("Blunt")

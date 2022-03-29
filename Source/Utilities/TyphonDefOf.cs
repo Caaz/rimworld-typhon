@@ -11,6 +11,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.ThingDef Typhon_Mimic_Hidden;
         public static Verse.ThingDef Typhon_Weaver_Race;
         public static Verse.ThingDef Typhon_Phantom_Race;
+        public static Verse.ThingDef Typhon_Cystoid_Race;
         static Thing()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
@@ -23,6 +24,8 @@ namespace Typhon.TyphonDefOf
         public static Verse.JobDef TyphonMimicBuilding;
         public static Verse.JobDef TyphonCreateWeaver;
         public static Verse.JobDef TyphonCreatePhantom;
+        public static Verse.JobDef TyphonCystoidAttack;
+        public static Verse.JobDef TyphonCreateCystoid;
         static Job()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(JobDefOf));
@@ -35,6 +38,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.PawnKindDef Typhon_Mimic_Hidden;
         public static Verse.PawnKindDef Typhon_Weaver;
         public static Verse.PawnKindDef Typhon_Phantom;
+        public static Verse.PawnKindDef Typhon_Cystoid;
         static PawnKind()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(PawnKindDefOf));
