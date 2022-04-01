@@ -37,7 +37,7 @@ namespace Typhon
             componentSpacer.SetBaseCount(20);
             componentSpacer.filter.SetAllow(ThingDef.Named("ComponentSpacer"), true);
             IngredientCount typhonOrgan = new IngredientCount();
-            typhonOrgan.SetBaseCount(20);
+            typhonOrgan.SetBaseCount(75);
             typhonOrgan.filter.SetAllow(ThingDef.Named("TyphonOrgan"), true);
             SoundDef soundWorking = SoundDef.Named("RecipeMachining");
             ThingDef unfinishedThing = ThingDef.Named("UnfinishedComponent");
