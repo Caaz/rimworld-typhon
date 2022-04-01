@@ -11,7 +11,7 @@ namespace Typhon.JobGiver
             Job attackJob = TyphonUtility.AttackJob(pawn);
             if (attackJob == null) return null;
 
-            CompHivemind comp = pawn.GetComp<CompHivemind>();
+            Comps.Hivemind comp = pawn.GetComp<Comps.Hivemind>();
             if (comp != null)
                 comp.SendSignal_Attack(pawn, attackJob.targetA.Pawn);
 
@@ -19,7 +19,7 @@ namespace Typhon.JobGiver
         }
         private void AlertHivemind(Pawn pawn, Pawn target)
         {
-            CompHivemind comp = pawn.GetComp<CompHivemind>();
+            Comps.Hivemind comp = pawn.GetComp<Comps.Hivemind>();
             if (comp != null)
                 comp.SendSignal_Attack(pawn, target);
         }

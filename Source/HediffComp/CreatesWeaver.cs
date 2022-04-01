@@ -10,7 +10,7 @@ namespace Typhon.HediffComp
 			Pawn weaver = TyphonUtility.GenerateWeaver();
 			GenSpawn.Spawn(weaver, base.Pawn.Corpse.Position, base.Pawn.Corpse.Map);
 			base.Pawn.Corpse.Destroy();
-			CompHivemind comp = weaver.GetComp<CompHivemind>();
+			Comps.Hivemind comp = weaver.GetComp<Comps.Hivemind>();
 			if (comp != null)
 				comp.SendSignal_CreatedWeaver(weaver);
 		}

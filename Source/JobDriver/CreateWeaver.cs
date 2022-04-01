@@ -24,7 +24,7 @@ namespace Typhon.JobDriver
             Toil wait = Toils_General.Wait(100);
             wait.AddPreInitAction(delegate
             {
-                CompHivemind comp = pawn.GetComp<CompHivemind>();
+                Comps.Hivemind comp = pawn.GetComp<Comps.Hivemind>();
                 if (comp == null) EndJobWith(JobCondition.Errored);
                 pawn.health.AddHediff(TyphonDefOf.Hediff.TyphonCreatesWeaver);
                 comp.SendSignal_Attack(pawn, pawn);

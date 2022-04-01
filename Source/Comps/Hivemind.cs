@@ -2,11 +2,11 @@
 using Verse;
 using Verse.AI;
 
-namespace Typhon
+namespace Typhon.Comps
 {
-    internal class CompHivemind : ThingComp
+    internal class Hivemind : ThingComp
 	{
-        private CompProperties_Hivemind Props => (CompProperties_Hivemind)props;
+        private CompProperties.Hivemind Props => (CompProperties.Hivemind)props;
 		public override void Notify_SignalReceived(Signal signal)
 		{
 			Pawn typhon = parent as Pawn;

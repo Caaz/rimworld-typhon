@@ -1,10 +1,10 @@
 ﻿using Verse;
 
-namespace Typhon
+namespace Typhon.Comps
 {
-    internal class CompReincarnate : ThingComp
+    internal class Reincarnate : ThingComp
     {
-        private CompProperties_Reincarnate Props => (CompProperties_Reincarnate)props;
+        private CompProperties.Reincarnate Props => (CompProperties.Reincarnate)props;
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             if(Props.amount > 0)
