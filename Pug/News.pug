@@ -17,6 +17,13 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("1.1.2.0", 
+    ["Organ Rebalance", [
+      "Typhon Organs no longer considered a small volume item, and recipes are adjusted to account for that.",
+      "Skilltrainers require 50 Organs, while Psytrainers require 75.",
+      "Thanks for the report, a.k!"
+    ]]
+  )
   +UpdateNews("1.1.1.0", 
     ["Cystoids!", [
       "Cystoids are small spikey creatures that act as mobile mines! When they near a target, they explode!",
