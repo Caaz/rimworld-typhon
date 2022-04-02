@@ -14,7 +14,6 @@ namespace Typhon.Comps
         }
         public override void CompTickRare()
         {
-            Log.Message("Doin the thing");
             if (GenClosest.ClosestThingReachable(
                 parent.Position, 
                 parent.Map, 
