@@ -44,8 +44,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\Comps\Hivemind.cs" />
     <Compile Include="Source\CompProperties\Hivemind.cs" />
-    <Compile Include="Source\CompProperties\Reincarnate.cs" />
-    <Compile Include="Source\Comps\Reincarnate.cs" />
+    <Compile Include="Source\CompProperties\ExplosiveNest.cs" />
+    <Compile Include="Source\Comps\ExplosiveNest.cs" />
     <Compile Include="Source\HediffCompProperties\CreateWeaver.cs" />
     <Compile Include="Source\HediffComp\CreatesWeaver.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_MimicCrash.cs" />

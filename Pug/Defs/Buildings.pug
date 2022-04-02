@@ -6,15 +6,16 @@
   rotatable false
   pathCost 42
   blockWind true
-  tickerType Normal
+  tickerType Rare
   passability PassThroughOnly
   statBases
     MaxHitPoints 1
     Flammability 1
   +Comps()
-    li(Class="Typhon.CompProperties.Reincarnate")
+    li(Class="Typhon.CompProperties.ExplosiveNest")
       pawnKind Typhon_Cystoid
       amount 5
+      radius 5
     li(Class="CompProperties_HeatPusher")
       heatPerSecond 5
       heatPushMaxTemperature 40
