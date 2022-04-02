@@ -11,22 +11,11 @@ namespace Typhon
 {
     public class Mod : ModBase
     {
-        internal static SettingHandle<bool> neuromodRetexture;
         public override void DefsLoaded()
         {
-            CreateSettings();
+            Retextures.Initialize();
+            Retextures.CreateSettings(Settings);
             CreateRecipes();
-            UpdateNeuromodTextures();
-        }
-
-        private void CreateSettings()
-        {
-            neuromodRetexture = Settings.GetHandle<bool>(
-                "neuromodRetexture",
-                "Retexture trainers",
-                "Use a prey-themed texture for skilltrainers and psytrainers (Requires reload of save)",
-                false);
-            neuromodRetexture.ValueChanged += handle => UpdateNeuromodTextures();
         }
         private void CreateRecipes()
         {
@@ -85,27 +74,6 @@ namespace Typhon
                 {
                     Logger.Message("Failed to create trainer for " + thingDef);
                 }
-            }
-        }
-        private void UpdateNeuromodTextures()
-        {
-            GraphicData graphicData = new GraphicData
-            {
-                texPath = (neuromodRetexture) ? "Things/Item/Typhon_Neuromod" : "Things/Item/Special/MechSerumNeurotrainer",
-                graphicClass = typeof(Graphic_Single)
-            };
-
-            foreach (ThingDef thingDef in DefDatabase<ThingDef>.AllDefs)
-            {
-                try
-                {
-                    if (
-                        thingDef.thingCategories.Contains(ThingCategoryDefOf.NeurotrainersPsycast)
-                        || thingDef.thingCategories.Contains(ThingCategoryDefOf.NeurotrainersSkill)
-                    )
-                        thingDef.graphicData = graphicData;
-                }
-                catch (Exception) { }
             }
         }
     }

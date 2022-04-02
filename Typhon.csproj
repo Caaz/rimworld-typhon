@@ -62,6 +62,7 @@
     <Compile Include="Source\JobGiver\MimicMultiply.cs" />
     <Compile Include="Source\Mod.cs" />
     <Compile Include="Source\Patches.cs" />
+    <Compile Include="Source\Retextures.cs" />
     <Compile Include="Source\Utilities\CoverFinder.cs" />
     <Compile Include="Source\Utilities\TyphonDefOf.cs" />
     <Compile Include="Source\Utilities\TyphonUtility.cs" />
