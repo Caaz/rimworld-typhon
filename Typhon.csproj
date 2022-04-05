@@ -42,13 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\Comps\CompHivemind.cs" />
-    <Compile Include="Source\Comps\CompProperties_Hivemind.cs" />
+    <Compile Include="Source\Comps\Hivemind.cs" />
+    <Compile Include="Source\CompProperties\Hivemind.cs" />
+    <Compile Include="Source\CompProperties\ExplosiveNest.cs" />
+    <Compile Include="Source\Comps\ExplosiveNest.cs" />
     <Compile Include="Source\HediffCompProperties\CreateWeaver.cs" />
     <Compile Include="Source\HediffComp\CreatesWeaver.cs" />
     <Compile Include="Source\Incidents\IncidentWorker_MimicCrash.cs" />
+    <Compile Include="Source\JobDriver\CreateCystoid.cs" />
     <Compile Include="Source\JobDriver\CreateWeaver.cs" />
-    <Compile Include="Source\JobDriver\Operator\Medical.cs" />
+    <Compile Include="Source\JobDriver\CystoidAttack.cs" />
     <Compile Include="Source\JobDriver\MimicBuilding.cs" />
     <Compile Include="Source\JobDriver\CreatePhantom.cs" />
     <Compile Include="Source\JobDriver\MimicMultiply.cs" />
@@ -60,6 +63,8 @@
     <Compile Include="Source\JobGiver\MimicMultiply.cs" />
     <Compile Include="Source\Mod.cs" />
     <Compile Include="Source\Patches.cs" />
+    <Compile Include="Source\Retextures.cs" />
+    <Compile Include="Source\Utilities\CoverFinder.cs" />
     <Compile Include="Source\Utilities\TyphonDefOf.cs" />
     <Compile Include="Source\Utilities\TyphonUtility.cs" />
   </ItemGroup>

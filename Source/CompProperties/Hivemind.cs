@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace Typhon
+namespace Typhon.CompProperties
 {
-    internal class CompProperties_Hivemind : CompProperties
+    internal class Hivemind : Verse.CompProperties
     {
         public string hivemindSignalTag = "Typhon.Hivemind";
-        public CompProperties_Hivemind()
+        public Hivemind()
         {
-            compClass = typeof(CompHivemind);
+            compClass = typeof(Comps.Hivemind);
         }
         public override IEnumerable<string> ConfigErrors(ThingDef parentDef)
         {

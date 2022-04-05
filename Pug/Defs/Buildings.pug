@@ -1,0 +1,21 @@
++ThingDef("Typhon_Cystoid_Nest", "cystoid nest")(ParentName="BuildingNaturalBase")
+  description A thin nest-like structure which contains and produces cystoid typhon.
+  thingClass Building
+  +GraphicData("Typhon/Cystoid/Nest", "(255,255,255)", 1, "Graphic_Single")
+  altitudeLayer Building
+  rotatable false
+  pathCost 42
+  blockWind true
+  tickerType Rare
+  passability PassThroughOnly
+  statBases
+    MaxHitPoints 1
+    Flammability 1
+  +Comps()
+    li(Class="Typhon.CompProperties.ExplosiveNest")
+      pawnKind Typhon_Cystoid
+      amount 5
+      radius 5
+    li(Class="CompProperties_HeatPusher")
+      heatPerSecond 5
+      heatPushMaxTemperature 40
