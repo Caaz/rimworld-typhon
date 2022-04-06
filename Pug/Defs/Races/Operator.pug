@@ -1,8 +1,11 @@
 include Mixins.pug
 
-+ThingDef("Typhon_Operator_Race", "operator")(ParentName="BasePawn")
++ThingDef("Typhon_Operator_Race", "operator")(ParentName="BaseMechanoid")
   description TODO
   soundImpactDefault BulletImpact_Metal
+  comps
+    li(Class="VFE.Mechanoids.CompProperties_Machine")
+      hoursActive 72
   statBases
     PsychicSensitivity 0.5
     ToxicSensitivity 0
