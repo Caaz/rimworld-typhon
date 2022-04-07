@@ -17,9 +17,8 @@ mixin StandardThinkTree(defName)
 +StandardThinkTree("Typhon_Thinktree_Mimic")
   +ThinkNode("Typhon.JobGiver.MimicMultiply")
   +ThinkNode("Typhon.JobGiver.AttackPawn")
-  if enableWeaver
-    +ThinkNode("ThinkNode_ConditionalRandom", {chance:"0.05"})
-      +ThinkNode("Typhon.JobGiver.CreateWeaver")
+  +ThinkNode("ThinkNode_ConditionalRandom", {chance:"0.05"})
+    +ThinkNode("Typhon.JobGiver.CreateWeaver")
   +ThinkNode("Typhon.JobGiver.MimicBuilding")
   
 +StandardThinkTree("Typhon_Thinktree_Weaver")
