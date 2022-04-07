@@ -1,3 +1,4 @@
+include ../Mixins.pug
 Operation(Class="PatchOperationFindMod")
   mods
     li Vanilla Expanded Framework
@@ -6,6 +7,12 @@ Operation(Class="PatchOperationFindMod")
       li(Class="PatchOperationAdd")
         xpath /Defs
         value
+          if enableOperators
+            include Operators/Bodies.pug
+            include Operators/Races.pug
+            include Operators/Pawnkinds.pug
+            include Operators/ThinkTrees.pug
+            include Operators/Buildings.pug
           #{"MVCF.ModDef"}
             defName Caaz_Typhon
             label Typhon
@@ -15,6 +22,11 @@ Operation(Class="PatchOperationFindMod")
       li(Class="PatchOperationAdd")
         xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]
         value
+          comps
+            li(Class="AnimalBehaviours.CompProperties_Blink")
+              blinkInterval 1000
+              distance 2~10
+              blinkWhenManhunter true
           verbs
             li
               verbClass Verb_Shoot
@@ -26,11 +38,3 @@ Operation(Class="PatchOperationFindMod")
               soundCast Shot_ChargeBlaster
               soundCastTail GunTail_Heavy
               muzzleFlashScale 0
-      li(Class="PatchOperationAdd")
-        xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]
-        value
-          comps
-            li(Class="AnimalBehaviours.CompProperties_Blink")
-              blinkInterval 1000
-              distance 2~10
-              blinkWhenManhunter true
