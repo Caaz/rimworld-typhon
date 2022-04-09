@@ -1,7 +1,8 @@
-include Mixins.pug
-+ThingDef("Typhon_Phantom_Race", "phantom")(ParentName="TyphonRaceBase")
-  description Phantoms are humanoid Typhon that Weavers are able to create from human corpses. Phantoms exhibit human-like behavioral patterns in the form of curiously observing their environment and have even been shown capable of mimicking human speech. They are even able to repeat phrases not heard by the humans used to create the phantom.
-  +TyphonRace("Human", "Typhon_Thinktree_Phantom")
++ThingDef("Typhon_Phantom_Race", "phantom")(ParentName="TyphonThingBase")
+  description Typhon taking the shape of a tall humanoid figure, Phantoms are what you get when a Weaver gets a hold of a dead or unconcious human body. Having the ability to zip and teleport short distances and project psychic pulses of energy towards foes from afar, these nimble Typhon can be deadly even on their own. Extreme caution is adviced.
+  race
+    body Human
+    thinkTreeMain Typhon_Thinktree_Phantom
     baseBodySize 1
     lifeStageAges
       +LifeStage("AnimalAdult", 0)

@@ -1,7 +1,8 @@
-include Mixins.pug
-+ThingDef("Typhon_Weaver_Race", "weaver")(ParentName="TyphonRaceBase")
-  description Weavers are an advanced form of Typhon Mimic that has, through unknown means, been selected for transformation into a Weaver. Weavers get their name from their production of Coral, a luminescent web-like substance that hangs in the air wherever Weavers are found. Weavers are able to reanimate the husks of humans who have been killed, turning the husks into Phantoms.
-  +TyphonRace("Typhon_Weaver_Body", "Typhon_Thinktree_Weaver")
++ThingDef("Typhon_Weaver_Race", "weaver")(ParentName="TyphonThingBase")
+  description What's known about this Typhon is how it's been seen to create these strand like essence, Coral; weaving it into beautiful looking fields of yellow almost transparent strings, hence the name. Cystoids have been noted to be around this Typhon while it's also seen to emit a shield-like field around itself that projects unnerving thoughts into a weak-minded individuals head, causing them to tremble or flee from fear. One last observation spotted is their ability to create Typhon with a humanoid figure from bodies of dead or unconcious people and the ability to create other forms of Typhon from the Mimics.  Word of advice: make sure you stop them from doing so and exercise caution.
+  race
+    body Typhon_Weaver_Body
+    thinkTreeMain Typhon_Thinktree_Weaver
     baseBodySize 1.1
     lifeStageAges
       +LifeStage("AnimalAdult", 0)
