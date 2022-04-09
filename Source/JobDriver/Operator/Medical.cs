@@ -1,5 +1,4 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
@@ -40,7 +39,6 @@ namespace Typhon.JobDriver.Operator
 				return ((job.playerForced || pawn.Faction != Faction.OfPlayer) && Deliveree.health.HasHediffsNeedingTend()) ? JobCondition.Ongoing : JobCondition.Succeeded;
 			});
 			this.FailOnAggroMentalState(TargetIndex.A);
-			Toil reserveMedicine = null;
 			PathEndMode interactionCell = PathEndMode.None;
 			if (Deliveree == pawn)
 			{
