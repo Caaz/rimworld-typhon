@@ -1,10 +1,11 @@
-include Mixins.pug
-+ThingDef("Typhon_Cystoid_Race", "cystoid")(ParentName="TyphonRaceBase")
++ThingDef("Typhon_Cystoid_Race", "cystoid")(ParentName="TyphonThingBase")
   description Lesser species of Typhon known to accumulate in nests and seen to spawn from the Weavers. Not much of a threat on their own but can overwhelm one with their numbers. Extremely volatile and explodes upon contact with any moving object, caution adviced when dealing with groups.
   statBases
       MaxHitPoints 1
       MoveSpeed 2
-  +TyphonRace("Typhon_Cystoid_Body", "Typhon_Thinktree_Cystoid")
+  race
+    body Typhon_Cystoid_Body
+    thinkTreeMain Typhon_Thinktree_Cystoid
     deathActionWorkerClass DeathActionWorker_SmallExplosion
     baseHealthScale .1
     baseBodySize .1

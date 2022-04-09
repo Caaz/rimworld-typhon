@@ -1,13 +1,16 @@
-include Mixins.pug
-+ThingDef("Typhon_Mimic", "mimic")(ParentName="TyphonRaceBase" Name="TyphonMimicRace")
++ThingDef("Typhon_Mimic", "mimic")(ParentName="TyphonThingBase" Name="TyphonThingMimic")
   description The first type of Typhon ever encountered by human life, these small agile creatures possess the ability to shape-shift into almost every single object, from small to medium sizes. How they do it is still up for debate but for all we know their organs and matter are quite valuable in the rim due to it's use in creating Neuro and Psytrainers. Still, for their size they can be dangerous so caution is adviced.
-  +TyphonRace("Typhon_Mimic", "Typhon_Thinktree_Mimic")
+  receivesSignals true
+  +Comps("Typhon.CompProperties.Hivemind")
+  statBases
+    MoveSpeed 10
+  race
+    body Typhon_Mimic
+    thinkTreeMain Typhon_Thinktree_Mimic
     baseBodySize .2
     lifeStageAges
       +LifeStage("AnimalAdult", 0)
         +LifeStageSounds("Typhon_Mimic_Wounded", "Typhon_Mimic_Death", "Typhon_Mimic_Call", "Typhon_Mimic_Angry")
-  receivesSignals true
-  +Comps("Typhon.CompProperties.Hivemind")
   tools
     +Tool("Appendage")
       +Capacities("Blunt")
@@ -31,6 +34,6 @@ include Mixins.pug
       ensureLinkedBodyPartsGroupAlwaysUsable true
       chanceFactor 0.2
       
-+ThingDef("Typhon_Mimic_Hidden")(ParentName="TyphonMimicRace")
++ThingDef("Typhon_Mimic_Hidden")(ParentName="TyphonThingMimic")
   selectable false
   hasTooltip false
