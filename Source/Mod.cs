@@ -1,6 +1,4 @@
-﻿using HarmonyLib;
-using HugsLib;
-using HugsLib.Settings;
+﻿using HugsLib;
 using HugsLib.Utils;
 using RimWorld;
 using System;
@@ -13,7 +11,6 @@ namespace Typhon
     {
         public override void DefsLoaded()
         {
-            Retextures.Initialize();
             Retextures.CreateSettings(Settings);
             CreateRecipes();
         }
