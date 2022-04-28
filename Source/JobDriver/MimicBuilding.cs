@@ -53,7 +53,7 @@ namespace Typhon.JobDriver
                 Building copy = (Building)ThingMaker.MakeThing(Copying.def, Copying.Stuff);
                 job.SetTarget(TargetIndex.B, copy);
                 bool placed = GenPlace.TryPlaceThing(Copy, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                if(!placed)
+                if (!placed)
                     EndJobWith(JobCondition.Errored);
             };
             mimic_toil.AddFinishAction(delegate
@@ -63,7 +63,7 @@ namespace Typhon.JobDriver
             });
             return mimic_toil;
         }
-        
+
         private void UpdateMimic(bool hidden)
         {
             PawnKindDef pawnKind = (hidden) ? TyphonDefOf.PawnKind.Typhon_Mimic_Hidden : TyphonDefOf.PawnKind.Typhon_Mimic;

@@ -38,5 +38,5 @@ namespace Typhon.JobDriver
             newReq.wantCoverFromTarget = true;
             return CoverFinder.TryFindCastPosition(newReq, 14f, out dest);
         }
-	}
+    }
 }
