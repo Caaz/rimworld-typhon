@@ -38,9 +38,9 @@ namespace Typhon
             if (target == null) return null;
             Verb verb = typhon.TryGetAttackVerb(target, !typhon.IsColonist);
             bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
-            if(typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateCystoid, target);
-            Job attackJob = JobMaker.MakeJob((isMelee)? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
+            Job attackJob = JobMaker.MakeJob((isMelee) ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
             attackJob.maxNumStaticAttacks = 2;
             attackJob.killIncappedTarget = true;
             attackJob.expiryInterval = Rand.Range(420, 900);

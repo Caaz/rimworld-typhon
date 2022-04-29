@@ -4,15 +4,22 @@
   bleedRate 0
 
 +BodyPartDef("TyphonThorax", "thorax")(ParentName="TyphonPart")
+  hitPoints 100
+    
++BodyPartDef("TyphonCore", "core")(ParentName="TyphonPart")
+  mbCore", "ManipulationLimbCore")
+
 +BodyPartDef("TyphonMimicLeg", "leg")(ParentName="TyphonPart")
   frostbiteVulnerability 0.01
+  hitPoints 20
   +Tags("MovingLimbCore", "ManipulationLimbCore")
   
-+BodyPartDef("TyphonTendril", "tendril", 30)(ParentName="TyphonPart")
++BodyPartDef("TyphonTendril", "tendril")(ParentName="TyphonPart")
   frostbiteVulnerability 0.01
+  hitPoints 100
   +Tags("MovingLimbCore", "ManipulationLimbCore")
   
-+BodyPartDef("TyphonSpike", "spike", 30)(ParentName="TyphonPart")
++BodyPartDef("TyphonSpike", "spike")(ParentName="TyphonPart")
   frostbiteVulnerability 0.01
   +Tags("MovingLimbCore", "ManipulationLimbCore")
   
