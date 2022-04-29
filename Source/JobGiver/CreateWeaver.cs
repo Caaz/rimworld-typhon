@@ -8,6 +8,7 @@ namespace Typhon.JobGiver
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
+            if (GetWeavers(pawn.Map).Count > 2) return null;
             List<Pawn> mimics = GetMimics(pawn.Position, pawn.Map, 7f);
             return (mimics.Count > 7) ? JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateWeaver) : null;
         }
@@ -20,6 +21,10 @@ namespace Typhon.JobGiver
                 list.Add(thing as Pawn);
             }
             return list;
+        }
+        private List<Thing> GetWeavers(Map map)
+        {
+            return map.listerThings.ThingsOfDef(TyphonDefOf.Thing.Typhon_Weaver_Race);
         }
     }
 }
