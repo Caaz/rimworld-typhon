@@ -17,6 +17,14 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.0.1.0", 
+    ["Weaver Rebalance and Typhon ThinkNode stuff", [
+      "Typhon that wind up ignored by the player start to flood the map, and that's not entirely desired.",
+      "Added a jobgiver for all typhon (excxept mimics) to leave the map. This should ensure typhon don't flood the map in a situation you can't get rid of them.",
+      "Added a bit more health for weaver's tendrils. This should ensure they don't get downed so quickly.",
+      "Thanks Conspicuous Coyote! More work to be done for dealing with downed typhon (since they don't bleed out). Ideas are welcome!"
+    ]]
+  )
   +UpdateNews("2.0.0.0",
     ["Oh boy, v2", [
       "Upped the major version to 2, because I transitioned the project from visual studio to VSCode.",
