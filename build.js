@@ -19,6 +19,8 @@ fs.readdir('Pug', (error, files) => {
             let xmlName = name + '/' + name + '.xml';
             if (name === 'csproj') {
                 xmlName = data.assemblyName + '.csproj';
+            } else if (name === 'Wiki') {
+                xmlName = data.assemblyName + '.html';
             } else {
                 fs.mkdir(name, _ => { });
             }
