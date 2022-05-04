@@ -7,3 +7,6 @@ obj
 # Built things
 *.xml
 *.dll
+
+# node stuff
+node_modules
