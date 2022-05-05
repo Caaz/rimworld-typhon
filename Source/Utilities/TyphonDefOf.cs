@@ -72,5 +72,14 @@ namespace Typhon.TyphonDefOf
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));
         }
     }
+    [DefOf]
+    internal static class Incident
+    {
+        public static IncidentDef MimicCrash;
+        static Incident()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(IncidentDefOf));
+        }
+    }
 #pragma warning restore 0649
 }

@@ -85,7 +85,7 @@ namespace Typhon
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 10f;
             return 5f;
         }
-        private static bool IsTyphon(Pawn pawn)
+        public static bool IsTyphon(Pawn pawn)
         {
             return pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
         }
