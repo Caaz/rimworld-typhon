@@ -6,11 +6,15 @@
         "version": "2.1.0.0",
         "packageId": "caaz.typhon",
         "namespace": "Typhon",
-        "assemblyName": "Typhon"
+        "assemblyName": "Typhon",
+        "feature_flags": {}
     },
     "dev": {
         "name": "Typhon Dev",
         "description": "Typhon mod, development mode!",
-        "packageId": "caaz.typhon.dev"
+        "packageId": "caaz.typhon.dev",
+        "feature_flags": {
+            "storyteller": true
+        }
     }
 }

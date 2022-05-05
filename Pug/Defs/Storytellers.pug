@@ -1,9 +1,10 @@
-- name = "Elvis"
-StoryTellerDef(ParentName="BaseStoryteller")
-    defName Typhon_Storyteller_Empath
-    label #{name} Empathetic
-    description #{name} watches your choices and responds to them. He'll give you challenges that push your ethics and morals, and reward you depending on how you respond to them.
-    portraitLarge Typhon/Storyteller/Storyteller
-    portraitTiny Typhon/Storyteller/StorytellerTiny
-    listOrder 200
-    +Comps("StorytellerCompProperties_ClassicIntro", "Typhon.StorytellerCompProperties.EnsureTyphonPresence")
+if feature_flags.storyteller
+    - name = "Elvis"
+    StoryTellerDef(ParentName="BaseStoryteller")
+        defName Typhon_Storyteller_Empath
+        label #{name} Empathetic
+        description #{name} watches your choices and responds to them. He'll give you challenges that push your ethics and morals, and reward you depending on how you respond to them.
+        portraitLarge Typhon/Storyteller/Storyteller
+        portraitTiny Typhon/Storyteller/StorytellerTiny
+        listOrder 200
+        +Comps("StorytellerCompProperties_ClassicIntro", "Typhon.StorytellerCompProperties.EnsureTyphonPresence")
