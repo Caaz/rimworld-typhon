@@ -8,10 +8,10 @@ mixin Dependency(packageId, displayName, steamWorkshopUrl)
 
 doctype xml
 ModMetaData
-  name Typhon Dev
-  description Adds Typhon from Prey (2015). For a full list of features, view the Workshop page!
-  author Caaz
-  packageId caaz.typhon.dev
+  name=name
+  description=description
+  author=author
+  packageId=packageId
   +SupportedVersions("1.3")
   +LoadAfter("UnlimitedHugs.HugsLib", "OskarPotocki.VanillaFactionsExpanded.Core")
   modDependencies
