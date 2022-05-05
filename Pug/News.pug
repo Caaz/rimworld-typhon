@@ -17,6 +17,39 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.0.1.0", 
+    ["Weaver Rebalance and Typhon ThinkNode stuff", [
+      "Typhon that wind up ignored by the player start to flood the map, and that's not entirely desired.",
+      "Added a jobgiver for all typhon (excxept mimics) to leave the map. This should ensure typhon don't flood the map in a situation you can't get rid of them.",
+      "Added a bit more health for weaver's tendrils. This should ensure they don't get downed so quickly.",
+      "Thanks Conspicuous Coyote! More work to be done for dealing with downed typhon (since they don't bleed out). Ideas are welcome!"
+    ]]
+  )
+  +UpdateNews("2.0.0.0",
+    ["Oh boy, v2", [
+      "Upped the major version to 2, because I transitioned the project from visual studio to VSCode.",
+      "What does this mean for the players? Almost nothing. But it makes my life easier, now I can code pug and C# in the same editor!"
+    ]],
+    ["Operator Work", [
+      "Some work on medical operators has been done. Proof of concept works, but it's not enabled for the full release yet.",
+      "The good news is, things are working very well, and the only thing holding me back is that I need a texture for the operator dispenser."
+    ]],
+    ["Refactored Typhon Race Defs", [
+      "They now inherit from a base abstract class, TyphonThingBase.",
+      "This should allow people to easily add custom typhon, should they want to."
+    ]],
+    ["Buffed Typhon!", [
+      "Typhon now have more health, and it's likely I need to scale some more.",
+      "Mimics now move faster. I accidentally buffed mimics twice between the last release and now, so we'll so how that works."
+    ]],
+    ["New Typhon Descriptions", [
+      "In general, I am bad at writing. 4Jan/Fluffwaffle has written up some descriptions which are now used in the mod huge thanks to them!"
+    ]],
+    ["Added Fluffwaffle's textures, then removed them!", [
+      "Going forward, I won't add retextures for random things. Neuromod retexture option will stay, but making an optional retexture for the prey guns would require too much of a system for me to care about",
+      "I think it's much better to leave it to another mod that can implement it in a more simple way! Check out Fluffwaffle's mods on steam!"
+    ]]
+  )
   +UpdateNews("1.1.2.0", 
     ["Organ Rebalance", [
       "Typhon Organs no longer considered a small volume item, and recipes are adjusted to account for that.",

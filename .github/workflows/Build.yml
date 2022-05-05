@@ -10,29 +10,19 @@ on:
 jobs:
   build:
     runs-on: windows-2019
-
     steps:
     - uses: actions/checkout@v2
-
-    - run: npm install pug-cli -g
-
-    - run: dotnet build
-
-    - uses: rvolo/xml-replace-action@v0.3
+    - name: Read Metadata
+      uses: antifree/json-to-variables@v1.0.1
       with:
-        filepath: "About/About.xml"
-        xpath: "/ModMetaData/packageId/text()"
-        replace: "caaz.typhon"
-
-    - uses: rvolo/xml-replace-action@v0.3
-      with:
-        filepath: "About/About.xml"
-        xpath: "/ModMetaData/name/text()"
-        replace: "Typhon"
-
+        filename: 'metadata.json'
+        prefix: metadata
+    - run: npm install
+    - run: npm run buildpug production
+    - run: npm run buildsource
     - uses: actions/upload-artifact@v2
       with:
-        name: Typhon
+        name: ${{ env.metadata_default_name }}
         path: |
           About
           Assemblies
