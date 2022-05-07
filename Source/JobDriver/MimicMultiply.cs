@@ -35,9 +35,18 @@ namespace Typhon.JobDriver
                 for (int i = 0; i < mimicAmount - 1; i++)
                     GenSpawn.Spawn(TyphonUtility.GenerateMimic(), pawn.Position, pawn.Map);
 
-            CompRottable comp = target.GetComp<CompRottable>();
-            if (comp != null)
-                comp.RotProgress = comp.PropsRot.TicksToDessicated;
+            ProcessCorpse(target);
+        }
+        private void ProcessCorpse(Corpse corpse)
+        {
+            if (Mod.mimicsDestroyCorpses)
+                corpse.Destroy();
+            else
+            {
+                CompRottable comp = corpse.GetComp<CompRottable>();
+                if (comp != null)
+                    comp.RotProgress = comp.PropsRot.TicksToDessicated;
+            }
         }
     }
 }
