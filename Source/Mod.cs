@@ -1,4 +1,5 @@
 ﻿using HugsLib;
+using HugsLib.Settings;
 using HugsLib.Utils;
 using RimWorld;
 using System;
@@ -9,10 +10,20 @@ namespace Typhon
 {
     public class Mod : ModBase
     {
+        internal static SettingHandle<bool> mimicsDestroyCorpses;
         public override void DefsLoaded()
         {
-            Retextures.CreateSettings(Settings);
+            CreateSettings();
             CreateRecipes();
+        }
+        private void CreateSettings()
+        {
+            Retextures.CreateSettings(Settings);
+            mimicsDestroyCorpses = Settings.GetHandle<bool>(
+                "mimicsDestroyCorpses",
+                "Mimics Destroy Corpses",
+                "Mimics will destroy corpses rather than desiccate them. This causes phantoms to be more rare, as they require corpses to spawn.",
+                false);
         }
         private void CreateRecipes()
         {

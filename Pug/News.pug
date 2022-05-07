@@ -17,6 +17,25 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.1.0", 
+    ["Mimic desiccation setting", [
+      "Mimics desiccating corpses seems to have caused a tps problem when there's a lot of corpses lying about. To combat this, a new setting has been added to have mimics completely destroy corpses instead!",
+      "Thanks shane_357 for suggesting the feature!"
+    ]],
+    ["Weavers no longer require desiccated corpses to create Phantoms", [
+      "As a result of less desiccated corpses, weaver phantom genesis job has been adjusted to not require a desiccated corpse.",
+      "In terms of Prey lore, this seems to be accurate."
+    ]],
+    ["Hidden Mimic TickerType Updated to Rare", [
+      "shane_357's request suggests there's also a lot of mimics on the map, likely hidden. A quick easy win here to improve TPS is to change the tickertype of hidden mimics to rare!",
+      "This should, in theory help improve performance for hidden mimics. While I do try my best to test performance myself, it's a very difficult thing to gauge on my end.",
+      "If anyone has any good ways of measuring performance of things in a rimworld mod, let me know and I'll do what I can to improve my workflow!"
+    ]],
+    ["New build system, again!", [
+      "Over the past few days I've been working on a new mod-template repository, so I can start working on new, half baked mod ideas quicker!",
+      "I've transitioned this repo to using that mod template, which includes some cool features. If you're interested, I would recommend checking out the repo and my discord, and I'll tell you all about it."
+    ]]
+  )
   +UpdateNews("2.0.1.0", 
     ["Weaver Rebalance and Typhon ThinkNode stuff", [
       "Typhon that wind up ignored by the player start to flood the map, and that's not entirely desired.",
