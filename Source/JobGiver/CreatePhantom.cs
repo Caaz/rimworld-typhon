@@ -10,8 +10,7 @@ namespace Typhon.JobGiver
         {
             Corpse target = (Corpse)GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.Corpse), PathEndMode.Touch, TraverseParms.For(pawn), 10);
             if (
-                target.GetRotStage() != RotStage.Dessicated
-                || !pawn.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly)
+                !pawn.CanReserveAndReach(target, PathEndMode.Touch, Danger.Deadly)
                 || !(target.InnerPawn.RaceProps.FleshType == FleshTypeDefOf.Normal)
                 || !target.InnerPawn.RaceProps.Humanlike
             ) return null;
