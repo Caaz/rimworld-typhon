@@ -40,3 +40,18 @@
     damageDef Thump
     damageAmountBase 15
     speed 80
+
+if feature_flags.storyteller
+  HistoryAutoRecorderDef
+    defName Typhon_History_Goodwill
+    label Goodwill
+    graphColor (1,1,1,1)
+    recordTicksFrequency= 60000/10
+    workerClass Typhon.HistoryAutoRecorderWorker.Goodwill
+    valueFormat {0}
+
+  HistoryAutoRecorderGroupDef
+    defName Typhon_History
+    label Typhon History
+    historyAutoRecorderDefs
+      li Typhon_History_Goodwill

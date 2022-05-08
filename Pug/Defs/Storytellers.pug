@@ -1,10 +1,100 @@
 if feature_flags.storyteller
-    - name = "Elvis"
-    StoryTellerDef(ParentName="BaseStoryteller")
-        defName Typhon_Storyteller_Empath
-        label #{name} Empathetic
-        description #{name} watches your choices and responds to them. He'll give you challenges that push your ethics and morals, and reward you depending on how you respond to them.
-        portraitLarge Typhon/Storyteller/Storyteller
-        portraitTiny Typhon/Storyteller/StorytellerTiny
-        listOrder 200
-        +Comps("StorytellerCompProperties_ClassicIntro", "Typhon.StorytellerCompProperties.EnsureTyphonPresence")
+  - name = "Elvis"
+  StoryTellerDef(ParentName="BaseStoryteller")
+    defName Typhon_Storyteller_Empath
+    label #{name} Empathetic
+    description #{name} watches your choices and responds to them. He'll give you challenges that push your ethics and morals, and reward you depending on how you respond to them.
+    portraitLarge Typhon/Storyteller/Storyteller
+    portraitTiny Typhon/Storyteller/StorytellerTiny
+    listOrder 200
+    +Comps("Typhon.StorytellerCompProperties.EnsureTyphonPresence")
+      li(Class="StorytellerCompProperties_RandomMain")
+        allowedTargetTags
+          li Map_PlayerHome
+        minDaysPassed 1
+        mtbDays 1.5
+        maxThreatBigIntervalDays 20
+        minIncChancePopulationIntentFactor 0.2
+        randomPointsFactorRange 0.5~1.5
+        skipThreatBigIfRaidBeacon true
+        categoryWeights
+          Misc 2.5
+          ThreatBig 1.5
+          OrbitalVisitor 1
+          FactionArrival 2
+          ThreatSmall 1
+          ShipChunkDrop 1
+      li(Class="StorytellerCompProperties_Disease")
+        category DiseaseHuman
+        minDaysPassed 10
+      li(Class="StorytellerCompProperties_Disease")
+        category DiseaseAnimal
+        minDaysPassed 20
+      li(Class="StorytellerCompProperties_ThreatsGenerator")
+        allowedTargetTags 
+          li Map_RaidBeacon
+        parms
+          allowedThreats Raids
+          onDays 1
+          offDays 4
+          minSpacingDays 1
+          numIncidentsRange 1~2
+          minThreatPoints 500
+      li(Class="StorytellerCompProperties_FactionInteraction")
+        incident RaidFriendly
+        baseIncidentsPerYear 10
+        minSpacingDays 2
+        fullAlliesOnly true
+        minDanger High
+      li(Class="StorytellerCompProperties_CategoryIndividualMTBByBiome")
+        category Misc
+        allowedTargetTags
+          li Caravan
+          li Map_TempIncident
+      li(Class="StorytellerCompProperties_CategoryIndividualMTBByBiome")
+        category ThreatSmall
+        applyCaravanVisibility true
+        allowedTargetTags
+          li Caravan
+          li Map_TempIncident
+      li(Class="StorytellerCompProperties_CategoryIndividualMTBByBiome")
+        category ThreatBig
+        applyCaravanVisibility true
+        allowedTargetTags
+          li Caravan
+          li Map_TempIncident
+      li(Class="StorytellerCompProperties_RandomQuest")
+        category GiveQuest
+        allowedTargetTags
+          li World
+        onDays 10
+        numIncidentsRange 1
+        acceptFractionByDaysPassedCurve
+          points
+            li (8, 0)
+            li (15, 1)
+        minSpacingDays 1
+        disableIfAnyModActive
+          li Ludeon.RimWorld.Royalty
+      li(Class="StorytellerCompProperties_RandomQuest")
+        category GiveQuest
+        allowedTargetTags
+          li World
+        onDays 12
+        numIncidentsRange 1~3
+        acceptFractionByDaysPassedCurve
+          points
+            li (8, 0)
+            li (15, 1)
+        minSpacingDays 1
+        enableIfAnyModActive
+          li Ludeon.RimWorld.Royalty
+      li(Class="StorytellerCompProperties_CategoryMTB")
+        category Misc
+        allowedTargetTags 
+          li World
+        minDaysPassed 1
+        mtbDays 15
+      li(Class="StorytellerCompProperties_Triggered")
+        incident StrangerInBlackJoin
+        delayTicks 180
