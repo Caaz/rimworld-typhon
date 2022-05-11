@@ -1,5 +1,5 @@
 if feature_flags.storyteller
-  - name = "Elvis"
+  - name = "Emmeth"
   StoryTellerDef(ParentName="BaseStoryteller")
     defName Typhon_Storyteller_Empath
     label #{name} Empathetic
@@ -8,7 +8,7 @@ if feature_flags.storyteller
     portraitTiny Typhon/Storyteller/StorytellerTiny
     listOrder 200
     +Comps("Typhon.StorytellerCompProperties.EnsureTyphonPresence")
-      li(Class="StorytellerCompProperties_RandomMain")
+      li(Class="Typhon.StorytellerCompProperties.RandomWithEmpathy")
         allowedTargetTags
           li Map_PlayerHome
         minDaysPassed 1
