@@ -19,10 +19,14 @@ namespace Typhon
         [HarmonyPatch(typeof(GenHostility), nameof(GenHostility.HostileTo), new Type[] { typeof(Thing), typeof(Thing) })]
         class GenHostilityHostileTo
         {
+            static bool IsHiddenMimic(Thing thing)
+            {
+                Pawn pawn = thing as Pawn;
+                return ((pawn != null) && (pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Mimic_Hidden));
+            }
             static void Postfix(Thing a, Thing b, ref bool __result)
             {
-                Pawn pawn = a as Pawn;
-                if ((pawn != null) && (pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Mimic_Hidden))
+                if (GenHostilityHostileTo.IsHiddenMimic(a) || GenHostilityHostileTo.IsHiddenMimic(b))
                 {
                     __result = false;
                 }
