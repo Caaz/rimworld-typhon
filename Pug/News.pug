@@ -17,6 +17,11 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.2.0", 
+    ["Bugfix - Hidden Mimic Hostility Check", [
+      "Issue #104, the hostility check previously didn't count both arguments of the function, now it does.",
+      "What this means for players is, nothing should be able to \"See\" hidden mimics. This includes turrets and raiders."
+    ]])
   +UpdateNews("2.1.1.0", 
     ["Mimic desiccation setting", [
       "Mimics desiccating corpses seems to have caused a tps problem when there's a lot of corpses lying about. To combat this, a new setting has been added to have mimics completely destroy corpses instead!",
