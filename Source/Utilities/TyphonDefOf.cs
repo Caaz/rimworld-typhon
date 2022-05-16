@@ -9,6 +9,8 @@ namespace Typhon.TyphonDefOf
     {
         public static Verse.ThingDef Typhon_Mimic;
         public static Verse.ThingDef Typhon_Mimic_Hidden;
+        public static Verse.ThingDef Typhon_Greater_Mimic_Race;
+        public static Verse.ThingDef Typhon_Greater_Mimic_Hidden_Race;
         public static Verse.ThingDef Typhon_Weaver_Race;
         public static Verse.ThingDef Typhon_Phantom_Race;
         public static Verse.ThingDef Typhon_Cystoid_Race;
@@ -37,6 +39,8 @@ namespace Typhon.TyphonDefOf
     {
         public static Verse.PawnKindDef Typhon_Mimic;
         public static Verse.PawnKindDef Typhon_Mimic_Hidden;
+        public static Verse.PawnKindDef Typhon_Greater_Mimic;
+        public static Verse.PawnKindDef Typhon_Greater_Mimic_Hidden;
         public static Verse.PawnKindDef Typhon_Weaver;
         public static Verse.PawnKindDef Typhon_Phantom;
         public static Verse.PawnKindDef Typhon_Cystoid;

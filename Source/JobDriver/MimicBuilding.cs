@@ -8,6 +8,17 @@ namespace Typhon.JobDriver
 {
     internal class MimicBuilding : Verse.AI.JobDriver
     {
+        private static PawnKindDef[] PawnKinds = new PawnKindDef[]
+        {
+                TyphonDefOf.PawnKind.Typhon_Mimic,
+                TyphonDefOf.PawnKind.Typhon_Mimic_Hidden,
+                TyphonDefOf.PawnKind.Typhon_Greater_Mimic,
+                TyphonDefOf.PawnKind.Typhon_Greater_Mimic_Hidden,
+        };
+        private bool IsGreater => (
+            (pawn.def == TyphonDefOf.Thing.Typhon_Greater_Mimic_Race)
+            || (pawn.def == TyphonDefOf.Thing.Typhon_Greater_Mimic_Hidden_Race)
+        );
         private Building Copying => (Building)job.GetTarget(TargetIndex.A).Thing;
         private Building Copy => (Building)job.GetTarget(TargetIndex.B).Thing;
         private int buildingHitPoints;
@@ -66,10 +77,9 @@ namespace Typhon.JobDriver
 
         private void UpdateMimic(bool hidden)
         {
-            PawnKindDef pawnKind = (hidden) ? TyphonDefOf.PawnKind.Typhon_Mimic_Hidden : TyphonDefOf.PawnKind.Typhon_Mimic;
-            ThingDef thing = (hidden) ? TyphonDefOf.Thing.Typhon_Mimic_Hidden : TyphonDefOf.Thing.Typhon_Mimic;
+            PawnKindDef pawnKind = PawnKinds[(IsGreater ? 2 : 0) + (hidden ? 1 : 0)];
             RegionListersUpdater.DeregisterInRegions(pawn, pawn.Map);
-            pawn.def = thing;
+            pawn.def = pawnKind.race;
             pawn.ChangeKind(pawnKind);
             pawn.Drawer.renderer.graphics.ResolveAllGraphics();
             RegionListersUpdater.RegisterInRegions(pawn, pawn.Map);

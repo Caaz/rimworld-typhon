@@ -1,0 +1,16 @@
++PawnKindDef("Typhon_Greater_Mimic", "Greater Mimic", "Typhon_Greater_Mimic_Race")(ParentName="AnimalKindBase" Name="TyphonKindGreaterMimicBase" Abstract="True")
+  defaultFactionType Typhon
+  combatPower 200
+  ecoSystemWeight 1
+
++PawnKindDef()(ParentName="TyphonKindGreaterMimicBase")
+  lifeStages
+    li
+      +BodyGraphicData("Typhon/GreaterMimic/GreaterMimic", "(255, 255, 255)", "0.7")
+      +DessicatedBodyGraphicData("Typhon/GreaterMimic/GreaterMimic", "(200, 200, 255)", "0.7")
+    
++PawnKindDef("Typhon_Greater_Mimic_Hidden", "Greater Mimic", "Typhon_Greater_Mimic_Hidden_Race")(ParentName="TyphonKindGreaterMimicBase")
+  lifeStages
+    li
+      +BodyGraphicData("Typhon/GreaterMimic/GreaterMimic", "(255, 255, 255, 0)", "0")
+      +DessicatedBodyGraphicData("Typhon/GreaterMimic/GreaterMimic", "(200,200,255)", "0")
