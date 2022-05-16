@@ -17,11 +17,22 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.3.0", 
+    ["Phantom Redesign", [
+      "I've heard the comments, and decided to learn some vector art stuff. Phantom is now redesigned, hopefully to more closely match an appearance you'd expect!",
+      "I've kept the skeletal motif, but I've tried to make the head more leaned forward, as we see in Prey."
+    ]],
+    ["Greater Mimics", [
+      "Greater Mimics are now in the mod! They're functionally identical to normal mimics, with a slight speed boost.",
+      "In the future, expect them to have a powerful attack that may immediately produce more mimics. The succ!"
+    ]]
+  )
   +UpdateNews("2.1.2.0", 
     ["Bugfix - Hidden Mimic Hostility Check", [
       "Issue #104, the hostility check previously didn't count both arguments of the function, now it does.",
       "What this means for players is, nothing should be able to \"See\" hidden mimics. This includes turrets and raiders."
-    ]])
+    ]]
+  )
   +UpdateNews("2.1.1.0", 
     ["Mimic desiccation setting", [
       "Mimics desiccating corpses seems to have caused a tps problem when there's a lot of corpses lying about. To combat this, a new setting has been added to have mimics completely destroy corpses instead!",
