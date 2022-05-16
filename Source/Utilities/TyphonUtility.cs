@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 using Verse.AI;
+using UnityEngine;
 
 namespace Typhon
 {
@@ -16,7 +17,7 @@ namespace Typhon
             typhon.health.RemoveAllHediffs();
             return typhon;
         }
-        public static Pawn GenerateMimic() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Mimic);
+        public static Pawn GenerateMimic() => GenerateTyphon(Random.Range(0.0f, 1.0f) > .2f ? TyphonDefOf.PawnKind.Typhon_Mimic : TyphonDefOf.PawnKind.Typhon_Greater_Mimic);
         public static Pawn GenerateWeaver() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Weaver);
         public static Pawn GenerateCystoid() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Cystoid);
         public static Pawn GeneratePhantom(Pawn from)
