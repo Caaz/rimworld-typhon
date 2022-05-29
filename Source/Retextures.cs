@@ -22,7 +22,7 @@ namespace Typhon
         {
             GraphicData graphicData = new GraphicData
             {
-                texPath = (neuromodRetexture) ? "Things/Item/Typhon_Neuromod" : "Things/Item/Special/MechSerumNeurotrainer",
+                texPath = (neuromodRetexture) ? "Typhon/Neuromod" : "Things/Item/Special/MechSerumNeurotrainer",
                 graphicClass = typeof(Graphic_Single)
             };
 
