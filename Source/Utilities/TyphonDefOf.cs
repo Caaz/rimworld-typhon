@@ -5,6 +5,15 @@ namespace Typhon.TyphonDefOf
 {
 #pragma warning disable 0649
     [DefOf]
+    internal static class Damage
+    {
+        public static Verse.DamageDef Typhon_ToxicExplosion;
+        static Damage()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(DamageDefOf));
+        }
+    }
+    [DefOf]
     internal static class Thing
     {
         public static Verse.ThingDef Typhon_Mimic;
