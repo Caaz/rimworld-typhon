@@ -17,6 +17,15 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.4.0", 
+    ["Cystoid Explosion Re-work", [
+      "Reworked how Cystoids explode, no longer will they burn your house down, but they will do toxic damage like they do in prey!"
+    ]],
+    ["Tech-Debt Work", [
+      "Moved neuromod textures to a Typhon folder",
+      "Updated the preview images."
+    ]]
+  )
   +UpdateNews("2.1.3.0", 
     ["Phantom Redesign", [
       "I've heard the comments, and decided to learn some vector art stuff. Phantom is now redesigned, hopefully to more closely match an appearance you'd expect!",
