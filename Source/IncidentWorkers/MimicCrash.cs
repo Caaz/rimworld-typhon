@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace Typhon
+namespace Typhon.IncidentWorkers
 {
-    internal class IncidentWorker_MimicCrash : IncidentWorker
+    internal class MimicCrash : IncidentWorker
     {
         protected override bool TryExecuteWorker(IncidentParms parms)
         {

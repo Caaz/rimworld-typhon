@@ -22,7 +22,7 @@ namespace Typhon
             static bool IsHiddenMimic(Thing thing)
             {
                 Pawn pawn = thing as Pawn;
-                return ((pawn != null) && (pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Mimic_Hidden));
+                return ((pawn != null) && ((pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Mimic_Hidden) || (pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Greater_Mimic_Hidden)));
             }
             static void Postfix(Thing a, Thing b, ref bool __result)
             {

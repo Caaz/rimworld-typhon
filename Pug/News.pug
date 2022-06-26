@@ -17,6 +17,18 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.5.0", 
+    ["New Typhon Event - Herd", [
+      "Typhon can now wander in from the edges of maps! No longer will you be saved by shields!",
+      "Shout out to 2men23 for bringing that situation to my attention.",
+      "Also, shout out to my new Creeper mod, because I just stole the herd code from that."
+    ]],
+    ["Bugfix - Greater Mimic Visibility", [
+      "Greater Mimics were being detected by pawns because I forgot to add them to the conditional on hostility checks",
+      "This has been resolved, and will now lead to colonists being properly ambushed.",
+      "You're welcome everybody!"
+    ]]
+  )
   +UpdateNews("2.1.4.0", 
     ["Cystoid Explosion Re-work", [
       "Reworked how Cystoids explode, no longer will they burn your house down, but they will do toxic damage like they do in prey!"

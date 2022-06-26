@@ -10,7 +10,7 @@ namespace Typhon.StorytellerComp
         {
             Map map = target as Map;
             if (
-                !Rand.MTBEventOccurs(.5f, 60000, 1000f) 
+                !Rand.MTBEventOccurs(.5f, 60000, 1000f)
                 || (map == null)
                 || HasMimic(map)
             ) yield break;
