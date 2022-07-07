@@ -6,7 +6,7 @@ namespace Typhon.Comps
 {
     internal class AttackOnDamage : ThingComp
     {
-        private CompProperties.ExplosiveNest Props => (CompProperties.ExplosiveNest)props;
+        private CompProperties.AttackOnDamage Props => (CompProperties.AttackOnDamage)props;
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             Pawn pawn = parent as Pawn;
