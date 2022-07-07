@@ -10,6 +10,7 @@ namespace Typhon.Comps
         public override void PostPostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
         {
             Pawn pawn = parent as Pawn;
+            if (pawn == null || pawn.Dead) return;
             if (pawn.CurJobDef == JobDefOf.AttackMelee || pawn.CurJobDef == JobDefOf.AttackStatic)
                 return;
             Pawn target = dinfo.Instigator as Pawn;
