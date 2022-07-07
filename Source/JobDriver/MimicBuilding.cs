@@ -46,6 +46,23 @@ namespace Typhon.JobDriver
             Scribe_Values.Look(ref buildingHitPoints, "buildingHitPoints", 0);
             base.ExposeData();
         }
+
+        public override void Notify_DamageTaken(DamageInfo dinfo)
+        {
+            Pawn target = dinfo.Instigator as Pawn;
+            if (target != null)
+            {
+                Job job = TyphonUtility.AttackJob(pawn, target);
+                if (job != null)
+                {
+                    pawn.jobs.jobQueue.EnqueueFirst(job);
+                    Comps.Hivemind comp = pawn.GetComp<Comps.Hivemind>();
+                    if (comp != null)
+                        comp.SendSignal_Attack(pawn, target);
+                }
+            }
+            EndJobWith(JobCondition.InterruptForced);
+        }
         private Toil Wait()
         {
             Toil wait_toil = Toils_General.Wait(Int32.MaxValue);
