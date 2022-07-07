@@ -1,5 +1,7 @@
 +ThingDef("Typhon_Phantom_Race", "phantom")(ParentName="TyphonThingBase")
-  description Typhon taking the shape of a tall humanoid figure, Phantoms are what you get when a Weaver gets a hold of a dead or unconcious human body. Having the ability to zip and teleport short distances and project psychic pulses of energy towards foes from afar, these nimble Typhon can be deadly even on their own. Extreme caution is adviced.
+  description Typhon taking the shape of a tall humanoid figure, Phantoms are what you get when a Weaver gets a hold of a dead or unconcious human body. Having the ability to zip and teleport short distances and project psychic pulses of energy towards foes from afar, these nimble Typhon can be deadly even on their own. Extreme caution is advised.
+  +Comps("Typhon.CompProperties.Hivemind", "Typhon.CompProperties.AttackOnDamage")
+  receivesSignals true
   race
     body Human
     thinkTreeMain Typhon_Thinktree_Phantom

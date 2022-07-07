@@ -17,6 +17,16 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.1.6.0", 
+    ["Typhon Retaliation", [
+      "All Typhon will now retaliate when attacked, utilizing the hivemind to alert nearby typhon of a threat.",
+      "This ignores their typical attacking preferences, meaning no more mowing them down with large pawns.",
+      "Should also mean long range attacks won't make you safe."
+    ]],
+    ["Phantom Hivemind", [
+      "Typhon now have hivemind capabilities, meaning they'll be alerted to nearby threats to other typhon."
+    ]]
+  )
   +UpdateNews("2.1.5.0", 
     ["New Typhon Event - Herd", [
       "Typhon can now wander in from the edges of maps! No longer will you be saved by shields!",

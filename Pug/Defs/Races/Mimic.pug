@@ -1,7 +1,7 @@
 +ThingDef("Typhon_Mimic", "mimic")(ParentName="TyphonThingBase" Name="TyphonThingMimic")
   description The first type of Typhon ever encountered by human life, these small agile creatures possess the ability to shape-shift into almost every single object, from small to medium sizes. How they do it is still up for debate but for all we know their organs and matter are quite valuable in the rim due to it's use in creating Neuro and Psytrainers. Still, for their size they can be dangerous so caution is adviced.
   receivesSignals true
-  +Comps("Typhon.CompProperties.Hivemind")
+  +Comps("Typhon.CompProperties.Hivemind", "Typhon.CompProperties.AttackOnDamage")
   statBases
     MoveSpeed 10
   race
