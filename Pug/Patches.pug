@@ -1,9 +1,4 @@
 doctype xml
 Patch
   include Patches/VanillaExpandedFramework.pug
-  Operation(Class="PatchOperationAdd")
-    xpath /Defs/ThingDef[defName="FabricationBench"]/recipes
-    value
-      each skill in ["Shooting", "Melee", "Construction", "Mining", "Cooking", "Plants", "Animals", "Crafting", "Artistic", "Medicine", "Social", "Intellectual"]
-        li!= "Typhon_Make_Skilltrainer_" + skill
-        
+  include Patches/Vanilla.pug
