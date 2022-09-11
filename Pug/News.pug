@@ -17,6 +17,12 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.2.0.0", 
+    ["Automated Releases!", [
+      "This mod will now auto-update whenever I commit to the main branch. If you're seeing this, it worked!",
+      "What does this mean for the players? Well, I can update, a lot quicker. Before, I'd make a commit to update the version and let github pump out a build, download that build, test it manually through rimworld, then create a github release, then a steam release. All of that took forever. Now, when a push is set to main it'll automatically do all of those steps. (except testing, ideally that should be covered while working on it anyway)",
+    ]]
+  )
   +UpdateNews("2.1.6.0", 
     ["Typhon Retaliation", [
       "All Typhon will now retaliate when attacked, utilizing the hivemind to alert nearby typhon of a threat.",
