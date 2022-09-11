@@ -3,7 +3,7 @@
   receivesSignals true
   +Comps("Typhon.CompProperties.Hivemind", "Typhon.CompProperties.AttackOnDamage")
   statBases
-    MoveSpeed 10
+    MoveSpeed 8
   race
     body Typhon_Mimic
     thinkTreeMain Typhon_Thinktree_Mimic
@@ -14,21 +14,21 @@
   tools
     +Tool("Appendage")
       +Capacities("Blunt")
-      power 9
+      power 6
       cooldownTime .9
       linkedBodyPartsGroup FrontLeftLeg
       surpriseAttack
         +ExtraMeleeDamages([["Stun", 9]])
     +Tool("Appendage")
       +Capacities("Blunt")
-      power 9
+      power 6
       cooldownTime .9
       linkedBodyPartsGroup FrontRightLeg
       surpriseAttack
         +ExtraMeleeDamages([["Stun", 9]])
     +Tool("Body")
       +Capacities("Blunt")
-      power 5
+      power 4
       cooldownTime 2
       linkedBodyPartsGroup Torso
       ensureLinkedBodyPartsGroupAlwaysUsable true
