@@ -40,6 +40,6 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
       with:
-        release_name: Automated Release ${{ github.run_id }}
-        tag_name: ${{ github.ref }}
+        release_name: Release \#${{ github.run_number }}
+        tag_name: release/${{ github.run_number }}
         asset_files: ${{env.mod_name}}.zip
