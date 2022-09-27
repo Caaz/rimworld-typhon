@@ -90,5 +90,10 @@ namespace Typhon
         {
             return pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
         }
+        public static bool IsHiddenMimic(Thing thing)
+        {
+            Pawn pawn = thing as Pawn;
+            return ((pawn != null) && ((pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Mimic_Hidden) || (pawn.kindDef == TyphonDefOf.PawnKind.Typhon_Greater_Mimic_Hidden)));
+        }
     }
 }

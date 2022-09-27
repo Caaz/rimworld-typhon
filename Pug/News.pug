@@ -17,6 +17,13 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.2.2.0", 
+    ["Compatibility: Camera+", [
+      "Hidden mimics will now no longer draw dots when zoomed out via Camera+!",
+      "Shout out to N/A for the suggestion. And absolutely more, they're just on the ticket itself.",
+      "Massive shout out to Brrainz for helping me figure out what was up with my patch. (No idea, but prefixes worked where postfixes didn't)",
+    ]]
+  )
   +UpdateNews("2.2.1.0", 
     ["Nerf all Typhon", [
       "Based on player feedback, weakened mimics, and set the event to require much more wealth.",
