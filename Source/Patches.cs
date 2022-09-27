@@ -37,24 +37,17 @@ namespace Typhon
             {
                 Type type = AccessTools.TypeByName("CameraPlus.Tools");
                 if (type != null)
-                {
-                    IEnumerable<MethodInfo> methods = type.GetMethods().Where(method => method.Name == "ShouldShowDot");
-                    foreach (MethodInfo method in methods)
-                    {
-                        Log.Message("Patching " + method);
-                    }
-                    return methods;
-                }
+                    return type.GetMethods().Where(method => method.Name == "ShouldShowDot");
                 return new List<MethodBase> { };
             }
-            static void PostFix(Pawn pawn, ref bool __result)
+            static bool Prefix(Pawn pawn, ref bool __result)
             {
-                Log.Message("Should Show dot? " + pawn);
                 if (TyphonUtility.IsHiddenMimic(pawn))
                 {
-                    Log.Message("Shouldn't draw dot for this hidden mimic");
                     __result = false;
+                    return false;
                 }
+                return true;
             }
         }
     }
