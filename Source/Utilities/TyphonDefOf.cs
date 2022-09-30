@@ -23,6 +23,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.ThingDef Typhon_Weaver_Race;
         public static Verse.ThingDef Typhon_Phantom_Race;
         public static Verse.ThingDef Typhon_Cystoid_Race;
+        public static Verse.ThingDef Typhon_Telepath_Race;
         static Thing()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
