@@ -22,16 +22,32 @@ Operation(Class="PatchOperationFindMod")
       li(Class="PatchOperationAdd")
         xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]
         value
-          comps
-            li(Class="AnimalBehaviours.CompProperties_Blink")
-              blinkInterval 1000
-              distance 2~10
-              blinkWhenManhunter true
           verbs
             li
               verbClass Verb_Shoot
               hasStandardCommand true
               defaultProjectile Typhon_Projectile_KineticOrb
+              warmupTime 1
+              range 10
+              ticksBetweenBurstShots 5
+              soundCast Shot_ChargeBlaster
+              soundCastTail GunTail_Heavy
+              muzzleFlashScale 0
+      li(Class="PatchOperationAdd")
+        xpath /Defs/ThingDef[defName="Typhon_Phantom_Race"]/comps
+        value
+          li(Class="AnimalBehaviours.CompProperties_Blink")
+            blinkInterval 1000
+            distance 2~10
+            blinkWhenManhunter true
+      li(Class="PatchOperationAdd")
+        xpath /Defs/ThingDef[defName="Typhon_Telepath_Race"]
+        value
+          verbs
+            li
+              verbClass Verb_Shoot
+              hasStandardCommand true
+              defaultProjectile Typhon_Projectile_PsychicOrb
               warmupTime 1
               range 10
               ticksBetweenBurstShots 5

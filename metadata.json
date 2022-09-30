@@ -3,7 +3,7 @@
         "name": "Typhon",
         "author": "Caaz",
         "description": "Adds Typhon from Prey (2015). For a full list of features, view the Workshop page!",
-        "version": "2.2.2.0",
+        "version": "2.2.3.0",
         "packageId": "caaz.typhon",
         "namespace": "Typhon",
         "assemblyName": "Typhon",

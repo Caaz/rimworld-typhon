@@ -76,6 +76,7 @@ namespace Typhon
             if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 2f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 15f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 15f;
             return 1f;
         }
         private static float AttackRange(Pawn typhon)
@@ -84,6 +85,7 @@ namespace Typhon
             if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 10f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 10f;
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 10f;
             return 5f;
         }
         public static bool IsTyphon(Pawn pawn)

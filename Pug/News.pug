@@ -17,6 +17,16 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.2.3.0", 
+    ["Bugfix: Phantom comp issue with Vanilla Expanded Framework", [
+      "In 2.1.6.0, a bug was introduced when Vanilla Expanded Framework is added, a duplicate comp node is added! Went and fixed that, turns out this is the first time I tested compat with VEF in a while.",
+    ]],
+    ["Telepaths...", [
+      "Working towards some Telepath stuff! Currently, the textures are in, and a very basic projectile added.",
+      "They won't show in-game yet, as none of the events or weaver behavior will spawn them.",
+      "If you feel strongly about Telepaths exploding pawn's heads, voice them now in the Tilde Discord, because that's my next goal!"
+    ]]
+  )
   +UpdateNews("2.2.2.0", 
     ["Compatibility: Camera+", [
       "Hidden mimics will now no longer draw dots when zoomed out via Camera+!",
