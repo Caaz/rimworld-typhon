@@ -17,6 +17,18 @@ mixin UpdateNews(version, ...contents)
     content= content
 
 block defs
+  +UpdateNews("2.3.0.0",
+    ["Telepaths!", [
+      "Telepaths are here! They are a huge threat! Beware!",
+      "Telepaths can shoot orbs of psychic energy from afar, similar to Phantoms. (When Vanilla Expanded Framework is loaded, at least)",
+      "They can also mind control your pawns if you let them get too close.",
+      "Mind controlled pawns can be recovered by simply damaging them in any way. Or, by killing the telepath that did the mind controlling.",
+      "If you fail to save the mind controlled pawn however, they'll run at your pawns and the telepath will explode the pawn's mind, damaging those around it. (this feature is togglable in settings.)",
+      "There's a 10 percent chance a weaver will spawn a telepath when attempting to create a phantom."
+    ]],
+    ["Bugfix: Weaver Phantom Genesis", [
+      "Weavers no longer create too many jobs when trying to spawn a phantom."
+    ]])
   +UpdateNews("2.2.3.0", 
     ["Bugfix: Phantom comp issue with Vanilla Expanded Framework", [
       "In 2.1.6.0, a bug was introduced when Vanilla Expanded Framework is added, a duplicate comp node is added! Went and fixed that, turns out this is the first time I tested compat with VEF in a while.",
