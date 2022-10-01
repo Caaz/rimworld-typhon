@@ -20,8 +20,12 @@ namespace Typhon.Hediffs
         }
         public override void Notify_PawnPostApplyDamage(DamageInfo damageInfo, float amount)
         {
-            pawn.SetFaction(originalFaction);
             severityInt = 0f;
+        }
+        public override void PostRemoved()
+        {
+            base.PostRemoved();
+            pawn.SetFaction(originalFaction);
         }
     }
 }
