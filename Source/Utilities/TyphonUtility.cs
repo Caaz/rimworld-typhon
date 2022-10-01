@@ -41,7 +41,7 @@ namespace Typhon
             bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateCystoid, target);
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race && Random.Range(0f, 1f) > .5f) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
             Job attackJob = JobMaker.MakeJob((isMelee) ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
             attackJob.maxNumStaticAttacks = 2;
             attackJob.killIncappedTarget = true;
