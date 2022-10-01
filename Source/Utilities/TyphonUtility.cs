@@ -41,6 +41,12 @@ namespace Typhon
             bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateCystoid, target);
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race)
+            {
+                // Should check if we have a mind-controlled pawn first, if we do, we send that to explode.
+                Log.Message("Mind controlling! Probably.");
+                return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
+            }
             Job attackJob = JobMaker.MakeJob((isMelee) ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
             attackJob.maxNumStaticAttacks = 2;
             attackJob.killIncappedTarget = true;
@@ -90,7 +96,9 @@ namespace Typhon
         }
         public static bool IsTyphon(Pawn pawn)
         {
-            return pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
+            if (pawn == null || pawn.Faction == null || pawn.RaceProps == null)
+                return false;
+            return pawn.Faction.def == TyphonDefOf.Faction.Typhon || pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
         }
         public static bool IsHiddenMimic(Thing thing)
         {

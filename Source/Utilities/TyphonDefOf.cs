@@ -38,6 +38,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.JobDef TyphonCreatePhantom;
         public static Verse.JobDef TyphonCystoidAttack;
         public static Verse.JobDef TyphonCreateCystoid;
+        public static Verse.JobDef TyphonMindControl;
         public static Verse.JobDef TyphonOperatorMedical;
         static Job()
         {
@@ -81,6 +82,7 @@ namespace Typhon.TyphonDefOf
     internal static class Hediff
     {
         public static HediffDef TyphonCreatesWeaver;
+        public static HediffDef TyphonMindControlled;
         static Hediff()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));

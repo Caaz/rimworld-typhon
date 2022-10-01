@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using RimWorld;
+using Verse;
+using Verse.AI;
+
+namespace Typhon.JobDriver
+{
+    internal class MindControl : Verse.AI.JobDriver
+    {
+        private Pawn Prey => (Pawn)job.GetTarget(TargetIndex.A).Thing;
+
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        {
+            return true;
+        }
+        protected override IEnumerable<Toil> MakeNewToils()
+        {
+            AddFailCondition((Func<bool>)delegate
+            {
+                return (Prey == null || Prey.Dead || !pawn.CanSee(Prey));
+            });
+            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch).FailOnDespawnedOrNull(TargetIndex.A);
+            yield return Toils_General.Do(ControlPawn);
+        }
+        private void ControlPawn()
+        {
+            IEnumerable<BodyPartRecord> parts = Prey.def.race.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource);
+            if (!parts.Any()) return;
+            BodyPartRecord brain = parts.First();
+
+            Hediff hediff = HediffMaker.MakeHediff(TyphonDefOf.Hediff.TyphonMindControlled, Prey, brain);
+            Prey.health.AddHediff(hediff, brain);
+            Prey.SetFaction(pawn.Faction);
+        }
+        private void ExplodeHead()
+        {
+            Log.Message("Exploding a head");
+            IEnumerable<BodyPartRecord> parts = Prey.def.race.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource);
+            if (!parts.Any()) return;
+            DamageInfo damage = new DamageInfo(DamageDefOf.Bomb, 100, 100, -1, pawn, parts.First());
+            GenExplosion.DoExplosion(Prey.Position, Prey.Map, 1.9f, DamageDefOf.Bomb, pawn, 1, 1, SoundDefOf.Interact_Ignite);
+            Prey.TakeDamage(damage);
+        }
+    }
+}
