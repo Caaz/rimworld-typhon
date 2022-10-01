@@ -41,12 +41,7 @@ namespace Typhon
             bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateCystoid, target);
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race)
-            {
-                // Should check if we have a mind-controlled pawn first, if we do, we send that to explode.
-                Log.Message("Mind controlling! Probably.");
-                return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
-            }
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
             Job attackJob = JobMaker.MakeJob((isMelee) ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
             attackJob.maxNumStaticAttacks = 2;
             attackJob.killIncappedTarget = true;
@@ -78,12 +73,10 @@ namespace Typhon
         }
         private static float PreySize(Pawn typhon)
         {
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 1.2f;
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 2f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 15f;
-            return 1f;
+            return 2f;
         }
         private static float AttackRange(Pawn typhon)
         {

@@ -34,14 +34,5 @@ namespace Typhon.JobDriver
             Prey.health.AddHediff(hediff, brain);
             Prey.SetFaction(pawn.Faction);
         }
-        private void ExplodeHead()
-        {
-            Log.Message("Exploding a head");
-            IEnumerable<BodyPartRecord> parts = Prey.def.race.body.GetPartsWithTag(BodyPartTagDefOf.ConsciousnessSource);
-            if (!parts.Any()) return;
-            DamageInfo damage = new DamageInfo(DamageDefOf.Bomb, 100, 100, -1, pawn, parts.First());
-            GenExplosion.DoExplosion(Prey.Position, Prey.Map, 1.9f, DamageDefOf.Bomb, pawn, 1, 1, SoundDefOf.Interact_Ignite);
-            Prey.TakeDamage(damage);
-        }
     }
 }

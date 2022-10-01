@@ -39,6 +39,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.JobDef TyphonCystoidAttack;
         public static Verse.JobDef TyphonCreateCystoid;
         public static Verse.JobDef TyphonMindControl;
+        public static Verse.JobDef TyphonMindBlower;
         public static Verse.JobDef TyphonOperatorMedical;
         static Job()
         {
