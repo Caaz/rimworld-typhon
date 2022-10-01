@@ -43,3 +43,12 @@ mixin StandardThinkTree(defName)
   +ThinkNode("Typhon.JobGiver.AttackPawn")
   +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 2})
     +ThinkNode("JobGiver_ExitMapRandom", {defaultLocomotion: "Walk"})
+  
+ThinkTreeDef
+  +BaseDef("Typhon_Thinktree_MindControlled")
+  insertTag Humanlike_PostDuty
+  thinkRoot(Class="ThinkNode_Priority")
+    subNodes
+      +ThinkNode("Typhon.ThinkNodes.IsTyphon")
+        +ThinkNode("Typhon.JobGiver.MindControlledAttack")
+        +ThinkNode("Typhon.JobGiver.MindControlledWander")

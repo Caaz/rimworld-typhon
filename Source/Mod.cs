@@ -11,6 +11,7 @@ namespace Typhon
     public class Mod : ModBase
     {
         internal static SettingHandle<bool> mimicsDestroyCorpses;
+        internal static SettingHandle<bool> telepathsExplodeBrains;
         public override void DefsLoaded()
         {
             CreateSettings();
@@ -24,6 +25,11 @@ namespace Typhon
                 "Mimics Destroy Corpses",
                 "Mimics will destroy corpses rather than desiccate them. This causes phantoms to be more rare, as they require corpses to spawn.",
                 false);
+            telepathsExplodeBrains = Settings.GetHandle<bool>(
+                "telepathsExplodeBrains",
+                "Telepaths Explode Brains",
+                "Telepaths will explode the brains of their mind-controlled pawns as an attack.",
+                true);
         }
         private void CreateRecipes()
         {

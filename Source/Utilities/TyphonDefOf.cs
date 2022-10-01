@@ -38,6 +38,8 @@ namespace Typhon.TyphonDefOf
         public static Verse.JobDef TyphonCreatePhantom;
         public static Verse.JobDef TyphonCystoidAttack;
         public static Verse.JobDef TyphonCreateCystoid;
+        public static Verse.JobDef TyphonMindControl;
+        public static Verse.JobDef TyphonMindBlower;
         public static Verse.JobDef TyphonOperatorMedical;
         static Job()
         {
@@ -54,6 +56,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.PawnKindDef Typhon_Weaver;
         public static Verse.PawnKindDef Typhon_Phantom;
         public static Verse.PawnKindDef Typhon_Cystoid;
+        public static Verse.PawnKindDef Typhon_Telepath;
         static PawnKind()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(PawnKindDefOf));
@@ -81,6 +84,7 @@ namespace Typhon.TyphonDefOf
     internal static class Hediff
     {
         public static HediffDef TyphonCreatesWeaver;
+        public static HediffDef TyphonMindControlled;
         static Hediff()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf));

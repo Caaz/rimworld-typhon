@@ -20,6 +20,7 @@ namespace Typhon
         public static Pawn GenerateMimic() => GenerateTyphon(Random.Range(0.0f, 1.0f) > .2f ? TyphonDefOf.PawnKind.Typhon_Mimic : TyphonDefOf.PawnKind.Typhon_Greater_Mimic);
         public static Pawn GenerateWeaver() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Weaver);
         public static Pawn GenerateCystoid() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Cystoid);
+        public static Pawn GenerateTelepath() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Telepath);
         public static Pawn GeneratePhantom(Pawn from)
         {
             Pawn phantom = GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Phantom);
@@ -41,6 +42,7 @@ namespace Typhon
             bool isMelee = (verb == null || verb.IsMeleeAttack || verb.ApparelPreventsShooting() || typhon.CanReachImmediate(target, PathEndMode.Touch));
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCystoidAttack, target);
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonCreateCystoid, target);
+            if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race && Random.Range(0f, 1f) > .5f) return JobMaker.MakeJob(TyphonDefOf.Job.TyphonMindControl, target);
             Job attackJob = JobMaker.MakeJob((isMelee) ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
             attackJob.maxNumStaticAttacks = 2;
             attackJob.killIncappedTarget = true;
@@ -72,12 +74,10 @@ namespace Typhon
         }
         private static float PreySize(Pawn typhon)
         {
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Mimic) return 1.2f;
-            if (typhon.def == TyphonDefOf.Thing.Typhon_Phantom_Race) return 2f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 15f;
-            return 1f;
+            return 2f;
         }
         private static float AttackRange(Pawn typhon)
         {
@@ -86,11 +86,13 @@ namespace Typhon
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 10f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 10f;
-            return 5f;
+            return 15f;
         }
         public static bool IsTyphon(Pawn pawn)
         {
-            return pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
+            if (pawn == null || pawn.Faction == null || pawn.RaceProps == null)
+                return false;
+            return pawn.Faction.def == TyphonDefOf.Faction.Typhon || pawn.RaceProps.FleshType == TyphonDefOf.FleshType.Typhon;
         }
         public static bool IsHiddenMimic(Thing thing)
         {
