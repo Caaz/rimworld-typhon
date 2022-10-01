@@ -6,10 +6,12 @@ namespace Typhon.Hediffs
     internal class MindControlled : Verse.Hediff
     {
         public Faction originalFaction;
+        public Pawn mindController;
         public override void ExposeData()
         {
             base.ExposeData();
             Scribe_Values.Look(ref originalFaction, "originalFaction");
+            Scribe_Values.Look(ref mindController, "mindController");
         }
         public override void PostMake()
         {

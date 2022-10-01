@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using Typhon.Hediffs;
 using Verse;
 using Verse.AI;
 
@@ -30,7 +31,8 @@ namespace Typhon.JobDriver
             if (!parts.Any()) return;
             BodyPartRecord brain = parts.First();
 
-            Hediff hediff = HediffMaker.MakeHediff(TyphonDefOf.Hediff.TyphonMindControlled, Prey, brain);
+            MindControlled hediff = HediffMaker.MakeHediff(TyphonDefOf.Hediff.TyphonMindControlled, Prey, brain) as MindControlled;
+            hediff.mindController = pawn;
             Prey.health.AddHediff(hediff, brain);
             Prey.SetFaction(pawn.Faction);
         }

@@ -85,7 +85,7 @@ namespace Typhon
             if (typhon.def == TyphonDefOf.Thing.Typhon_Cystoid_Race) return 15f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Weaver_Race) return 10f;
             if (typhon.def == TyphonDefOf.Thing.Typhon_Telepath_Race) return 10f;
-            return 5f;
+            return 15f;
         }
         public static bool IsTyphon(Pawn pawn)
         {
