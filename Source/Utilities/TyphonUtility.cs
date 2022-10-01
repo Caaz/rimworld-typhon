@@ -20,6 +20,7 @@ namespace Typhon
         public static Pawn GenerateMimic() => GenerateTyphon(Random.Range(0.0f, 1.0f) > .2f ? TyphonDefOf.PawnKind.Typhon_Mimic : TyphonDefOf.PawnKind.Typhon_Greater_Mimic);
         public static Pawn GenerateWeaver() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Weaver);
         public static Pawn GenerateCystoid() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Cystoid);
+        public static Pawn GenerateTelepath() => GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Telepath);
         public static Pawn GeneratePhantom(Pawn from)
         {
             Pawn phantom = GenerateTyphon(TyphonDefOf.PawnKind.Typhon_Phantom);

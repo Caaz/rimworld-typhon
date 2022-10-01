@@ -56,6 +56,7 @@ namespace Typhon.TyphonDefOf
         public static Verse.PawnKindDef Typhon_Weaver;
         public static Verse.PawnKindDef Typhon_Phantom;
         public static Verse.PawnKindDef Typhon_Cystoid;
+        public static Verse.PawnKindDef Typhon_Telepath;
         static PawnKind()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(PawnKindDefOf));

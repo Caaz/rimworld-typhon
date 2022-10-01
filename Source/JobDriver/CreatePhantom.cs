@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 using Verse.AI;
 
@@ -30,8 +31,14 @@ namespace Typhon.JobDriver
         private void PhantomGenesis()
         {
             Corpse target = (Corpse)job.GetTarget(TargetIndex.A);
-            GenSpawn.Spawn(TyphonUtility.GeneratePhantom(target.InnerPawn), pawn.Position, pawn.Map);
+            Pawn typhon = CreateTyphon(target.InnerPawn);
+            GenSpawn.Spawn(typhon, pawn.Position, pawn.Map);
             target.Destroy();
+        }
+        private Pawn CreateTyphon(Pawn pawn)
+        {
+            if (Random.Range(0f, 1f) > .9f) return TyphonUtility.GenerateTelepath();
+            return TyphonUtility.GeneratePhantom(pawn);
         }
     }
 }
