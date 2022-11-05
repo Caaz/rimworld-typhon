@@ -8,6 +8,10 @@ using Verse;
 
 namespace Typhon
 {
+    internal class Dummy
+    {
+        public bool ShouldShowDot(Pawn pawn) { return false; }
+    }
     internal class Patches
     {
         [HarmonyPatch(typeof(RaceProperties), nameof(RaceProperties.IsFlesh), MethodType.Getter)]
@@ -36,9 +40,13 @@ namespace Typhon
             static IEnumerable<MethodBase> TargetMethods()
             {
                 Type type = AccessTools.TypeByName("CameraPlus.Tools");
-                if (type != null)
-                    return type.GetMethods().Where(method => method.Name == "ShouldShowDot");
-                return new List<MethodBase> { };
+                Log.Message("Trying for " + type);
+                if (type == null)
+                {
+                    type = typeof(Dummy);
+                    Log.Message("Dummy instead " + type);
+                }
+                return type.GetMethods().Where(method => method.Name == "ShouldShowDot");
             }
             static bool Prefix(Pawn pawn, ref bool __result)
             {
