@@ -19,6 +19,8 @@ fs.readdir('Pug', (error, files) => {
             let xmlName = name + '/' + name + '.xml';
             if (name === 'csproj') {
                 xmlName = data.assemblyName + '.csproj';
+            } else if (name == 'loadFolders') {
+                xmlName = name+'.xml';
             } else if (name === 'html') {
                 xmlName = data.assemblyName + '.html';
             } else {
