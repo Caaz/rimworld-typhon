@@ -6,7 +6,7 @@ obj
 
 # Built things
 *.xml
-*.dll
+1.4/Assemblies/*.dll
 *.html
 *.csproj
 
