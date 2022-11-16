@@ -9,6 +9,13 @@
         +LifeStageSounds("Typhon_Mimic_Wounded", "Typhon_Mimic_Death", "Typhon_Mimic_Call", "Typhon_Mimic_Angry")
   receivesSignals true
   +Comps("Typhon.CompProperties.Hivemind", "Typhon.CompProperties.AttackOnDamage")
+    li(Class="Typhon.CompProperties.CoralArmor")
+      graphicElements
+        - for (var i = 1; i <= 3; i++) 
+          li
+            texPath Typhon/Weaver/Armored#{i}/Armor
+            graphicClass Graphic_Multi
+            drawSize 2.7
     li(Class="CompProperties_SpawnerFilth")
       filthDef Filth_Typhon_Coral
       spawnMtbHours .1

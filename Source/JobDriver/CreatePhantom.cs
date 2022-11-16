@@ -12,7 +12,6 @@ namespace Typhon.JobDriver
         {
             return pawn.Reserve(TargetA, job, 1, -1, null, errorOnFailed);
         }
-
         protected override IEnumerable<Toil> MakeNewToils()
         {
             if (TargetA.Thing.Position != pawn.Position)
