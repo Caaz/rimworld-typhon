@@ -1,0 +1,12 @@
+include Mixins/Generic.pug
+doctype xml
+ModMetaData
+  +Object({
+    name:name,
+    description:description,
+    author:author,
+    packageId:packageId,
+    spportedVersions:supportedversions,
+    loadAfter:loadAfter,
+    modDependencies:modDependencies
+  })

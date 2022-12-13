@@ -1,0 +1,27 @@
+{
+  "name": "rimworld-mod-template",
+  "version": "1.0.0.0",
+  "description": "A template for rimworld mods.",
+  "type": "module",
+  "scripts": {
+    "build": "npm run buildpug && npm run buildsource",
+    "buildsource": "dotnet build",
+    "buildpug": "node --experimental-json-modules build.js",
+    "lint": "xo build.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caaz/rimworld-mod-template.git"
+  },
+  "author": "Daniel Caaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Caaz/rimworld-mod-template/issues"
+  },
+  "homepage": "https://github.com/Caaz/rimworld-mod-template#readme",
+  "devDependencies": {
+    "@anduh/pug-cli": "^1.0.0-alpha8",
+    "pug": "^3.0.2",
+    "xo": "^0.48.0"
+  }
+}

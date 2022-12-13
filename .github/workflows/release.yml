@@ -1,0 +1,44 @@
+name: Automated Release
+
+on:
+  workflow_call: {}
+  workflow_dispatch: {}
+
+jobs:
+  bump_version:
+    uses: ./.github/workflows/bump_version.yml
+  build:
+    needs: bump_version
+    uses: ./.github/workflows/build.yml
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: Mod
+    - name: Read Metadata
+      uses: antifree/json-to-variables@v1.0.1
+      with:
+        filename: 'metadata.json'
+        prefix: metadata
+    - name: Set Environment Variables
+      run: |
+        echo "workshop_id=$(cat About/PublishedFileId.txt)" >> $GITHUB_ENV
+        echo "mod_name=$(ls ..)" >> $GITHUB_ENV
+    - name: Prepare for Distribution
+      run: |
+        echo '::echo::on'
+        mkdir ${{ env.mod_name }}
+        mv `ls -I ${{ env.mod_name }}` ${{ env.mod_name }}
+        7z a ${{ env.mod_name }}.zip ${{ env.mod_name }}
+        ls
+    - name: Create Release
+      uses: ncipollo/release-action@v1.11.1
+      with:
+        token: ${{ secrets.REPO_TOKEN }}
+        name: ${{ env.metadata_default_name }} ${{ env.metadata_default_version }}
+        tag: ${{ env.metadata_default_version }}
+        generateReleaseNotes: true
+        allowUpdates: true
+        artifacts: ${{ env.mod_name }}.zip
