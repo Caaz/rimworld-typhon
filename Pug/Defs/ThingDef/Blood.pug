@@ -1,0 +1,17 @@
+ThingDef(ParentName="BaseFilth")
+  defName Typhon_Thing_Blood
+  label blood
+  description A black oily substance that can only be assumed is the blood of a Typhon
+  statBases
+    Beauty -40
+    Cleanliness -20
+  filth
+    ignoreFilthMultiplierStat true
+    disappearsInDays 35~40
+    rainWashes true
+    cleaningWorkToReduceThickness 70
+    canFilthAttach true
+    cleaningSound Interact_CleanFilth_Fluid
+  graphicData
+    texPath Things/Filth/Spatter
+    color (25,25,25)

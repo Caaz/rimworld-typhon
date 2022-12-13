@@ -1,0 +1,31 @@
+ThingDef(ParentName="AnimalThingBase" Name="TyphonThingBase" Abstract="true")
+  statBases
+    PsychicSensitivity 2
+    ToxicResistance 1
+    MoveSpeed 7.0
+    MarketValue 450
+    ComfyTemperatureMin -101
+    FilthRate 0
+    MaxHitPoints 200
+  race
+    thinkTreeConstant Typhon_Thinktree_Constant
+    fleshType Typhon_Flesh_Typhon
+    specificMeatDef Typhon_Thing_Organ
+    hasGenders false
+    predator false
+    petness 0
+    baseHungerRate 0
+    maxPreyBodySize 1.5
+    needsRest false
+    foodType None
+    gestationPeriodDays 1000
+    lifeExpectancy 1000
+    trainability None
+    wildness 1
+    manhunterOnDamageChance 1
+    manhunterOnTameFailChance 1
+    bloodDef Typhon_Thing_Blood
+    soundMeleeHitPawn Pawn_Melee_SmallScratch_HitPawn
+    soundMeleeHitBuilding Pawn_Melee_SmallScratch_HitBuilding
+    soundMeleeMiss Pawn_Melee_SmallScratch_Miss
+    litterSizeCurve: points: li (0, 0)

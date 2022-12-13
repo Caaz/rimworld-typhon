@@ -3,7 +3,7 @@ AbilityCategoryDef
   displayOrder 31126
 
 AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
-  defName PhantomGenesis
+  defName Typhon_Ability_PhantomGenesis
   label phantom genesis
   description Using this ability, you can choose to convert human corpses or unconscious humans into Phantoms, which will then fight by your side and follow you around. This can be a useful way to gain additional allies in combat. They are typically slow-moving, but can move at great speeds when provoked.
   iconPath Typhon/Abilities/PhantomGenesis
@@ -25,7 +25,5 @@ AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
       canTargetBuildings false
       canTargetCorpses true
       canTargetMechs true
-  statBases
-    Ability_PsyfocusCost 0.04
-  comps
-    li(Class="CompProperties_Resurrect")
+  statBases: Ability_PsyfocusCost 0.04
+  comps: li(Class="CompProperties_Resurrect")

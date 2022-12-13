@@ -1,20 +1,22 @@
 mixin List(elements)
-  each element in elements
-    if typeof(element) === "object"
-      li
-        +Object(element)
-    else
-      li=element
+  if elements != null
+    each element in elements
+      if typeof(element) === "object"
+        li
+          +Object(element)
+      else
+        li=element
   
 mixin Object(object)
-  each value, key in object
-    if value != null
-      if typeof(value) === "object"
-        if value[0]
-          #{key}
-            +List(value)
+  if object != null
+    each value, key in object
+      if value != null
+        if typeof(value) === "object"
+          if value[0]
+            #{key}
+              +List(value)
+          else
+            #{key}
+              +Object(value)
         else
-          #{key}
-            +Object(value)
-      else
-        #{key}=value
+          #{key}=value

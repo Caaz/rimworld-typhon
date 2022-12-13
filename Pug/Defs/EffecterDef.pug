@@ -1,0 +1,31 @@
+EffecterDef
+  defName Typhon_Damage_HitTyphon
+  offsetTowardsTarget 0.25~0.25
+  positionRadius 0.1
+  children
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.4
+      fleckDef AirPuff
+      burstCount 4~5
+      speed 0.4~0.8
+      scale 1.0~1.3
+      color (25,25,25)
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.1
+      fleckDef BloodSplash
+      burstCount 2~3
+      speed 0.4~0.8
+      scale 1.6~2.1
+      color (25,25,25)
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.0
+      fleckDef BodyImpact
+      burstCount 1
+      scale 0.55
+      color (25,25,25)
+      spawnLocType OnSource
