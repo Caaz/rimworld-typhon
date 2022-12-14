@@ -15,7 +15,7 @@ mixin ThinkTreeDef(defName, thinkRoot="ThinkNode_Priority")
     defName=defName
     thinkRoot(Class=thinkRoot): subNodes: block
         
-mixin Thinktree(defName)
+mixin ThinkTree(defName)
   +ThinkTreeDef(defName)&attributes(attributes)
     +ThinkNode("ThinkNode_ConditionalMustKeepLyingDown")
       +ThinkNode("JobGiver_KeepLyingDown")
@@ -30,12 +30,14 @@ mixin Thinktree(defName)
 
     
 +ThinkTreeDef("Typhon_Thinktree_Constant")
+  +ThinkNodeSubtree("Despawned")
   +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
-    +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"Goto"})
-      +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
+    for jobDef in ["Goto", "AttackMelee"]
+      +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:jobDef})
+        +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
   +ThinkNode("ThinkNode_ConditionalCanDoConstantThinkTreeJobNow")
 
-+Thinktree("Typhon_Thinktree_Phantom")
++ThinkTree("Typhon_Thinktree_Phantom")
   +ThinkNode("JobGiver_AIFightEnemies", {targetAcquireRadius:65, targetKeepRadius:72})
   +ThinkNode("JobGiver_AIGotoNearestHostile")
   +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 5})

@@ -25,7 +25,7 @@ AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
       canTargetBuildings false
       canTargetCorpses true
       canTargetMechs false
-  statBases: Ability_PsyfocusCost 0.04
+  statBases: Ability_PsyfocusCost 0.3
   comps: li(Class="CompProperties_Resurrect")
   
 AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
@@ -34,24 +34,23 @@ AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
   description Quickly move to a target location
   iconPath Typhon/Abilities/PhantomGenesis
   cooldownTicksRange 500
-  warmupMote Mote_ResurrectAbility
+  //- warmupMote Mote_ResurrectAbility
   //- warmupStartSound Resurrect_Cast
   category Typhon
   displayOrder 1
   hostile false
+  writeCombatLog true
   verbProperties
-    verbClass Verb_CastAbilityJump
-    violent false
-    forceNormalTimeSpeed false
-    drawAimPie false
-    minRange 2
     range 9.9
     warmupTime 0.1
-    requireLineOfSight true
-    //- soundCast Resurrect_Resolve
-    //- soundLanding
     targetParams
       canTargetLocations true
-      canTargetPawns false
-      canTargetBuildings false
-  statBases: Ability_PsyfocusCost 0.01
+  statBases: Ability_PsyfocusCost 0.1
+  comps: li(Class="CompProperties_AbilityTeleport")
+    compClass Typhon.CompAbilityEffect.PhantomPhase
+    clamorType Ability
+    clamorRadius 1
+    destClamorType Ability
+    destClamorRadius 1
+    stunTicks 0
+    goodwillImpact 0

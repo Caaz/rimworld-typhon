@@ -2,7 +2,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace Typhon.Patches.PawnComponentsUtility
+namespace Typhon.Patch.PawnComponentsUtility
 {
     [HarmonyPatch(typeof(RimWorld.PawnComponentsUtility), nameof(RimWorld.PawnComponentsUtility.CreateInitialComponents))]
     class CreateInitialComponents
@@ -11,10 +11,10 @@ namespace Typhon.Patches.PawnComponentsUtility
         {
             if (
                 pawn.RaceProps.FleshType == FleshTypeDefOf.Typhon_FleshType_Typhon
-                && pawn.abilities == null
             )
             {
-                pawn.abilities = new Pawn_AbilityTracker(pawn);
+                if (pawn.abilities == null) pawn.abilities = new Pawn_AbilityTracker(pawn);
+                if (pawn.psychicEntropy == null) pawn.psychicEntropy = new RimWorld.Pawn_PsychicEntropyTracker(pawn);
             }
         }
     }

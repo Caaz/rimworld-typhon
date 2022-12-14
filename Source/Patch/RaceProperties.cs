@@ -1,6 +1,6 @@
 using HarmonyLib;
 
-namespace Typhon.Patches.RaceProperties
+namespace Typhon.Patch.RaceProperties
 {
     [HarmonyPatch(typeof(Verse.RaceProperties), nameof(Verse.RaceProperties.IsFlesh), MethodType.Getter)]
     class IsFlesh
