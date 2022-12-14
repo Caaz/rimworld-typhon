@@ -30,10 +30,13 @@ mixin Thinktree(defName)
 
     
 +ThinkTreeDef("Typhon_Thinktree_Constant")
+  +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
+    +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"Goto"})
+      +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
   +ThinkNode("ThinkNode_ConditionalCanDoConstantThinkTreeJobNow")
 
-  
-
 +Thinktree("Typhon_Thinktree_Phantom")
+  +ThinkNode("JobGiver_AIFightEnemies", {targetAcquireRadius:65, targetKeepRadius:72})
+  +ThinkNode("JobGiver_AIGotoNearestHostile")
   +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 5})
     +ThinkNode("JobGiver_ExitMapRandom", {defaultLocomotion: "Walk"})

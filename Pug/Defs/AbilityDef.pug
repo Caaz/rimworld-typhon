@@ -11,7 +11,7 @@ AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
   warmupMote Mote_ResurrectAbility
   //- warmupStartSound Resurrect_Cast
   category Typhon
-  displayOrder 1
+  displayOrder 0
   hostile false
   verbProperties
     verbClass Verb_CastAbilityTouch
@@ -20,10 +20,38 @@ AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
     warmupTime 2
     //- soundCast Resurrect_Resolve
     targetParams
-      //- This should be true, for incapacitated pawns at least
+      //- canTargetHumans should be true, for incapacitated ones at least
       canTargetPawns false
       canTargetBuildings false
       canTargetCorpses true
-      canTargetMechs true
+      canTargetMechs false
   statBases: Ability_PsyfocusCost 0.04
   comps: li(Class="CompProperties_Resurrect")
+  
+AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
+  defName Typhon_Ability_PhantomPhase
+  label phantom phase
+  description Quickly move to a target location
+  iconPath Typhon/Abilities/PhantomGenesis
+  cooldownTicksRange 500
+  warmupMote Mote_ResurrectAbility
+  //- warmupStartSound Resurrect_Cast
+  category Typhon
+  displayOrder 1
+  hostile false
+  verbProperties
+    verbClass Verb_CastAbilityJump
+    violent false
+    forceNormalTimeSpeed false
+    drawAimPie false
+    minRange 2
+    range 9.9
+    warmupTime 0.1
+    requireLineOfSight true
+    //- soundCast Resurrect_Resolve
+    //- soundLanding
+    targetParams
+      canTargetLocations true
+      canTargetPawns false
+      canTargetBuildings false
+  statBases: Ability_PsyfocusCost 0.01
