@@ -10,17 +10,16 @@
 [![Discord](https://img.shields.io/discord/259685048914149378?color=%237289DA&label=Discord&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/aE6ABXNqPj)    
 
 ## Description
-
-This is a Rimworld Mod that adds the [Typhon aliens from the game Prey](https://prey.fandom.com/wiki/Typhon). Being psychic creatures feels like a perfect addtion to the lore of Rimworld.
+The Typhon mod adds a new, alien species to the world of RimWorld. [The Typhon](https://prey.fandom.com/wiki/Typhon) are a highly-evolved, shape-shifting race of creatures, formed from a unique, shimmering substance that allows them to manipulate their form and shape. They are able to use their appendages as weapons, and can change the solidity of their bodies to adapt to a variety of environments.
 
 ## Development
 
 ### Prerequisites
 - `dotnet` Used for building C# as well as nuget packages.
-- `pug-cli` Used for building xml files, [see their repo](https://github.com/pugjs/pug-cli#readme) for more info
+- `nodejs` for running scripts and downloading javascript dependences
 
 ### Building
-- To build the assembly, simply run `dotnet build`
+- `npm run build` will build the pug, and build the assembly.
 
 ## Testing
 
@@ -42,3 +41,5 @@ Pull requests also have actions that build the project.
 ## Special Thanks
 - Kingofar
     - First backer with a very generous donation!
+- Gemini
+    - Second backer, with monthly contributions!
