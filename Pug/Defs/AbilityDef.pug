@@ -46,6 +46,23 @@ AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
   comps: li(Class="CompProperties_AbilityLaunchProjectile")
     projectileDef Typhon_Thing_KineticOrb
 
+AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+  defName Typhon_Ability_MimicMatter
+  label kinetic orb
+  description Shoots an orb that causes a small explosion on impact
+  iconPath Typhon/Abilities/PhantomGenesis
+  cooldownTicksRange 300
+  displayOrder 1
+  hostile true
+  verbProperties
+    range 9.9
+    warmupTime 0.3
+    targetParams
+      canTargetPawns true
+      canTargetLocations true
+  comps: li(Class="CompProperties_AbilityLaunchProjectile")
+    projectileDef Typhon_Thing_KineticOrb
+
 
 //- AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
 //-   defName Typhon_Ability_PhantomGenesis

@@ -1,0 +1,35 @@
+ThingDef(ParentName="TyphonThingBase")
+  defName Typhon_Thing_Mimic
+  label mimic
+  description Mimics are alien creatures that are capable of disguising themselves as inanimate objects in order to surprise and attack unsuspecting prey. They are small, black, and semi-solid, with four tentacle-like limbs and a central mass. Mimics are known for their ability to camouflage themselves in their surroundings. They are considered a threat to human colonies, as they can attack and kill colonists. Some Mimics have been observed attempting to arrange themselves into humanoid shapes, possibly out of curiosity or as a threat display. They are typically encountered by colonists who are exploring or scavenging in the wilderness, and they can pose a significant danger if not dealt with properly.
+  statBases: MoveSpeed 8
+  race
+    body Typhon_Body_Mimic
+    thinkTreeMain Typhon_Thinktree_Mimic
+    baseBodySize .25
+    lifeStageAges: li
+      def AnimalAdult
+      minAge 0
+      soundWounded Typhon_Sound_MimicWounded
+      soundDeath Typhon_Sound_MimicDeath
+      soundAngry Typhon_Sound_MimicAngry
+      soundCall Typhon_Sound_MimicCall
+  tools
+    li
+      label Right Tendril
+      capacities: li Blunt
+      power 3
+      cooldownTime 2
+      linkedBodyPartsGroup Legs
+      surpriseAttack: extraMeleeDamages: li
+        def Stun
+        amount 3
+    li
+      label Left Tendril
+      capacities: li Blunt
+      power 3
+      cooldownTime 2
+      linkedBodyPartsGroup Legs
+      surpriseAttack: extraMeleeDamages: li
+        def Stun
+        amount 3
