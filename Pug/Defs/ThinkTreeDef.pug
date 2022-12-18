@@ -33,7 +33,7 @@ mixin ThinkTree(defName)
   +ThinkNodeSubtree("Despawned")
   +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
     +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"AttackMelee"})
-      +ThinkNode("Typhon.JobGiver.CastHostileAbility", {ability:"Typhon_Ability_KineticOrb"})
+      +ThinkNode("Typhon.JobGiver.CastAbilityOnJobTarget", {ability:"Typhon_Ability_KineticOrb"})
       +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
   +ThinkNode("ThinkNode_ConditionalCanDoConstantThinkTreeJobNow")
 
