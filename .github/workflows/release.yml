@@ -36,6 +36,7 @@ jobs:
     - name: Create Release
       uses: ncipollo/release-action@v1.11.1
       with:
+        prerelease: true
         token: ${{ secrets.REPO_TOKEN }}
         name: ${{ env.metadata_default_name }} ${{ env.metadata_default_version }}
         tag: ${{ env.metadata_default_version }}

@@ -1,5 +1,5 @@
 ﻿# Typhon
-[![Build Status](https://img.shields.io/github/workflow/status/Caaz/rimworld-typhon/Build?style=for-the-badge&logo=github)](#Typhon)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/caaz/rimworld-typhon/release.yml?branch=main&logo=github&style=for-the-badge)](#Typhon)
 [![Download](https://img.shields.io/github/downloads-pre/Caaz/rimworld-typhon/latest/total?style=for-the-badge&logo=github)](https://github.com/Caaz/rimworld-typhon/releases)
 
 [![Subscriptions](https://img.shields.io/steam/subscriptions/2752054193?logo=steam&style=for-the-badge)](https://steamcommunity.com/sharedfiles/filedetails/?id=2752054193)
@@ -11,6 +11,8 @@
 
 ## Description
 The Typhon mod adds a new, alien species to the world of RimWorld. [The Typhon](https://prey.fandom.com/wiki/Typhon) are a highly-evolved, shape-shifting race of creatures, formed from a unique, shimmering substance that allows them to manipulate their form and shape. They are able to use their appendages as weapons, and can change the solidity of their bodies to adapt to a variety of environments.
+### Beware!
+This mod is currently in the process of a rewrite.
 
 ## Development
 
@@ -23,7 +25,7 @@ The Typhon mod adds a new, alien species to the world of RimWorld. [The Typhon](
 
 ## Testing
 
-The latest development build can be found on [latest build action on the main branch](https://github.com/Caaz/rimworld-typhon/actions/workflows/Build.yml?query=branch%3Amain)
+The latest development build can be found on [latest build action on the main branch](https://github.com/Caaz/rimworld-typhon/actions/workflows/build.yml?query=branch%3Amain)
 
 Pull requests also have actions that build the project.
 
