@@ -3,7 +3,7 @@
     "name": "Typhon",
     "author": "Caaz",
     "description": "The Typhon mod adds a new, alien species to the world of RimWorld. The Typhon are a highly-evolved, shape-shifting race of creatures, formed from a unique, shimmering substance that allows them to manipulate their form and shape. They are able to use their appendages as weapons, and can change the solidity of their bodies to adapt to a variety of environments.",
-    "version": "3.0.0.0",
+    "version": "3.0.0.1",
     "packageId": "caaz.typhon.rework",
     "namespace": "Typhon",
     "assemblyName": "Typhon",
