@@ -1,0 +1,74 @@
+AbilityCategoryDef
+  defName Typhon
+  displayOrder 31126
+
+AbilityDef(ParentName="PsycastBase" Name="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty" Abstract="True")
+  category Typhon
+  writeCombatLog true
+  statBases: Ability_PsyfocusCost 0.2
+
+AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+  defName Typhon_Ability_PhantomPhase
+  label phantom phase
+  description Quickly move to a target location
+  iconPath Typhon/Abilities/PhantomGenesis
+  cooldownTicksRange 500
+  displayOrder 1
+  hostile false
+  verbProperties
+    range 9.9
+    warmupTime 0.1
+    targetParams
+      canTargetLocations true
+  comps: li(Class="CompProperties_AbilityTeleport")
+    compClass Typhon.CompAbilityEffect.PhantomPhase
+    clamorType Ability
+    clamorRadius 1
+    destClamorType Ability
+    destClamorRadius 1
+    stunTicks 0
+    goodwillImpact 0
+
+AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+  defName Typhon_Ability_KineticOrb
+  label kinetic orb
+  description Shoots an orb that causes a small explosion on impact
+  iconPath Typhon/Abilities/PhantomGenesis
+  cooldownTicksRange 300
+  displayOrder 1
+  hostile true
+  verbProperties
+    range 9.9
+    warmupTime 0.3
+    targetParams
+      canTargetPawns true
+      canTargetLocations true
+  comps: li(Class="CompProperties_AbilityLaunchProjectile")
+    projectileDef Typhon_Thing_KineticOrb
+
+
+//- AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
+//-   defName Typhon_Ability_PhantomGenesis
+//-   label phantom genesis
+//-   description Using this ability, you can choose to convert human corpses or unconscious humans into Phantoms, which will then fight by your side and follow you around. This can be a useful way to gain additional allies in combat. They are typically slow-moving, but can move at great speeds when provoked.
+//-   iconPath Typhon/Abilities/PhantomGenesis
+//-   cooldownTicksRange 68400~75600
+//-   warmupMote Mote_ResurrectAbility
+//-   //- warmupStartSound Resurrect_Cast
+//-   category Typhon
+//-   displayOrder 0
+//-   hostile false
+//-   verbProperties
+//-     verbClass Verb_CastAbilityTouch
+//-     drawAimPie false
+//-     range -1
+//-     warmupTime 2
+//-     //- soundCast Resurrect_Resolve
+//-     targetParams
+//-       //- canTargetHumans should be true, for incapacitated ones at least
+//-       canTargetPawns false
+//-       canTargetBuildings false
+//-       canTargetCorpses true
+//-       canTargetMechs false
+//-   statBases: Ability_PsyfocusCost 0.3
+//-   comps: li(Class="CompProperties_Resurrect")

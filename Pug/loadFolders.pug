@@ -1,9 +1,3 @@
-include Mixins.pug
-mixin Version(version, ...items)
-  #{"v"+version}
-    li /
-    li= version
-
+include Mixins/Generic.pug
 loadFolders
-  +Version(1.3)
-  +Version(1.4)
+  +Object(loadFolders)

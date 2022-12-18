@@ -1,0 +1,48 @@
+mixin ThinkNode(name, extra)
+  unless block || extra
+    li(Class=name)/
+  else
+    li(Class=name)
+      +Object(extra)
+      if block
+        subNodes: block
+
+mixin ThinkNodeSubtree(name)
+  li(Class="ThinkNode_Subtree"): treeDef!= name
+
+mixin ThinkTreeDef(defName, thinkRoot="ThinkNode_Priority")
+  ThinkTreeDef&attributes(attributes)
+    defName=defName
+    thinkRoot(Class=thinkRoot): subNodes: block
+        
+mixin ThinkTree(defName)
+  +ThinkTreeDef(defName)&attributes(attributes)
+    +ThinkNode("ThinkNode_ConditionalMustKeepLyingDown")
+      +ThinkNode("JobGiver_KeepLyingDown")
+    +ThinkNodeSubtree("Downed")
+    +ThinkNodeSubtree("BurningResponse")
+    +ThinkNode("JobGiver_ReactToCloseMeleeThreat")
+    +ThinkNode("ThinkNode_QueuedJob")
+    block
+    +ThinkNode("ThinkNode_Tagger", {tagToGive:"Idle"})
+      +ThinkNode("JobGiver_WanderAnywhere", {maxDanger:"Deadly",ticksBetweenWandersRange:"120~240"})
+    +ThinkNode("JobGiver_IdleError")
+
+    
++ThinkTreeDef("Typhon_Thinktree_Constant")
+  +ThinkNodeSubtree("Despawned")
+  +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
+    +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"AttackMelee"})
+      +ThinkNode("Typhon.JobGiver.CastAbilityOnJobTarget", {ability:"Typhon_Ability_KineticOrb"})
+      +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
+  +ThinkNode("ThinkNode_ConditionalCanDoConstantThinkTreeJobNow")
+
++ThinkTree("Typhon_Thinktree_Phantom")
+  +ThinkNode("JobGiver_AIFightEnemies", {
+    targetAcquireRadius:65, 
+    targetKeepRadius:72,
+    needLOSToAcquireNonPawnTargets: true
+  })
+  +ThinkNode("JobGiver_AIGotoNearestHostile")
+  +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 5})
+    +ThinkNode("JobGiver_ExitMapRandom", {defaultLocomotion: "Walk"})

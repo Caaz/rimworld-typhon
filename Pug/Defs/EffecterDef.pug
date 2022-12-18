@@ -1,0 +1,88 @@
+EffecterDef
+  defName Typhon_Effecter_HitTyphon
+  offsetTowardsTarget 0.25~0.25
+  positionRadius 0.1
+  children
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.4
+      fleckDef AirPuff
+      burstCount 4~5
+      speed 0.4~0.8
+      scale 1.0~1.3
+      color (25,25,25)
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.1
+      fleckDef BloodSplash
+      burstCount 2~3
+      speed 0.4~0.8
+      scale 1.6~2.1
+      color (25,25,25)
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      positionRadius 0.0
+      fleckDef BodyImpact
+      burstCount 1
+      scale 0.55
+      color (25,25,25)
+      spawnLocType OnSource
+
+EffecterDef
+  defName Typhon_Effecter_PhantomShift
+  children
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      fleckDef PsycastSkipInnerExit
+      burstCount 1~1
+      scale 0.5~0.5
+      rotation 0~0
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggered
+      fleckDef PsycastSkipOuterRingExit
+      burstCount 1~1
+      scale 0.5~0.5
+      rotation 0~0
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggeredDelayed
+      fleckDef PsycastSkipFlashExit
+      initialDelayTicks 12
+      burstCount 1~1
+      scale 0.5~0.5
+      rotation 0~0
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggeredDelayed
+      fleckDef PlainFlash
+      initialDelayTicks 14
+      burstCount 1~1
+      scale 3.0~3.0
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggeredDelayed
+      positionRadius 1.3
+      initialDelayTicks 16
+      fleckDef ElectricalSpark
+      burstCount 7~9
+      scale 1.25
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggeredDelayed
+      positionRadius 1.3
+      initialDelayTicks 24
+      fleckDef ElectricalSpark
+      burstCount 5~7
+      scale 1.25
+      spawnLocType OnSource
+    li
+      subEffecterClass SubEffecter_SprayerTriggeredDelayed
+      positionRadius 1.3
+      initialDelayTicks 32
+      fleckDef ElectricalSpark
+      burstCount 3~7
+      scale .75
+      spawnLocType OnSource

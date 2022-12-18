@@ -1,0 +1,57 @@
+ThingDef(ParentName="TyphonThingBase")
+  defName Typhon_Thing_Phantom
+  label phantom
+  description Phantoms are humanoid creatures created by the Weaver Typhon using some unknown ability. They are typically slow-moving, but can move at great speeds when provoked. This makes them dangerous in combat, as they can quickly move behind pawns or to a nearby area. They are able to "phase" rapidly, allowing them to cover large distances quickly, but they cannot move through solid objects.
+  //- To be reevaluated.
+  //- comps
+  //-   li(Class="Typhon.CompProperties.Hivemind")
+  //-   li(Class="Typhon.CompProperties.AttackOnDamage")
+  //- receivesSignals true
+  race
+    body Human
+    thinkTreeMain Typhon_Thinktree_Phantom
+    baseBodySize 1
+    lifeStageAges
+      li
+        def AnimalAdult
+        minAge 0
+        soundWounded Typhon_Sound_PhantomWounded
+        soundDeath Typhon_Sound_PhantomDeath
+        soundAngry Typhon_Sound_PhantomAngry
+        soundCall Typhon_Sound_PhantomCall
+  tools
+    li
+      label Right Claw
+      capacities: li Blunt
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup RightHand
+      surpriseAttack: extraMeleeDamages: li
+        def Stun
+        amount 14
+    li
+      label Left Claw
+      capacities: li Blunt
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup LeftHand
+      surpriseAttack: extraMeleeDamages: li
+        def Stun
+        amount 14
+    li
+      label Teeth
+      capacities: li Bite
+      power 9
+      cooldownTime 2
+      linkedBodyPartsGroup Teeth
+      chanceFactor 0.1
+      soundMeleeHit Pawn_Melee_HumanBite_Hit
+      soundMeleeMiss Pawn_Melee_HumanBite_Miss
+    li
+      label Body
+      capacities: li Blunt
+      power 5
+      cooldownTime 2
+      linkedBodyPartsGroup Torso
+      ensureLinkedBodyPartsGroupAlwaysUsable true
+      chanceFactor 0.2

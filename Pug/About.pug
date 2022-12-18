@@ -1,18 +1,12 @@
-include Mixins/Lists.pug
-
-mixin Dependency(packageId, displayName, steamWorkshopUrl)
-  li
-    packageId!= packageId
-    displayName!= displayName
-    steamWorkshopUrl!= steamWorkshopUrl
-
+include Mixins/Generic.pug
 doctype xml
 ModMetaData
-  name=name
-  description=description
-  author=author
-  packageId=packageId
-  +SupportedVersions("1.3", "1.4")
-  +LoadAfter("UnlimitedHugs.HugsLib", "OskarPotocki.VanillaFactionsExpanded.Core")
-  modDependencies
-    +Dependency("UnlimitedHugs.HugsLib", "HugsLib", "steam://url/CommunityFilePage/818773962")
+  +Object({
+    name:name,
+    description:description,
+    author:author,
+    packageId:packageId,
+    supportedVersions:supportedVersions,
+    loadAfter:loadAfter,
+    modDependencies:modDependencies
+  })
