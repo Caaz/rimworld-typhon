@@ -2,12 +2,12 @@ AbilityCategoryDef
   defName Typhon
   displayOrder 31126
 
-AbilityDef(ParentName="PsycastBase" Name="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty" Abstract="True")
+AbilityDef(ParentName="PsycastBase" Name="TyphonPsycast" Abstract="True")
   category Typhon
   writeCombatLog true
   statBases: Ability_PsyfocusCost 0.2
 
-AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+AbilityDef(ParentName="TyphonPsycast")
   defName Typhon_Ability_PhantomPhase
   label phantom phase
   description Quickly move to a target location
@@ -21,7 +21,7 @@ AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
     targetParams
       canTargetLocations true
   comps: li(Class="CompProperties_AbilityTeleport")
-    compClass Typhon.CompAbilityEffect.PhantomPhase
+    compClass Typhon.AbilityComp.PhantomPhase
     clamorType Ability
     clamorRadius 1
     destClamorType Ability
@@ -29,13 +29,13 @@ AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
     stunTicks 0
     goodwillImpact 0
 
-AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+AbilityDef(ParentName="TyphonPsycast")
   defName Typhon_Ability_KineticOrb
   label kinetic orb
   description Shoots an orb that causes a small explosion on impact
   iconPath Typhon/Abilities/PhantomGenesis
   cooldownTicksRange 300
-  displayOrder 1
+  displayOrder 2
   hostile true
   verbProperties
     range 9.9
@@ -46,22 +46,22 @@ AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
   comps: li(Class="CompProperties_AbilityLaunchProjectile")
     projectileDef Typhon_Thing_KineticOrb
 
-AbilityDef(ParentName="TyphonPsycast" MayRequire="Ludeon.RimWorld.Royalty")
+AbilityDef(ParentName="TyphonPsycast")
   defName Typhon_Ability_MimicMatter
-  label kinetic orb
-  description Shoots an orb that causes a small explosion on impact
+  label mimic matter
+  description turns into shit
   iconPath Typhon/Abilities/PhantomGenesis
   cooldownTicksRange 300
-  displayOrder 1
-  hostile true
+  displayOrder 3
+  hostile false
   verbProperties
-    range 9.9
-    warmupTime 0.3
+    range 3
+    warmupTime 0.5
     targetParams
-      canTargetPawns true
-      canTargetLocations true
-  comps: li(Class="CompProperties_AbilityLaunchProjectile")
-    projectileDef Typhon_Thing_KineticOrb
+      canTargetPawns false
+      canTargetBuildings true
+  comps: li(Class="CompProperties_AbilityEffect")
+    compClass Typhon.AbilityComp.MimicMatter
 
 
 //- AbilityDef(ParentName="PsycastBase" MayRequire="Ludeon.RimWorld.Royalty")
