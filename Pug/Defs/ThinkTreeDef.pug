@@ -31,9 +31,10 @@ mixin ThinkTree(defName)
     
 +ThinkTreeDef("Typhon_Thinktree_Constant")
   +ThinkNodeSubtree("Despawned")
-  +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
-    +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"AttackMelee"})
+  +ThinkNode("ThinkNode_ConditionalDoingJob", {jobDef:"AttackMelee"})
+    +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_KineticOrb"})
       +ThinkNode("Typhon.JobGiver.CastAbilityOnJobTarget", {ability:"Typhon_Ability_KineticOrb"})
+    +ThinkNode("ThinkNode_ConditionalHasAbility", {ability:"Typhon_Ability_PhantomPhase"})
       +ThinkNode("JobGiver_AIJumpToJobTarget", {ability:"Typhon_Ability_PhantomPhase"})
   +ThinkNode("ThinkNode_ConditionalCanDoConstantThinkTreeJobNow")
 
@@ -44,5 +45,16 @@ mixin ThinkTree(defName)
     needLOSToAcquireNonPawnTargets: true
   })
   +ThinkNode("JobGiver_AIGotoNearestHostile")
+  +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 5})
+    +ThinkNode("JobGiver_ExitMapRandom", {defaultLocomotion: "Walk"})
+
++ThinkTree("Typhon_Thinktree_Mimic")
+  +ThinkNode("JobGiver_AIFightEnemies", {
+    targetAcquireRadius:10, 
+    targetKeepRadius:20,
+    needLOSToAcquireNonPawnTargets: true
+  })
+  //- Maybe this should be mimic nearby object
+  +ThinkNode("JobGiver_WanderAnywhere")
   +ThinkNode("ThinkNode_ChancePerHour_Constant", {mtbDays: 5})
     +ThinkNode("JobGiver_ExitMapRandom", {defaultLocomotion: "Walk"})

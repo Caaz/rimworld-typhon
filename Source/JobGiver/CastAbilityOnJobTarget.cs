@@ -4,7 +4,7 @@ using Verse.AI;
 
 namespace Typhon.JobGiver
 {
-    public class CastHostileAbility : JobGiver_AICastAbility
+    public class CastAbilityOnJobTarget : JobGiver_AICastAbility
     {
         protected override LocalTargetInfo GetTarget(Pawn pawn, Ability ability)
         {

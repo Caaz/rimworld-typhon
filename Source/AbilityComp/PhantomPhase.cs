@@ -1,7 +1,7 @@
 using RimWorld;
 using Verse;
 
-namespace Typhon.CompAbilityEffect
+namespace Typhon.AbilityComp
 {
     public class PhantomPhase : RimWorld.CompAbilityEffect
     {

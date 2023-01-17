@@ -1,0 +1,33 @@
+BodyDef
+  defName Typhon_Body_Mimic
+  label mimic
+  corePart
+    def Body
+    height Middle
+    depth Outside
+    groups: li Torso
+    parts 
+      li
+        def Typhon_BodyPart_Organ
+        coverage 0.1
+        depth Inside
+      li
+        def Typhon_BodyPart_Tendril
+        coverage 0.1
+        height Bottom 
+        groups: li Legs
+      li
+        def Typhon_BodyPart_Tendril
+        coverage 0.1
+        height Bottom
+        groups: li Legs
+      li
+        def Typhon_BodyPart_Tendril
+        coverage 0.1
+        height Bottom
+        groups: li Legs
+      li
+        def Typhon_BodyPart_Tendril
+        coverage 0.1
+        height Bottom
+        groups: li Legs
